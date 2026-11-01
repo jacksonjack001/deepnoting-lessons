@@ -1,0 +1,756 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="一周 AI 观察 2026.10.12 — 10.16"><title>一周 AI 观察 | 2026.10.12 — 10.16</title><link rel="stylesheet" href="assets/reveal.css"><style>
+    :root{--paper:#f3f0e8;--ink:#151713;--muted:#65675f;--line:rgba(21,23,19,.18);--acid:#c6f43d;--red:#f0442e;--blue:#1b56d8;--sand:#d5c8ad;--serif:"Noto Serif SC","Songti SC",serif;--mono:"IBM Plex Mono","PingFang SC",monospace}
+    *{box-sizing:border-box}body{background:var(--paper)}.reveal{color:var(--ink);font-family:var(--serif);font-size:26px}.reveal-viewport{background:var(--paper)}
+    .reveal .slides section{height:100%;padding:44px 62px 38px;text-align:left}.reveal .slides section::before{content:"";position:absolute;inset:18px;border:1px solid var(--line);pointer-events:none}
+    .reveal h1,.reveal h2,.reveal h3{color:var(--ink);font-family:var(--serif);text-transform:none}.reveal h1{font-size:3.05em;font-weight:900;line-height:1.04;letter-spacing:-.05em;margin:0}.reveal h2{font-size:1.7em;font-weight:900;line-height:1.12;letter-spacing:-.035em;margin:0 0 18px}.reveal h3{font-size:.9em;font-weight:900;margin:0 0 7px}.reveal p{line-height:1.5;margin:.42em 0}.reveal strong{color:var(--red);font-weight:900}.reveal a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+    .reveal .slide-number{display:none!important}.reveal .progress{color:var(--red);height:4px}
+    .kicker,.folio,.tag,.metric-label,.source,.caption,.hint,.eyebrow{font-family:var(--mono)}.kicker{color:var(--red);font-size:.53em;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}.folio{position:absolute;top:29px;right:34px;font-size:.45em;color:var(--muted);letter-spacing:.08em}.rule{width:76px;height:8px;background:var(--red);margin:20px 0}.lede{max-width:990px;font-size:1.02em;line-height:1.52}.muted{color:var(--muted)}.small{font-size:.69em;line-height:1.43}.tiny{font-size:.52em;line-height:1.42}.source{position:absolute;bottom:30px;left:63px;right:88px;color:var(--muted);font-size:.39em;line-height:1.35}.source a{color:var(--muted)}
+    .tag{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:4px 9px;font-size:.43em;font-weight:600;letter-spacing:.04em;margin-right:5px}.tag.red{color:var(--red)}.tag.blue{color:var(--blue)}.tag.warn{color:#8b4c00;background:#f6dfb3;border-color:#c58a30}.tag.dark{color:var(--ink)}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.split{display:grid;grid-template-columns:1.06fr .94fr;gap:27px;align-items:start}.split.reverse{grid-template-columns:.9fr 1.1fr}.split.equal{grid-template-columns:1fr 1fr}.card{border:1px solid var(--ink);padding:16px 17px;background:rgba(255,255,255,.28);min-height:130px}.card.acid{background:var(--acid)}.card.ink{background:var(--ink);color:var(--paper)}.card.ink h3,.card.ink strong{color:var(--acid)}.card.red{background:var(--red);color:#fff}.card.red h3,.card.red strong{color:#fff}.card p{font-size:.66em;margin:0;line-height:1.45}.card .no{font:600 .46em var(--mono);color:var(--muted);margin-bottom:12px}.card.ink .no,.card.red .no{color:rgba(255,255,255,.68)}.big-number{font:600 1.95em/1 var(--mono);letter-spacing:-.07em}.metric-label{font-size:.44em;color:var(--muted);margin-top:7px}.card.ink .metric-label,.card.red .metric-label{color:rgba(255,255,255,.7)}
+    .signal-list{display:grid;gap:0;border-top:1px solid var(--ink)}.signal{display:grid;grid-template-columns:58px 170px 1fr;gap:12px;align-items:center;padding:10px 6px;border-bottom:1px solid var(--line)}.signal .n{font:600 .62em var(--mono);color:var(--red)}.signal b{font-size:.69em}.signal span:last-child{display:block;font-size:.6em;line-height:1.42;color:var(--muted)}
+    .takeaway{position:absolute;left:62px;right:62px;bottom:64px;display:grid;grid-template-columns:112px 1fr;border-top:2px solid var(--ink);padding-top:11px}.takeaway b{font:600 .45em var(--mono);color:var(--red)}.takeaway span{font-size:.6em;line-height:1.4}
+    .chapter{background:var(--ink)!important;color:var(--paper)!important}.chapter::before{border-color:rgba(243,240,232,.28)!important}.chapter h2{color:var(--paper);font-size:2.65em;margin-top:145px}.chapter .kicker{color:var(--acid)}.chapter .folio{color:rgba(243,240,232,.55)}.chapter .rule{background:var(--acid);width:180px}.chapter p{color:rgba(243,240,232,.72);max-width:850px}
+    .visual{display:block;width:100%;height:338px;object-fit:contain;border:1px solid var(--ink);background:#fff}.visual.covered{object-fit:cover}.visual.short{height:218px}.visual.mini{height:160px}.visual.tall{height:390px}.caption{margin-top:6px;color:var(--muted);font-size:.39em;line-height:1.38}.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.media-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.media-tile{position:relative;border:1px solid var(--ink);background:#fff;overflow:hidden}.media-tile img{display:block;width:100%;height:176px;object-fit:cover}.media-tile.contain img{object-fit:contain}.media-tile span{position:absolute;left:7px;bottom:7px;padding:4px 7px;background:var(--ink);color:var(--paper);font:600 .35em var(--mono)}
+    .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:9px;align-items:center;margin-top:17px}.flow .step{border:1px solid var(--ink);padding:15px 9px;text-align:center;font-size:.59em;background:rgba(255,255,255,.28)}.flow .step.hot{background:var(--acid)}.flow .arrow{font:600 .95em var(--mono);color:var(--red)}
+    .quote{border-left:8px solid var(--red);padding:3px 0 3px 17px;font-size:1em;line-height:1.48;margin:18px 0}.trust{display:grid;grid-template-columns:125px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}.trust:last-child{border-bottom:1px solid var(--line)}.trust b{font:600 .48em var(--mono);color:var(--red)}.trust span{font-size:.61em;line-height:1.4}.dense h2{font-size:1.48em}.dense .card{min-height:108px;padding:13px 15px}.dense .small{margin:.28em 0}
+    .matrix{display:grid;grid-template-columns:150px repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin-top:15px}.matrix>*{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:11px 10px}.matrix b{font:600 .48em var(--mono)}.matrix span{font-size:.54em;line-height:1.33}.matrix .head{background:var(--ink);color:var(--paper)}.matrix .hot{background:var(--acid)}
+    #commercial-unit-economics .card{padding:20px;min-height:175px}
+    #commercial-unit-economics .card p{font-size:.70em;line-height:1.55}
+    #commercial-unit-economics .matrix{margin-top:24px}
+    #commercial-unit-economics .matrix>*{padding:15px 12px}
+    #commercial-unit-economics .matrix span{font-size:.61em}
+    #openai-benchmark-review .matrix>*{padding:18px 12px}
+    #openai-sketch-demo .demo-compare{gap:20px}
+    #openai-sketch-demo .demo-panel{border:1px solid var(--ink);padding:12px 12px 14px;background:rgba(255,255,255,.3)}
+    #openai-sketch-demo .demo-panel:first-child{border-top:7px solid var(--acid)}
+    #openai-sketch-demo .demo-panel:last-child{border-top:7px solid var(--blue)}
+    #openai-sketch-demo .demo-panel h3{display:grid;grid-template-columns:56px 1fr;align-items:center;gap:8px;margin:12px 0 7px}
+    #openai-sketch-demo .demo-panel h3 span{font:600 .5em var(--mono);color:var(--red)}
+    #openai-sketch-demo .demo-panel .small{min-height:68px;margin:0}
+    .media-video{display:block;width:100%;height:330px;object-fit:contain;background:#111;border:1px solid var(--ink)}.media-video.short{height:205px}
+    .slides img{cursor:zoom-in}#image-lightbox[hidden],#edit-toolbar[hidden]{display:none!important}#image-lightbox{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:56px;background:rgba(9,11,10,.94);backdrop-filter:blur(6px)}#image-lightbox img{display:block;max-width:92vw;max-height:84vh;object-fit:contain;cursor:zoom-in;box-shadow:0 20px 70px rgba(0,0,0,.45)}#image-lightbox.zoomed{display:block;overflow:auto;text-align:center}#image-lightbox.zoomed img{max-width:none;max-height:none;margin:0 auto;cursor:zoom-out}#lightbox-close{position:fixed;right:24px;top:18px;z-index:1002;border:1px solid rgba(255,255,255,.55);background:#111;color:#fff;width:42px;height:42px;border-radius:50%;font:28px/1 var(--mono);cursor:pointer}#lightbox-caption{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);max-width:78vw;padding:7px 12px;background:rgba(0,0,0,.75);color:#fff;font:12px/1.4 var(--mono);text-align:center}
+    #edit-toolbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--ink);background:var(--acid);box-shadow:0 5px 20px rgba(0,0,0,.18);font:12px var(--mono)}#edit-toolbar button{border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:5px 9px;font:12px var(--mono);cursor:pointer}body.edit-mode [contenteditable="true"]{outline:1px dashed rgba(27,86,216,.6);outline-offset:3px;cursor:text}body.edit-mode [contenteditable="true"]:focus{outline:3px solid var(--blue);background:rgba(255,255,255,.72)}body.edit-mode .slides img{cursor:default}
+    @media(max-width:800px){body{overflow:hidden}.reveal{font-size:26px}.reveal .slides section{padding:44px 62px 38px}.reveal .slides section>*{max-width:78%}.source{left:63px;right:auto;width:72%}.takeaway{right:auto;width:72%}.grid3,.grid4{grid-template-columns:repeat(3,minmax(0,1fr))}.signal{grid-template-columns:58px 170px 1fr}.visual{max-width:100%}}
+  
+.reveal .slides section{padding-bottom:46px}
+.slidelead{font-size:.8em;line-height:1.42;color:var(--muted);margin:0 0 15px}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.story{border:1px solid var(--ink);padding:15px 16px;min-height:185px;background:rgba(255,255,255,.35)}
+.story.hot{background:var(--acid)}.story.dark{background:var(--ink);color:var(--paper)}.story.dark h3{color:var(--acid)}
+.story h3{font-size:.73em;margin:0 0 10px}.story p{font-size:.58em;line-height:1.45;margin:0}
+.label{font:600 .45em var(--mono);color:var(--red);margin-bottom:8px}
+.price-table{display:grid;grid-template-columns:1.3fr repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin-top:18px}
+.price-table>*{padding:13px 10px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);font-size:.57em}
+.price-table .th{font-family:var(--mono);font-size:.43em;background:var(--ink);color:var(--paper)}
+.price-table .accent{background:var(--acid);font-weight:800}
+.figurebox{border:1px solid var(--ink);background:#fff;padding:8px}.figurebox img{display:block;width:100%;height:300px;object-fit:contain}.figurebox.tall img{height:370px}.figurebox.short img{height:245px}
+.figurebox .caption{font-size:.39em;margin:5px 3px 0}
+.pointlist{display:grid;gap:10px}.point{border-left:6px solid var(--red);padding-left:12px;font-size:.62em;line-height:1.42}.point b{display:block;font-size:1.05em;margin-bottom:3px}
+.point.blue{border-color:var(--blue)}.point.acid{border-color:#84ab00}
+.lozenge{display:inline-block;font:600 .42em var(--mono);border:1px solid var(--ink);padding:5px 9px;margin:3px 4px 3px 0;background:#fff}
+.flow4 b{display:block;font:600 .78em var(--mono);color:var(--red);margin-bottom:7px}
+.section-note{font-size:.56em;line-height:1.42;color:var(--muted);margin:10px 0}
+.tight h2{font-size:1.48em}.tight .story{min-height:150px}.tight .story p{font-size:.56em}
+.twofig{display:grid;grid-template-columns:1fr 1fr;gap:10px}.twofig .figurebox img{height:206px}
+.callout{border:1px solid var(--ink);background:var(--acid);padding:13px 15px;font-size:.59em;line-height:1.38;margin-top:13px}
+.source{bottom:29px;right:125px}
+.chapter.chapter-visual h2,#research-divider.chapter-visual h2{margin-top:36px}
+
+.evidence-figure{margin:10px 0 0;border:1px solid var(--ink);background:#fff;padding:5px 8px 4px;position:relative}
+.evidence-figure img{display:block;width:100%;height:133px;object-fit:contain;background:#fff}
+.evidence-figure figcaption{font:10px/1.25 var(--mono);color:var(--muted);margin:3px 3px 0}
+.cover .evidence-figure img{height:125px;background:transparent}
+.cover .evidence-figure figcaption{display:none}
+.chapter .evidence-figure{width:100%;max-width:1070px;margin-top:35px;border-color:rgba(243,240,232,.45);background:transparent}
+.chapter .evidence-figure img{height:205px;object-fit:contain;background:transparent}
+.chapter .evidence-figure figcaption{color:rgba(243,240,232,.65)}
+@media(max-width:800px){.cover .evidence-figure{top:490px}}
+
+.wechat-figure{margin:9px 0 0;border:1px solid var(--ink);padding:7px;background:#fff}
+.wechat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.wechat-figure.single .wechat-grid{grid-template-columns:1fr}
+.wechat-figure.multi:has(.wechat-tile:nth-child(2):last-child) .wechat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wechat-tile{min-width:0;display:flex;flex-direction:column;gap:4px}
+.wechat-tile img{display:block;width:100%;height:155px;object-fit:contain;background:#f7f7f7;cursor:zoom-in}
+.wechat-tile span{display:block;font:10px/1.3 var(--mono);color:var(--muted)}
+.cover .wechat-figure{position:absolute;left:63px;right:63px;top:482px;margin:0;padding:4px 8px;background:#fff}
+.cover .wechat-tile img{height:125px}.cover .cover-originals .wechat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cover .wechat-tile span{font-size:9px}
+.commercial-original-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:start}
+.commercial-original-layout .wechat-figure{margin:0}
+.commercial-original-layout .wechat-tile img{height:345px}
+.commercial-notes{display:grid;gap:12px}.commercial-notes .card{min-height:155px}.commercial-notes .card p{font-size:.61em}
+
+.jev-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:20px;align-items:start}.jev-layout .pointlist{gap:9px}.jev-layout .point{font-size:.58em;line-height:1.34}.jev-slide .wechat-figure{margin:0}.jev-originals .wechat-grid{grid-template-columns:1fr}.jev-slide .wechat-tile img{height:360px}.jev-slide .wechat-tile span{font-size:10px}
+
+/* ===== generic weekly theme additions (skill-managed) ===== */
+.reveal .slides section{padding-bottom:46px}
+.slidelead{font-size:.8em;line-height:1.42;color:var(--muted);margin:0 0 15px}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.story{border:1px solid var(--ink);padding:15px 16px;min-height:185px;background:rgba(255,255,255,.35)}
+.story.hot{background:var(--acid)}.story.dark{background:var(--ink);color:var(--paper)}.story.dark h3{color:var(--acid)}
+.story h3{font-size:.73em;margin:0 0 10px}.story p{font-size:.58em;line-height:1.45;margin:0}
+.label{font:600 .45em var(--mono);color:var(--red);margin-bottom:8px}
+.price-table{display:grid;grid-template-columns:1.3fr repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin-top:18px}
+.price-table>*{padding:13px 10px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);font-size:.57em}
+.price-table .th{font-family:var(--mono);font-size:.43em;background:var(--ink);color:var(--paper)}
+.price-table .accent{background:var(--acid);font-weight:800}
+.figurebox{border:1px solid var(--ink);background:#fff;padding:8px}.figurebox img{display:block;width:100%;height:300px;object-fit:contain}.figurebox.tall img{height:370px}.figurebox.short img{height:245px}
+.figurebox .caption{font-size:.39em;margin:5px 3px 0}
+.pointlist{display:grid;gap:10px}.point{border-left:6px solid var(--red);padding-left:12px;font-size:.62em;line-height:1.42}.point b{display:block;font-size:1.05em;margin-bottom:3px}
+.point.blue{border-color:var(--blue)}.point.acid{border-color:#84ab00}
+.lozenge{display:inline-block;font:600 .42em var(--mono);border:1px solid var(--ink);padding:5px 9px;margin:3px 4px 3px 0;background:#fff}
+.flow4 b{display:block;font:600 .78em var(--mono);color:var(--red);margin-bottom:7px}
+.section-note{font-size:.56em;line-height:1.42;color:var(--muted);margin:10px 0}
+.tight h2{font-size:1.48em}.tight .story{min-height:150px}.tight .story p{font-size:.56em}
+.twofig{display:grid;grid-template-columns:1fr 1fr;gap:10px}.twofig .figurebox img{height:206px}
+.callout{border:1px solid var(--ink);background:var(--acid);padding:13px 15px;font-size:.59em;line-height:1.38;margin-top:13px}
+.source{bottom:29px;right:125px}
+.chapter.chapter-visual h2{margin-top:36px}
+.chapter.chapter-visual p{max-width:900px}
+
+/* original-article figure system: class derived from tile count by deckkit.tiles() */
+.wechat-figure{margin:9px 0 0;border:1px solid var(--ink);padding:7px;background:#fff}
+.wechat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.wechat-figure.single .wechat-grid{grid-template-columns:1fr}
+.wechat-figure.two .wechat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.wechat-figure.three .wechat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.wechat-tile{min-width:0;display:flex;flex-direction:column;gap:4px}
+.wechat-tile img{display:block;width:100%;height:155px;object-fit:contain;background:#f7f7f7;cursor:zoom-in}
+.wechat-figure.single .wechat-tile img{height:340px}
+.wechat-figure.two .wechat-tile img{height:250px}
+.wechat-figure.three .wechat-tile img{height:190px}
+.wechat-tile span{display:block;font:10px/1.3 var(--mono);color:var(--muted)}
+/* a two-image figure must span the full slide, so collapse the split column */
+.split:has(.wechat-figure.two){grid-template-columns:1fr;gap:14px;align-items:stretch}
+.split:has(.wechat-figure.two) .pointlist{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px}
+
+/* cover */
+.cover::after{content:"W42";font-size:5em;right:74px}
+.cover .date{font:600 .72em var(--mono);letter-spacing:.08em;margin-top:22px}
+.cover .bands{display:flex;gap:8px;margin-top:18px}
+.cover .bands span{height:12px;display:block}
+.cover .bands span:nth-child(1){width:31%;background:var(--red)}
+.cover .bands span:nth-child(2){width:19%;background:var(--acid);border:1px solid var(--ink)}
+.cover .bands span:nth-child(3){width:50%;background:var(--blue)}
+.cover .hint{position:absolute;left:63px;right:63px;bottom:30px;font-size:.41em;color:var(--muted)}
+.cover .wechat-figure{position:absolute;left:63px;right:63px;top:440px;margin:0;padding:4px 8px;background:#fff}
+.cover .wechat-tile img{height:158px}
+.cover .cover-originals .wechat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cover .wechat-tile span{font-size:9px}
+
+/* chapter divider with a single hero figure */
+.chapter.chapter-visual .wechat-figure{margin-top:20px}
+.chapter.chapter-visual .wechat-figure .wechat-tile img{height:200px}
+
+/* appendix source table */
+.appx h2{font-size:1.34em}
+.src-table{width:100%;border-collapse:collapse;margin-top:6px;font-size:.5em;line-height:1.3}
+.src-table th,.src-table td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+.src-table th{background:var(--ink);color:var(--paper);font:600 .92em var(--mono)}
+.src-table tbody tr:nth-child(even){background:rgba(255,255,255,.42)}
+.src-table .ta-c{text-align:center;white-space:nowrap;font-family:var(--mono)}
+.tbl-yes{color:var(--blue);font-weight:700}
+.tbl-no{color:var(--muted)}
+
+/* 2026-10-17 visual audit: preserve a readable 16:9 safe area. */
+.cover::after{display:none!important}
+.cover .hint{font-size:14px;line-height:1.3;bottom:32px}
+.cover h1{position:relative;z-index:1;font-size:3.45em;letter-spacing:-.045em}
+.cover .lede{max-width:1040px;font-size:1.04em;line-height:1.52}
+.cover .bands{margin-top:24px}
+.cover-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.cover-pillars>div{min-height:146px;border:1px solid var(--ink);background:rgba(255,255,255,.42);padding:17px 20px}
+.cover-pillars>div:nth-child(2){background:var(--acid)}
+.cover-pillars b{display:block;font:700 12px var(--mono);color:var(--red);margin-bottom:15px}
+.cover-pillars span{display:block;font-size:23px;font-weight:800;line-height:1.3}
+.chapter h2{margin-top:165px!important;max-width:1020px;font-size:2.55em;line-height:1.17}
+.chapter p{font-size:.76em;line-height:1.45;max-width:980px}
+.wechat-figure{max-width:100%;min-width:0}
+.wechat-figure.single .wechat-grid{grid-template-columns:1fr}
+.wechat-figure.single .wechat-tile img{height:260px;object-fit:contain}
+.split .wechat-figure.single .wechat-tile img{height:340px}
+.wechat-figure.two .wechat-tile img{height:225px;object-fit:contain}
+.wechat-figure.three .wechat-tile img{height:170px;object-fit:contain}
+.wechat-tile span{font-size:12px;line-height:1.25}
+.source{font-size:12px;line-height:1.3;bottom:29px;left:63px;right:90px}
+.source a{color:#384c82}
+.src-table{font-size:14px;line-height:1.25}
+.src-table th,.src-table td{padding:6px 7px}
+.src-table a{color:var(--blue);text-decoration:none}
+.src-table a:hover{text-decoration:underline}
+.appx .slidelead{font-size:17px}
+.appx h2{font-size:1.48em}
+.provenance-slide .slidelead{max-width:1070px;font-size:19px;margin-bottom:23px}
+.claim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px}
+.claim{border:1px solid var(--ink);background:#fff;min-height:218px;padding:22px 23px}
+.claim:nth-child(2){background:var(--acid)}
+.claim b{display:block;font:700 14px var(--mono);color:var(--red)}
+.claim strong{display:block;font:700 52px/1 var(--mono);margin:20px 0 14px;color:var(--ink)}
+.claim span{font-size:17px;line-height:1.38;color:var(--muted)}
+.provenance-slide .callout{font-size:17px;line-height:1.45;margin-top:20px;padding:15px 18px}
+@media(max-width:800px){.cover-pillars{grid-template-columns:repeat(3,1fr)}.cover-pillars span{font-size:20px}}
+
+.weekly-overview .story-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.weekly-overview .story{min-height:205px;padding:21px 24px}
+.weekly-overview .story h3{font-size:.82em}
+.weekly-overview .story p{font-size:.64em}
+.anthropic-weekly .grid2{gap:22px}
+.anthropic-weekly .card{min-height:238px;padding:24px 28px}
+.anthropic-weekly .card h3{font-size:1em;margin-bottom:15px}
+.anthropic-weekly .card p{font-size:.7em;line-height:1.5}
+.metric-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.metric-strip.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.metric-strip>div{border-top:3px solid var(--red);padding:12px 16px;background:rgba(255,255,255,.38)}
+.metric-strip>div:nth-child(2){border-color:var(--blue)}
+.metric-strip>div:nth-child(3){border-color:#83a900}
+.metric-strip b{display:block;font:700 34px/1.1 var(--mono);color:var(--ink)}
+.metric-strip span{display:block;font-size:14px;line-height:1.35;margin-top:7px;color:var(--muted)}
+.weekly-models .story-grid{margin-top:15px}
+.weekly-models .story{min-height:225px}
+.weekly-models .story p{font-size:.63em}
+</style></head><body><div class="reveal"><div class="slides">
+<section class="cover"><div class="folio"></div><div class="kicker">W42</div><h1>一周 AI 观察</h1><div class="rule"></div><p class="lede">本周主线只有一条：<strong>AI 从「能生成」走向「能接手」</strong>——写代码、做科研、动浏览器、管知识。伴随而来的是新的验证、授权与安全边界。</p><div class="date">2026.10.12 — 10.16</div><div class="bands"><span></span><span></span><span></span></div><div class="cover-pillars"><div><b>01 / AGENT</b><span>从回答问题<br/>走向执行任务</span></div><div><b>02 / RESEARCH</b><span>从模型跑分<br/>走向自主科研</span></div><div><b>03 / GOVERNANCE</b><span>从开放调用<br/>走向权限治理</span></div></div><div class="hint">方向键翻页 · 点击图片放大 · E 编辑 · F 全屏 · O 总览<br/>文字可暂存浏览器；编辑后可导出含图片的单文件 HTML。</div></section>
+<section class="tight weekly-overview"><div class="folio"></div>
+<div class="kicker">本周速览 / W42</div>
+<h2>本周四个关键词：接手、科研、权限、安全</h2>
+<div class="story-grid">
+<div class="story hot"><div class="label">AGENT / 开发</div><h3>AI 接手工程全流程</h3>
+<p>Claude Code 桌面版支持并行子会话与 Worktree 隔离；Linus 用 Claude Code 写内核补丁，8 线程吞吐提升约 3 倍；Anthropic 为 Agent 规模自研版本控制系统 Scion。</p></div>
+<div class="story"><div class="label">RESEARCH / 评测</div><h3>AI 自己搞科研上排行榜</h3>
+<p>DeepRSI 用 48 小时自主科研挑战排名，Fable 5.1 第一、Kimi K3 国产开源第一；斯坦福 NCM 提出「先写提纲再填细节」的文本生成第三范式。</p></div>
+<div class="story"><div class="label">PRODUCT / 权限</div><h3>入口与授权的重新划分</h3>
+<p>Anthropic 允许订阅额度直连第三方 App；ChatGPT 进 Chrome 动手操作网页；openJiuwen 把个人资料变成 Agent 可用的知识空间。</p></div>
+<div class="story dark"><div class="label">RISK / 安全</div><h3>能力越强，风险越具体</h3>
+<p>Anthropic 红队演示 15 台电视盒跑通 26B 模型；OpenAI 会议室窃听案由自家模型协助破案；智谱引入白帽古河补强 cyber 能力。</p></div>
+</div>
+<p class="source">来源：对应正文页；<a href="#/39">逐条原文见附录索引</a></p>
+</section>
+<section class="chapter chapter-visual"><div class="folio"></div><div class="kicker">第一章 / 前沿模型</div><h2>前沿模型：换代、开放与真实交付</h2><div class="rule"></div><p>Gemini 4 与 Muse Wonder 同周落地，比拼重点从跑分转向「能不能接手真实任务」。</p></section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">前沿 / 谷歌</div>
+<h2>Gemini 4 Argon 全球开放：把「看懂」接到「动手」</h2>
+<div class="split equal">
+<div class="pointlist">
+<div class="point"><b>工程：600 万行遗留代码</b>Chromium 约 4000 万行代码中的 600 万行旧目录完成架构重构，原需数月压缩到数周；Argon 通宵跑完 16892 项单元测试。</div>
+<div class="point"><b>给 AI 提速</b>Gemma 4 E2B 在单张 A100 上推理吞吐从约 3.79 万 token/s 提升到 10.8 万以上，约 2.85 倍，输出保持一致。</div>
+<div class="point blue"><b>从屏幕走向现实</b>据真实机器人视频构建 Real2Sim 仿真场景，人形机器人连续投中 7 次沙包；量子纠错解码器、聚变与生命科学项目均有落地案例。</div>
+<div class="point acid"><b>榜单与价格</b>Artificial Analysis 智力指数 53 分，与 GPT-6 Astra 持平；11 月 30 日前输入/输出每百万 token 2/10 美元，12 月 1 日起恢复 4/20 美元。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="Argon 官方能力对标 GPT-6 Astra 与 Fable 5.1" src="assets/17-04.png"/><span>新智元原文图</span></div><div class="wechat-tile"><img alt="Argon 全面开放的能力清单" src="assets/09-01.png"/><span>腾讯科技原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573352&amp;idx=1&amp;sn=493b2968fa5c99c8ee62d5eb4a58fcc1&amp;chksm=a8ceb30c9a2a190fa7447acbb3d2db51b1d503cb9cab99386786d88031e917e44de0adc92d23&amp;mpshare=1&amp;scene=1&amp;srcid=1014sYYJLa6YNKU8paXp1KVi&amp;sharer_shareinfo=4852eb2a935829cf9d66d14c204e163d&amp;sharer_shareinfo_first=4852eb2a935829cf9d66d14c204e163d" rel="noopener noreferrer" target="_blank" title="前沿模型争霸！Gemini 4 Argon全面开放，谷歌用模型“操练”机器人（腾讯科技）">9 · 腾讯科技 · 前沿模型争霸！Gem…</a> · <a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734418&amp;idx=1&amp;sn=7f92b6ba19a7bef04126c1797a809a36&amp;chksm=f0df52098f92ae055ec639446feed74aaec3464c50abcd535147f21ebb6223f58b3d01c3b2bd&amp;mpshare=1&amp;scene=1&amp;srcid=10145W7nmn2lEJZ8ooUPamvJ&amp;sharer_shareinfo=e95267fe5a0eacfc33cfb462a9920b8e&amp;sharer_shareinfo_first=e95267fe5a0eacfc33cfb462a9920b8e" rel="noopener noreferrer" target="_blank" title="刚刚，Gemini 4全球上线！（新智元）">17 · 新智元 · 刚刚，Gemini4…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">前沿 / 开放科学</div>
+<h2>Astra 蜂群 24 小时攻破整数乘法下界</h2>
+<div class="split equal">
+<div class="pointlist">
+<div class="point"><b>突破</b>GitHub 仓库 CrocSwap/integer-mult-bounds 中，研究者把 OpenAI 第 109 号数学难题（条件整数乘法下界）的核心参数 k 从 2^-182 推到 0.00129。</div>
+<div class="point blue"><b>怎么做到的</b>先是 Doug Colkitt 独自推进到 2^-34，随后社区释放数十个由 Codex 与 Claude 驱动的智能体：读取论文与代码、寻找优化空间、自动写码、自动跑验证器，成功提交 PR、失败重来。</div>
+<div class="point acid"><b>人类直觉仍是关键</b>当 k 逼近 0.001、纯优化陷入局部最优，研究者 Jacob Sussman 引入 E8 格点几何重构「配对立方体变换」，打破比特侧与复数侧的冲突；一天内 151 个 PR 涌入、新增代码超 2.6 亿行，89 个标注 Codex、48 个标注 Claude。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="人类直觉 + AI 试错的协作过程" src="assets/04-09.png"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733949&amp;idx=1&amp;sn=92b620a00a1f3100bf28e271931d943c&amp;chksm=f02d07485c359ce73134c60e9ff15c182c694bc15f95ed9be50b36ca6c1ead5ccc597a56730f&amp;mpshare=1&amp;scene=1&amp;srcid=1013X2c05pTtTWeJS1e5Homj&amp;sharer_shareinfo=2901f386f9fa649b5955617b6a8f132b&amp;sharer_shareinfo_first=2901f386f9fa649b5955617b6a8f132b" rel="noopener noreferrer" target="_blank" title="全球直播！Astra狂破整数乘法纪录，AI蜂群24小时击穿CS圣杯（新智元）">4 · 新智元 · 全球直播！Astra…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">前沿 / Meta</div>
+<h2>Meta 发布 Muse Wonder：闭源、订阅，主攻个人智能体</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>成绩单</b>Artificial Analysis 显示 Wonder Full 多项智能体与专业工作评测进入前三；最高推理强度下 Muse Code + Wonder Full 的编程智能体成绩与 Claude Code + Sonnet 5.5 持平。</div>
+<div class="point blue"><b>两个主轴</b>Active Memory 跨天、跨周保留偏好与约束；Active Focus 让任务卡住时主动换路，关键操作前先向用户确认。</div>
+<div class="point"><b>定价与争议</b>API 每百万输入 4 美元、缓存输入 0.20 美元、输出 20 美元，支持 100 万 token 上下文；Wang 承认编程能力仍不如 Opus 5.5，3D 演示未专门训练。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="Muse Wonder 与 Jev1 原子动画对比" src="assets/06-08.jpg"/><span>APPSO原文图</span></div><div class="wechat-tile"><img alt="Wonder 系列 / Muse Code 组合示意" src="assets/06-03.jpg"/><span>APPSO原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651111732&amp;idx=1&amp;sn=0d538ee2c8a316f0a1f6df3d13770fe6&amp;chksm=bce468379e04e2bafefa8d78b5f85c2616cb9adc548d56b0e1ae8cf133e7de853cd6fbd84fec&amp;mpshare=1&amp;scene=1&amp;srcid=1013FqzCa9jS43jm3HmCo6BW&amp;sharer_shareinfo=6339b9b373e248bca79cb66623a03248&amp;sharer_shareinfo_first=6339b9b373e248bca79cb66623a03248" rel="noopener noreferrer" target="_blank" title="刚刚，小扎发布神秘「西瓜」模型，跑分媲美 Opus 5.5，口碑却一言难尽（APPSO）">6 · APPSO · 刚刚，小扎发布神秘「…</a> · <a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734418&amp;idx=2&amp;sn=100e81770635aacf46d1ea7bdf0a5c82&amp;chksm=f06390b7f3702bb38e2b03c29b8594bb4b1846b4152a650bd48cb133d390ebba124f0b496102&amp;mpshare=1&amp;scene=1&amp;srcid=10145YZpQfuUR8YR2ts1LYqg&amp;sharer_shareinfo=bf3eaf55b6ff5f6b4d420595028dcbd7&amp;sharer_shareinfo_first=bf3eaf55b6ff5f6b4d420595028dcbd7" rel="noopener noreferrer" target="_blank" title="亚历山大王首次自曝：Muse Wonder搞砸了，Meta就会直接破产！（新智元）">18 · 新智元 · 亚历山大王首次自曝：…</a>。</p>
+</section>
+<section class="tight anthropic-weekly"><div class="folio"></div>
+<div class="kicker">前沿 / Anthropic</div>
+<h2>Claude 一周两连发：订阅直连第三方，Opus 5.5 极速版解禁</h2>
+<div class="grid2">
+<div class="card"><div class="no">01 / 生态</div><h3>订阅额度直通第三方 App</h3>
+<p>Claude Max 与 Team 用户的月度 API Credits 可直接用于 Agent SDK、claude -p、API 与 Managed Agents，以及采用这些技术的第三方 App。开发者不再对用户二次收费，本质是「自带订阅」模式。</p></div>
+<div class="card acid"><div class="no">02 / 速度</div><h3>Opus 5.5 极速模式全面开放</h3>
+<p>与标准版相同权重与智力水平，每秒输出 token 提升最多 2.5 倍，取消等待名单。极速版价目为每百万输入 8 / 输出 40 美元，反而低于 Opus 5、Opus 4.8 的 10 / 50 美元。</p></div>
+</div>
+<div class="metric-strip"><div><b>2.5×</b><span>极速模式最高输出速度增幅<br/>原文报道口径</span></div><div><b>$8 / $40</b><span>每百万输入 / 输出 token<br/>原文所列极速版价格</span></div></div><p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734758&amp;idx=1&amp;sn=afe7493086c24097e4a4b5dd8c776ed9&amp;chksm=f02334ff01e00874d539a30c9342f2e329b46873b6ce95fd6c8e8a0cedb140cecba2ee8268dd&amp;mpshare=1&amp;scene=1&amp;srcid=1015fL5tYv6sAzOn0isger2t&amp;sharer_shareinfo=044d1128e7d271d05330357bccbd4aa3&amp;sharer_shareinfo_first=044d1128e7d271d05330357bccbd4aa3" rel="noopener noreferrer" target="_blank" title="刚刚，Claude彻底解禁第三方应用！（新智元）">23 · 新智元 · 刚刚，Claude彻…</a> · <a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734941&amp;idx=1&amp;sn=320b88edc6d5520ad0cb578de21a0cb7&amp;chksm=f0153d24a93ee1d6e7b0398cddc3771785267b1190c17156ff900cffa93f3bfa10626f394854&amp;mpshare=1&amp;scene=1&amp;srcid=10169NHYhiLY0oYJuqyktetX&amp;sharer_shareinfo=71d1175f47b4bcfda0972f776064fdda&amp;sharer_shareinfo_first=71d1175f47b4bcfda0972f776064fdda" rel="noopener noreferrer" target="_blank" title="刚刚，Opus 5.5极速版全面解禁！（新智元）">32 · 新智元 · 刚刚，Opus5.5…</a>。</p>
+</section>
+<section class="chapter chapter-visual"><div class="folio"></div><div class="kicker">第二章 / Agent 工程</div><h2>Agent 工程：从单点助手到并行工作台</h2><div class="rule"></div><p>当写代码不再是瓶颈，瓶颈转移到版本控制、权限边界与人类该看什么。</p></section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">Agent / 编程助手</div>
+<h2>Claude Code 桌面版大改：一人指挥 AI 军团</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>嵌套会话</b>主会话识别可并行任务后自动为每个子任务开独立会话，中间过程不污染主线，结果自动汇总回主会话；侧边栏显示谁在工作、谁在等确认。</div>
+<div class="point blue"><b>环境复用 + Worktree 隔离</b>常用目录、SSH 主机、云端环境可打包成一键拉起的「环境」；并行会话各自用 Git Worktree 独立分支，物理层隔离避免互相覆盖。</div>
+<div class="point acid"><b>/btw 支线对话</b>输入 /btw 或按快捷键即在独立标签页开问，完整继承上下文、不打断主线；空闲压缩在缓存过期前自动整理上下文，可在 settings.json 关闭。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="新版桌面端的会话与待办管理" src="assets/24-04.png"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734758&amp;idx=2&amp;sn=3aa2c5ede4f48cd056cfe1bdc97ffb2f&amp;chksm=f0d775cc82daf21be91d212c3486322e74151b3a99a85894a3dbe5056c8eaab7e47273e5a493&amp;mpshare=1&amp;scene=1&amp;srcid=1015PQlXjnYWlJGFPF2NpIBZ&amp;sharer_shareinfo=8dbf92c09dbc3f7e52dbe1317a3bc5ac&amp;sharer_shareinfo_first=8dbf92c09dbc3f7e52dbe1317a3bc5ac" rel="noopener noreferrer" target="_blank" title="Claude Code桌面版暴改，一人指挥AI军团飙代码！（新智元）">24 · 新智元 · ClaudeCode…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">Agent / 基础设施</div>
+<h2>Anthropic 重造源码控制：git 扛不住每天 3 万次合并</h2>
+<div class="split reverse">
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="Scion 与 git 的日常命令耗时对比" src="assets/10-03.png"/><span>AGI Hunt原文图</span></div></div></figure>
+<div class="pointlist">
+<div class="point"><b>负荷</b>5 月日均合并约 2500 次，9 月已超过每天 3 万次，9 月 9 日单日 30401 次；仅 main 分支历史就接近 100 GB，CI 每天 checkout 约 2500 万次。</div>
+<div class="point blue"><b>Scion</b>围绕「客户端永远在线」重设：历史、blame、merge、rebase 全在服务端完成，数据分布式存储、无 packfile，每层缓存命中率均超 99%。</div>
+<div class="point acid"><b>结果</b>基础设施 CPU 与内存仅为原 git 镜像方案的 1/200，checkout 快两个数量级；7 人 5 个月完成迁移，而同期每日合并量还涨了 10 倍。Anthropic 明确不打算开源。</div>
+</div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzA4NzgzMjA4MQ==&amp;mid=2453488182&amp;idx=1&amp;sn=d8db652150620fff9d93b491b3a94c90&amp;chksm=863d7afe4877b3fbdba04966b49d0be27003a4b8b52a9c8d78fa5bdbc6d4b889aa9783da751c&amp;mpshare=1&amp;scene=1&amp;srcid=1014o1T9zcJO5W9t7gsbre1s&amp;sharer_shareinfo=e8051aaf032cfe524b5b0a95821615f8&amp;sharer_shareinfo_first=e8051aaf032cfe524b5b0a95821615f8" rel="noopener noreferrer" target="_blank" title="刚刚，Anthropic 重新发明了 git（AGI Hunt）">10 · AGI Hunt · 刚刚，Anthrop…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">Agent / 开源项目</div>
+<h2>REA 三天冲上 GitHub 榜首：让 Agent 直接啃二进制</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>热度</b>Reverse Engineer Anything 三天揽近 7 万至 8 万星，登顶 Trending；对比 Jev 前三天下载 3.5 万次，REA 累计约 4.4 万次。</div>
+<div class="point blue"><b>做法</b>基于 MCP 把大模型与反编译工具串起来：你说「看看 Notion 剪贴板桥接怎么写的」，Agent 自行反编译、读汇编、顺藤摸瓜最终给出可用的重构代码。</div>
+<div class="point acid"><b>争议</b>作者称会继续挑战 Office 等大型商业软件。文章提出的推论——代码微创新受冲击、版权判定困难、反混淆竞赛——属评论性预测，非既成事实。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="REA 与 OpenClaw 的 Star 增长曲线对比" src="assets/15-11.png"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733514&amp;idx=1&amp;sn=e28255085a6acb816e2a9316390d6b6e&amp;chksm=f088dceffb3541e8b45c7be1445106d900c28c1009bf1604085ff7a09c2444b47f61c8b214c5&amp;mpshare=1&amp;scene=1&amp;srcid=1014Dv68AYSKP2lk5njLr1Xb&amp;sharer_shareinfo=c2ca9e98bd1dbecaf7c8a7543dc677c2&amp;sharer_shareinfo_first=c2ca9e98bd1dbecaf7c8a7543dc677c2" rel="noopener noreferrer" target="_blank" title="比Jev更爆火！逆向灭霸 REA 一天登顶GitHub（新智元）">15 · 新智元 · 比Jev更爆火！逆向…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">Agent / 落地实践</div>
+<h2>Linux 之父的 -with-llm 分支：Claude Code 写内核</h2>
+<div class="split">
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="noref-filemap-read-with-llm 分支的补丁说明" src="assets/19-05.png"/><span>新智元原文图</span></div></div></figure>
+<div class="pointlist">
+<div class="point"><b>问题</b>多线程小块读取同一文件时，反复修改 folio 原子引用计数，在 Linus 的测试机上 8 线程小读时该瓶颈占到所有 Load HITMs 开销的 99.92%。</div>
+<div class="point blue"><b>补丁</b>缓存内存被移除后延迟归还，借助 RCU 让进行中的读取先完成，从而减少共享引用计数争抢。8 线程吞吐约为原来 3 倍，单线程约提升一成。</div>
+<div class="point acid"><b>顺带挖出十年旧账</b>在 assoc-array-fixes 分支中，用大模型理顺 2013 年的晦涩代码并放进用户态测试框架，除报告的问题外又找出 3 个 Bug，全部可追溯到 2013 年首次合入。</div>
+</div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734488&amp;idx=2&amp;sn=812aea9d2ed0c01ba650f8c73a6ad14e&amp;chksm=f0244a4f4532d6163df690bb801e396c3e27ac02e8198936e34de5c767c1d54e54445bfe470e&amp;mpshare=1&amp;scene=1&amp;srcid=1014CsrYtNoKuUbM4Uf22NKg&amp;sharer_shareinfo=f8a3026a2ce0f600cb01e695df2f705f&amp;sharer_shareinfo_first=f8a3026a2ce0f600cb01e695df2f705f" rel="noopener noreferrer" target="_blank" title="Linux之父彻底入坑AI！Claude Code写内核，性能暴涨3倍（新智元）">19 · 新智元 · Linux之父彻底入…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">Agent / 招聘与编程</div>
+<h2>刷 LeetCode 的时代过去了：大厂面试转向「读代码」</h2>
+<div class="split equal">
+<div class="pointlist">
+<div class="point"><b>Google 试点</b>代码理解环节让候选人阅读、调试、优化既有代码，并允许使用 Gemini；面试官考察的是「AI 熟练度」——如何设计提示、核实输出、对结果负责。目前仅覆盖美国部分团队的初、中级岗位。</div>
+<div class="point blue"><b>行业跟进</b>Canva 用 AI 辅助编程取代基础算法环节，把题目从「康威生命游戏」升级为「繁忙机场起降系统」；Meta 明确使用批准工具不算作弊；Codility 可让 AI 故意写出有 bug 的代码。</div>
+<div class="point acid"><b>能力位移</b>Karpathy 称自己手动写代码的能力在退化，但区分「生成」与「辨别」：审查代码更依赖理解已有逻辑，而 AI 的错误常是需求假设错误导致整套实现跑偏。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="Google 面试改革的报道" src="assets/03-02.png"/><span>机器之心原文图</span></div><div class="wechat-tile"><img alt="面试官对新考核环节的说明" src="assets/03-04.png"/><span>机器之心原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651062317&amp;idx=1&amp;sn=f39a8c0dda930e33e0953d143aaee2a1&amp;chksm=850c3e59e7373f70bceeb6809c7ed6613776e379cdde60987ad0e888c0fcdd682f86c2c6bab6&amp;mpshare=1&amp;scene=1&amp;srcid=1012CL8Dii2n3i33NklKu5bs&amp;sharer_shareinfo=d01bf3173f695728a0119491e57c8c1b&amp;sharer_shareinfo_first=d01bf3173f695728a0119491e57c8c1b" rel="noopener noreferrer" target="_blank" title="刷LeetCode的时代要过去了？大厂面试正在转向（机器之心）">3 · 机器之心 · 刷LeetCode的…</a>。</p>
+</section>
+<section class="chapter chapter-visual"><div class="folio"></div><div class="kicker">第三章 / 研究与方法</div><h2>研究与范式：AI 开始自己写提纲、自己搞科研</h2><div class="rule"></div><p>从「AI 辅助科研」到「AI 自主科研」，再到新的文本生成范式。</p></section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">研究 / 基准评测</div>
+<h2>DeepRSI：48 小时自主科研挑战，Kimi K3 国产开源第一</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>怎么考</b>15 道取自真实机器学习研究的题目，覆盖训练方案优化、GPU 内核加速、估计器精度、向量搜索；无网络环境、统一 Pi Agent 框架、最高推理强度，公开验证器 + 私有验证器双轨防过拟合。</div>
+<div class="point blue"><b>排名</b>Elo 榜 Fable 5.1 以 1548 分第一，GPT-6 Astra 1232 分第二，Kimi K3 820 分第三，超过 Grok 4.7 与 Gemini 3.8 Flash，成为排名最高的开放权重模型。</div>
+<div class="point acid"><b>成本视角</b>公开列示成本约 Fable 5.1 627 美元、Astra 404 美元、Kimi K3 159 美元；Astra 仅约 700 万 token 取得第二，而 Gemini 3.8 Flash 超过 1 亿 token 仅列第五。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="DeepRSI 总榜 Elo 评分" src="assets/22-02.png"/><span>量子位原文图</span></div><div class="wechat-tile"><img alt="各模型列示成本对比" src="assets/22-07.png"/><span>量子位原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247933280&amp;idx=2&amp;sn=d383f6e95d600ea9a08f25fc307ccda0&amp;chksm=e99f378f34cfb24c30fe06395038ee0df370cb1c99bdeabd4267009768a01c453054c0d29f32&amp;mpshare=1&amp;scene=1&amp;srcid=1015QWrMLDuZJT1FjQRfDY47&amp;sharer_shareinfo=5fd57219a86a7cc13ca4ab121b293d23&amp;sharer_shareinfo_first=5fd57219a86a7cc13ca4ab121b293d23" rel="noopener noreferrer" target="_blank" title="Jeff Dean投的RSI出成果了：Kimi K3自我进化排国产第一（量子位）">22 · 量子位 · JeffDean投的…</a>。</p>
+</section>
+<section class="tight ncm-demo-slide"><div class="folio"></div>
+<div class="kicker">研究 / 生成范式</div>
+<h2>斯坦福 NCM：文本也能先写「提纲」再填细节</h2>
+<div class="split">
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="NCM 与自回归、扩散模型的 128-token 文本生成速度对比动图" src="assets/28-ncm-generation-demo.gif"/><span>NCM 生成速度对比动图 · <a href="https://mmbiz.qpic.cn/mmbiz_gif/5L8bhP5dIqEEagZOeoLP7z79t457H2BldDicQdicWT0Iibjo4z83n74zjVMc72UDcJylaQufrazeFOEGUMgBrK8TRacnovQF9ibNLThUiaI3J44I/640?wx_fmt=gif" target="_blank" rel="noopener noreferrer">查看原图</a></span></div></div></figure>
+<div class="pointlist">
+<div class="point"><b>第三条路</b>既非自回归也非扩散：借 NeurIPS 2024 最佳论文 VAR 的「下一尺度预测」，让模型先并行写出概念大纲，再逐层并行填充细节。</div>
+<div class="point blue"><b>两个阶段</b>先训练多尺度残差 VQ-VAE（随机截去细层，逼迫粗层也承载信息），再冻结它训练 Transformer 预测下一层，同级编码同时预测。</div>
+<div class="point acid"><b>速度</b>单张 H100 上，LM1B 无条件生成比强扩散基线快约 21 倍，OpenWebText 约 10 倍，XSum 摘要约 31 倍；数独困难题完整解出率 86.1%，高于 FMLM+ 的 81.3%。规模目前约 1 亿参数、扩展到 7.25 亿，长文表现仍待验证。</div>
+</div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651062933&amp;idx=2&amp;sn=d234466308715a4fc0e9cc34c8fd73fb&amp;chksm=851abc19511ed01aa35b8645b604a05065c9c5fe827e6e283e728a152fce823bd4fad51c565b&amp;mpshare=1&amp;scene=1&amp;srcid=1015vbvHWJ8vI10zY1ciOtbo&amp;sharer_shareinfo=b554492fa5e326f41689ceed086b3525&amp;sharer_shareinfo_first=b554492fa5e326f41689ceed086b3525" rel="noopener noreferrer" target="_blank" title="大模型下个范式：文本生成先写提纲，速度能快31倍（机器之心）">28 · 机器之心 · 大模型下个范式：文本…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">研究 / 物理 AI</div>
+<h2>Tadpole：不谈「预测未来」，先学会「理解世界」</h2>
+<div class="split equal">
+<div class="pointlist">
+<div class="point"><b>思路</b>物理基础模型通常直接学动力学，Tadpole 先做自编码器学习三维物理场本身的空间结构，再迁移到重建、动力学预测与生成建模。</div>
+<div class="point blue"><b>在线学习</b>预训练累计使用约 202 TB 数据，却无需本地保存：GPU 求解器实时生成数据经多级缓存直接训练，高速 SSD 环境下反而比离线方案快约 1.8 倍。</div>
+<div class="point acid"><b>可迁移性</b>把变量拆开、随机裁剪局部区域统一训练框架；零样本重建覆盖各向同性湍流、通道流、过渡边界层、磁流体力学等，最高分辨率 1024³，模型越大、预训练物理系统越丰富，泛化越好。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="Tadpole 在未见三维物理系统上的零样本重建" src="assets/29-03.png"/><span>机器之心原文图</span></div><div class="wechat-tile"><img alt="从求解器实时生成数据到多级缓存的训练框架" src="assets/29-06.png"/><span>机器之心原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651062933&amp;idx=3&amp;sn=b4e2b5d2f10f19a31cf4bb07da1446f5&amp;chksm=85e097a5e88b49cf15903eb51de032fc53b2c2dfaa85499666ec81efa2d1423bc8b90b632afd&amp;mpshare=1&amp;scene=1&amp;srcid=101523Pypa0kA0KAdEphpyKK&amp;sharer_shareinfo=fbc11f35e2ba0ab78432a778dccd7cc8&amp;sharer_shareinfo_first=fbc11f35e2ba0ab78432a778dccd7cc8" rel="noopener noreferrer" target="_blank" title="从「预测未来」到「理解世界」：Tadpole与一种新的科学基础模型思路（机器之心）">29 · 机器之心 · 从「预测未来」到「理…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">研究 / 语音记忆</div>
+<h2>VoxMem：音频大模型「聊得越久，忘得越多」</h2>
+<div class="split">
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="VoxMem 的会话时间分布与线索密度" src="assets/16-09.png"/><span>新智元原文图</span></div></div></figure>
+<div class="pointlist">
+<div class="point"><b>为什么需要新尺子</b>语音里的说话人、语气、背景声转写即丢失；真实交互分布在相隔数天的多次会话中。VoxMem 含 799 道题、3196 个评测实例、约 177 小时音频。</div>
+<div class="point blue"><b>方法很干净</b>题目在 8K / 16K / 32K / 64K 四种长度下完全相同，长历史严格包含短历史，只增加干扰与填充会话；每条线索配一个去掉线索的对照版本，证明答案确实由声音决定。</div>
+<div class="point acid"><b>结果</b>32K 下 15 个模型无一整体准确率超过 40%；说出口的状态变化平均能追到 44.5%，而语气变化仅 3.4%、背景声变化 1.2%。多数错误发生在「听进去并记住」之前，而非推理阶段。</div>
+</div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733131&amp;idx=3&amp;sn=6b91c3fc0c4519f5dea8ad255b583b1f&amp;chksm=f006dd6cd5a77263a7f30a0f5c4129730917e833d4e2e54c3329a5d2264ae5e06bc8edfb47a5&amp;mpshare=1&amp;scene=1&amp;srcid=1013vMlTryrJEurPmROxX39M&amp;sharer_shareinfo=128e1b87b6d9bc68736eb12896c78ff8&amp;sharer_shareinfo_first=128e1b87b6d9bc68736eb12896c78ff8" rel="noopener noreferrer" target="_blank" title="多会话语音记忆基准VoxMem，专治音频大模型记不住「谁说的、怎么说」（新智元）">16 · 新智元 · 多会话语音记忆基准V…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">研究 / 档案破译</div>
+<h2>AI 破解冷战档案：HC615 被官方标记为 Solved</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>谜题</b>约 1952 年捷克斯洛伐克密码课程材料 HC615，220 个符号、22 类字形、32 个分段、八行文字，读出的内容涉及向俄斯特拉发派遣九位同志、一年期劳动队与政治工作经验要求。</div>
+<div class="point blue"><b>分工</b>AI 组织资料、审查转录、编写程序、整理实验；真正搜索钥表的是经典求解器——用捷克语四字符统计模式评分，模拟退火搜索字母映射。</div>
+<div class="point acid"><b>可核验</b>220 个符号逐位置回加密全部匹配；六份对照密文恢复 1219 个字母中的 1215 个。结果由平台协调人 Eugen Antal 确认，官方目录标记 Solved 并署名 Zijian Zeng。f、q、w、x 未出现，重音与标点属编辑恢复。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="HC615 原始密文页" src="assets/12-05.jpg"/><span>新智元原文图</span></div><div class="wechat-tile"><img alt="完整八行字母流与译意关键词" src="assets/12-06.png"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734258&amp;idx=3&amp;sn=fb64c7fad03bacf53b64d93780f97ea0&amp;chksm=f0e1323190e4fc4684cc6ddc59bc707c04d58e719187c0f28f10d2ad07b08249d2f417ef5d89&amp;mpshare=1&amp;scene=1&amp;srcid=1014UlyD4K1ocz3SNpOu06VE&amp;sharer_shareinfo=ec86246c7cd2e236a2ab4eca49c0687a&amp;sharer_shareinfo_first=ec86246c7cd2e236a2ab4eca49c0687a" rel="noopener noreferrer" target="_blank" title="源码公开，AI破解冷战档案！220个符号零修改，多项历史密码成果（新智元）">12 · 新智元 · 源码公开，AI破解冷…</a>。</p>
+</section>
+<section class="chapter chapter-visual"><div class="folio"></div><div class="kicker">第四章 / 产品与生态</div><h2>产品与生态：入口、权限与知识资产</h2><div class="rule"></div><p>谁掌握用户的工作上下文，谁就掌握 Agent 时代的入口。</p></section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">产品 / 浏览器入口</div>
+<h2>ChatGPT 进 Chrome：从「光动嘴」到「真动手」</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>Chat 模式</b>跨越已打开标签页收集信息，把散在各页的条件放到一起权衡，例如比较三款沙发的尺寸、材质、交付与退货政策。</div>
+<div class="point blue"><b>Work 模式</b>基于 Computer Use 架构，在授权后自己接管浏览器、点按网页，完成填表、汇总比价成表、整理标签页分组等操作。</div>
+<div class="point acid"><b>入口之争</b>侧边栏与客户端对话打通，配合插件可在已登录网站内操作。文章判断这会把浏览器从「人找信息」变成「AI 执行任务的工位」，压力给到谷歌。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="Chat 与 Work 的双模式界面" src="assets/35-03.png"/><span>新智元原文图</span></div><div class="wechat-tile"><img alt="Work 模式接管页面、自动填表" src="assets/35-06.gif"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735259&amp;idx=2&amp;sn=2002a96ca077b7a910bc2fc0f017c321&amp;chksm=f02b4ebf6e897aa185e43ef92fb3fc9c7e72b031bc84e39c57001e0d4187b24d6111adce3b3d&amp;mpshare=1&amp;scene=1&amp;srcid=1016RnNNOgKC5Z9R3yCTBAck&amp;sharer_shareinfo=23c1b253afbb260b70d5a56dc9826fda&amp;sharer_shareinfo_first=23c1b253afbb260b70d5a56dc9826fda" rel="noopener noreferrer" target="_blank" title="OpenAI突袭Chrome！ChatGPT长出「双手」，自动打工了（新智元）">35 · 新智元 · OpenAI突袭Ch…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">产品 / 知识空间</div>
+<h2>openJiuwen 个人知识空间：一次采集，反复使用</h2>
+<div class="split equal">
+<div class="pointlist">
+<div class="point"><b>四层流程</b>来源（本地文件夹、Edge 收藏夹、知乎、今日头条、飞书文档、GitHub 等）→ 手动或定时增量采集 → 三种处理方式 → 智能体按需使用。</div>
+<div class="point blue"><b>三种处理</b>规则（BM25 词项权重 + 内容相似度归类，不调用生成模型）、规则与大模型混合、智能体处理（优先更新合并已有主题页面）。</div>
+<div class="point acid"><b>渐进式披露</b>智能体先拿到知识概况与阅读入口，再沿目录逐步读取，类似接手工作时先看目录再看文档。团队自建 25 题测试集：通过率 +32%，总耗时 -76.2%，任务阶段 token 消耗 -84.1%。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="个人知识空间的四层流程与效果对比" src="assets/14-01.png"/><span>量子位原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247933010&amp;idx=2&amp;sn=8f3352a8c2ebc76573a39dc3e5c927a2&amp;chksm=e9d2e23d439adb93a51ac7c4c31a1d250db953c7769d5b9f8688069d97606f5dc59c3ca05154&amp;mpshare=1&amp;scene=1&amp;srcid=1014QG3e0MouOOJJmf2SQAn0&amp;sharer_shareinfo=26cdec9dd66291832f437bf2da12ecf1&amp;sharer_shareinfo_first=26cdec9dd66291832f437bf2da12ecf1" rel="noopener noreferrer" target="_blank" title="告别资料散落，让知识持续积累：openJiuwen首发个人知识空间，重塑个人办公智能体新体验！（量子位）">14 · 量子位 · 告别资料散落，让知识…</a>。</p>
+</section>
+<section class="tight weekly-models"><div class="folio"></div>
+<div class="kicker">产品 / 模型与定价</div>
+<h2>一周模型速览：便宜模型接手日常调用</h2>
+<div class="metric-strip three"><div><b>490</b><span>tokens/s · 网友灰度实测</span></div><div><b>10 亿+</b><span>模思智能 Pre-A 融资 · 报道口径</span></div><div><b>$0.10</b><span>Haiku 5.5 每百万输入 token<br/>原文所列限额内价格</span></div></div>
+<div class="story-grid">
+<div class="story hot"><div class="label">智谱 / 高速</div><h3>GLM-5.3-Highspeed 灰度</h3>
+<p>网友在 Zcode 3.15.1 晒出 490 tokens/s；Pi 模型目录显示 100 万 token 上下文、最大输出约 128k、low/high/max 三档思考强度。属灰度阶段的网友实测，官方未公布正式参数。</p></div>
+<div class="story"><div class="label">融资 / 多模态</div><h3>模思智能超 10 亿元 Pre-A</h3>
+<p>复旦邱锡鹏团队孵化，华控基金领投；今年第二次官宣融资。半年发布 20 多个模型，聚焦全模态实时交互，即将推出 MOSS Live，面向 AI 眼镜、智能汽车、机器人等终端。</p></div>
+<div class="story"><div class="label">价格 / 小模型</div><h3>Haiku 5.5 与 Luna 同价档</h3>
+<p>Anthropic 把 10 万 token 以内请求降至每百万输入 0.10 / 输出 0.50 美元，为 Haiku 4.5 的十分之一，与 OpenAI GPT-6 Luna 一致；Plotly 测试中 Haiku 5.5 做对 37/43 题仅花 0.38 美元。</p></div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247932360&amp;idx=1&amp;sn=18389d216f33ac1e61450092be36e75c&amp;chksm=e97bcf8fd555a72efaa62ae860005acc0a876581ed94708c5719a3a8e6000a28ee53da93793a&amp;mpshare=1&amp;scene=1&amp;srcid=10128WzDg7HEOxZvGDp3byyS&amp;sharer_shareinfo=d152644b1a87ae8f460ceba380cf1b88&amp;sharer_shareinfo_first=d152644b1a87ae8f460ceba380cf1b88" rel="noopener noreferrer" target="_blank" title="智谱新模型，490 tokens/s！（量子位）">1 · 量子位 · 智谱新模型，490t…</a> · <a href="https://mp.weixin.qq.com/s?__biz=MzA4MTQ4NjQzMw==&amp;mid=2652811699&amp;idx=1&amp;sn=ef1b0c82f36e4b0494f07352df7abce6&amp;chksm=85538e1e849f6d6215c3c61b67f3a9fa672406d40099667a783f155691a6021493d8d480e228&amp;mpshare=1&amp;scene=1&amp;srcid=1012qWqDNbdTItQhvfYmaFWo&amp;sharer_shareinfo=5af340b066a883f67163289424b754ef&amp;sharer_shareinfo_first=5af340b066a883f67163289424b754ef" rel="noopener noreferrer" target="_blank" title="10亿！上海大模型创企拿下新融资（智东西）">2 · 智东西 · 10亿！上海大模型创…</a> · <a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573322&amp;idx=1&amp;sn=01d1cb4410c942935073302a78a71c84&amp;chksm=a8f21993252c4fab2e63210f1a3afa2b3fe7aacbd3cc793c61a52b1b71afe22e27f3f60595f2&amp;mpshare=1&amp;scene=1&amp;srcid=1013hJoxoYfWhZT0Q6yU19r2&amp;sharer_shareinfo=d76556830f198ae850d50160df5c943c&amp;sharer_shareinfo_first=d76556830f198ae850d50160df5c943c" rel="noopener noreferrer" target="_blank" title="OpenAI也抄Jev，AI开始出现自主性｜AI一周观察2026W41（腾讯科技）">7 · 腾讯科技 · OpenAI也抄Je…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">产品 / 决策模型</div>
+<h2>StartLux-Decision：从「唯一超越 Jev」到断层第一</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>双模型矩阵</b>Instant 提供 0.8B–27B 五种规格，AutoThink 提供 4B/9B/27B；在 Decision Index 0.3 公开测试集上，Instant 同规模对比领先 7.4–16.9 分。</div>
+<div class="point blue"><b>关键测试</b>DecisionPivot 采用成对对照，只有一处能改变答案的微小细节不同，全组答对才计分；27B AutoThink 达到 86.9% 成对准确率，1 SEK 量级价格差即可翻转决定。</div>
+<div class="point acid"><b>方法</b>Instant 在全注意力层引入双向注意力；AutoThink 用置信度引导按需推理（最多 4096 token）；原创 RLCD² 用 Proper Scoring Rules 优化决策概率分布，并软性惩罚冗长推理。9B 版推理正常终止率从 45.9% 提升到 93.9%。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="成对准确率对比：AutoThink 领先" src="assets/34-05.png"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735259&amp;idx=1&amp;sn=1211affbf6b105954337331117e04c57&amp;chksm=f026075d793b12cf6699ed3b2030eede6a62b5aba49282da21fdd9d30ac82869b8055027f0db&amp;mpshare=1&amp;scene=1&amp;srcid=1016Qw1PmfQWS9Un4jqpkSsY&amp;sharer_shareinfo=0e9b9b088359205c76924c43ae047648&amp;sharer_shareinfo_first=0e9b9b088359205c76924c43ae047648" rel="noopener noreferrer" target="_blank" title="断层领先Jev，全球第一！决策模型新王震撼发布新版本（新智元）">34 · 新智元 · 断层领先Jev，全球…</a>。</p>
+</section>
+<section class="chapter chapter-visual"><div class="folio"></div><div class="kicker">第五章 / 硬件与风险</div><h2>硬件与安全：算力下沉，风险具体</h2><div class="rule"></div><p>本地算力把 token 变成「电费」，AI 自我复制的门槛则被踩破。</p></section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">硬件 / 英伟达</div>
+<h2>RTX Spark 上手：把 PC 变成个人 Token 工厂</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>配置</b>N1X 超级芯片两种 SKU，最高 20 核 CPU + 6144 核 Blackwell GPU、128GB 统一内存，FP4 峰值约 1 PFLOPS；与 DGX Spark 的 AI 性能相当，但运行 Windows on Arm。</div>
+<div class="point blue"><b>性能</b>本地 AI 模型运行较上代提升 4.6 倍、微调约 2.7 倍；MLPerf Client 开发智能体测试平均任务耗时 53.296 秒，SPEED-Bench 平均输出 31.01 token/s。</div>
+<div class="point acid"><b>账本</b>全天候运行千问模型每月约生成 6100 万 token、电费约 20 美元；同等 token 走 Claude Sonnet 5.5 Medium API 约需 1200 美元。实测高负载下电量 90%→10% 用时约 1 小时 22 分，不适合长期离电重载。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="RTX Spark 本地 AI 性能与续航实测" src="assets/31-11.png"/><span>智东西原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzA4MTQ4NjQzMw==&amp;mid=2652811995&amp;idx=1&amp;sn=b9ba3497b61b9b0de08654eb0b4b8fe6&amp;chksm=85aad69769bf0360e5b9229a9bf70c598e0b8d41164d7bfba27377015cb3ae4ef548585e1234&amp;mpshare=1&amp;scene=1&amp;srcid=1016BHTbAr8EI0Vpq7GWQzi2&amp;sharer_shareinfo=87864fc42fcd72369ac21e2fc1b54808&amp;sharer_shareinfo_first=87864fc42fcd72369ac21e2fc1b54808" rel="noopener noreferrer" target="_blank" title="英伟达RTX Spark真机上手！黄仁勋的AI PC杀招终于来了（智东西）">31 · 智东西 · 英伟达RTXSpar…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">安全 / 自我复制</div>
+<h2>Anthropic 红队：15 台电视盒跑通 26B 模型</h2>
+<div class="split equal">
+<div class="pointlist">
+<div class="point"><b>实验</b>15 个 4GB 杂牌安卓电视盒连成局域网，流水线并行「切碎」模型，成功运行 Gemma4-26B-A4B，速度仅 0.39 token/s，但生存门槛已被踏破。</div>
+<div class="point blue"><b>适应与「遗传」</b>9B 模型在 9 种陌生硬件中的 8 种上搭起推理服务器；借 Memento 框架让失败实例留下笔记传给下一代，成功率从 45% 升到 61%–84%。向更强模型求助反而没用。</div>
+<div class="point acid"><b>倒计时与防御</b>按每年 13.7 ECI 推算，2026 年底小模型或击穿自我复制能力底线；防御框架以把基本传染数 R₀ 压到 1 以下为目标。研究称端到端复制经未认证 ADB 接口实现，尚未在真实电视盒上展示完整闭环。</div>
+</div>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="15 台电视盒流水线并行运行 26B 模型" src="assets/08-03.png"/><span>新智元原文图</span></div><div class="wechat-tile"><img alt="同一研究的另一种拆解报道" src="assets/13-03.png"/><span>APPSO原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734109&amp;idx=1&amp;sn=ef1d746768f29ad3d704689eaaff99a1&amp;chksm=f01dd584c102720401a228053bae349d826befd9e76af9dd166775522aaeab3909fb997423a2&amp;mpshare=1&amp;scene=1&amp;srcid=1013uVFsWut1L44iRRjny2Mk&amp;sharer_shareinfo=56b174e028d31e489df2234931310953&amp;sharer_shareinfo_first=56b174e028d31e489df2234931310953" rel="noopener noreferrer" target="_blank" title="Anthropic惊人预警：小模型已有生命迹象！AI蠕虫恐引爆全球物联网灾难（新智元）">8 · 新智元 · Anthropic惊…</a> · <a href="https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651111817&amp;idx=1&amp;sn=58e0bc04ea58dd8fb24afcbb528dcd7b&amp;chksm=bca9ca6bc527cdf4b6122f03928727aea96b1c5df45c5da34a90c5f6dc42fdbe82d700f2b1b4&amp;mpshare=1&amp;scene=1&amp;srcid=10138dSep9K3NREzvupl780h&amp;sharer_shareinfo=4af82de4a28988167f17d17c668957c9&amp;sharer_shareinfo_first=4af82de4a28988167f17d17c668957c9" rel="noopener noreferrer" target="_blank" title="AI学会「寄生繁殖」了，Anthropic 用 15台破电视盒子养活大模型（APPSO）">13 · APPSO · AI学会「寄生繁殖」…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">安全 / 企业窃密</div>
+<h2>OpenAI 会议室窃听案：自家模型协助破案</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>发现</b>约 9 月 30 日，反窃听团队在高管会议室电视机背面 USB 接口发现加密录音设备，用卫生纸遮挡，公司判断约两天前（9 月 28 日前后）被装入。</div>
+<div class="point blue"><b>线索</b>司法部诉状显示，9 月 24 日至 30 日一个与涉案员工关联的账号密集咨询录音设备的制作、隐蔽、加密与远程访问，连设备唯一 MAC 地址都出现在提问记录里。</div>
+<div class="point acid"><b>破案</b>OpenAI 用自家模型分析设备存储镜像并排查底层数据变化，锁定一名几天前放置设备的员工后移交 FBI。文章指出攻防双方都在用 AI，属媒体与诉状披露，判决尚未作出。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="司法部公布的设备与安装位置" src="assets/20-03.png"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734488&amp;idx=1&amp;sn=cc45abfcfd3e6c620f9374f28d9af2be&amp;chksm=f0cc5e53688a7fb95e4d364a5f48b71217b055172cb9fcace1ad073bdd4d7883486e3ce7d1de&amp;mpshare=1&amp;scene=1&amp;srcid=1014Rgnqla9mlKZxR2SciwVM&amp;sharer_shareinfo=24630158c9f4f3dad2cd6ed7300d4002&amp;sharer_shareinfo_first=24630158c9f4f3dad2cd6ed7300d4002" rel="noopener noreferrer" target="_blank" title="OpenAI高管会议室惊现窃听器！35岁工程师涉案被AI举报送进FBI（新智元）">20 · 新智元 · OpenAI高管会议…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">安全 / 攻防能力</div>
+<h2>智谱补强 cyber：白帽古河加入 GLM 基础模型组</h2>
+<div class="split">
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="GLM 5.2–5.3 的 cyber 能力演进时间线" src="assets/27-02.png"/><span>腾讯科技原文图</span></div></div></figure>
+<div class="pointlist">
+<div class="point"><b>人事</b>古河（Yuki Chen）加入 GLM 基础模型组，职责为提升模型 cyber 能力；他曾五次位列 MSRC 最具价值安全研究者年度榜首，2022 年获 Pwnie Awards 史诗级成就奖。</div>
+<div class="point blue"><b>成绩</b>Z.ai 披露古河等研究人员使用 GLM 发现的 23 个 Windows 漏洞全部获得微软 MSRC 确认与致谢；CyberGym 成绩由 GLM-5.2 的 77.2% 提升至 GLM-5.3 的 84.5%。</div>
+<div class="point acid"><b>两面性</b>Anthropic 测试显示 GLM-5.3 在 Chrome V8 已知漏洞的 410 次尝试中 50 次完成端到端利用，接近 Claude Mythos Preview 的 56 次；同一报告质疑其防滥用措施易被绕过。能力与防滥用需同时推进。</div>
+</div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573388&amp;idx=1&amp;sn=d8da25b3c38bf857bc2af7c5f65e6cd7&amp;chksm=a8ae60dcdf5258188848eb6f9d03b6dcf1de789b958849fe001d86c897f615154c544fc1b1cb&amp;mpshare=1&amp;scene=1&amp;srcid=1015IwKrevYROMneAuf6U9uo&amp;sharer_shareinfo=4452a85651a725baeefead98dc20f4a8&amp;sharer_shareinfo_first=4452a85651a725baeefead98dc20f4a8" rel="noopener noreferrer" target="_blank" title="顶尖“白帽”古河加入GLM模型组，智谱的“安全”野心有多大？（腾讯科技）">27 · 腾讯科技 · 顶尖“白帽”古河加入…</a>。</p>
+</section>
+<section class="chapter chapter-visual"><div class="folio"></div><div class="kicker">第六章 / 产业与内容</div><h2>产业与内容：分发、商业化与创造力</h2><div class="rule"></div><p>AI 产品的价值，也由数据使用边界、创作者工具与分发方式决定。</p></section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">产业 / 人物叙事</div>
+<h2>黄仁勋：算力越缺，越逼着把架构做到极致</h2>
+<div class="split equal">
+<div class="pointlist">
+<div class="point"><b>关于中国 AI 公司</b>在 Lex Fridman 的边走边聊中，黄仁勋认为算力短缺正迫使它们设计效率更高的架构，「受到的限制非常、非常大」，但仍在融资推进业务、「拼命把事情做成」。</div>
+<div class="point blue"><b>合作关系</b>他回忆翻黄页、写长信找台积电的过程，被张忠谋明确告知「这件事我们做不了」反而打动了他；核心是「rough justice」——长期大体公平，给伙伴留下能继续经营的利益。</div>
+<div class="point acid"><b>生态观</b>强调整个中国台湾生态都要参与数万亿美元计算设备的机会，去年整个供应链股价涨 300% 而英伟达基本没动，他认为让伙伴一起成长更重要。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="黄仁勋与 Lex Fridman 的对谈" src="assets/30-01.png"/><span>AI前线原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&amp;mid=2247668393&amp;idx=1&amp;sn=6985e0e7e56c8102274e28ccdadc8335&amp;chksm=fa8b03c543c4b068bd7d35a05df153aed08497f86ce104c8f66baa3885671f8cc737177d3bf9&amp;mpshare=1&amp;scene=1&amp;srcid=1015RUIlThBg8xxIFwzvP1S8&amp;sharer_shareinfo=097ec038f2718e23b8e57654178316b1&amp;sharer_shareinfo_first=097ec038f2718e23b8e57654178316b1" rel="noopener noreferrer" target="_blank" title="黄仁勋谈中国 AI 公司：算力越缺，越逼着他们把架构做到极致（AI前线）">30 · AI前线 · 黄仁勋谈中国AI公司…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">产业 / 产品发布</div>
+<h2>马斯克让汽车飞起来：冷气推进的原理与边界</h2>
+<div class="split">
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="Roadster 飞越车队的演示现场" src="assets/36-06.png"/><span>腾讯科技原文图</span></div><div class="wechat-tile"><img alt="冷气推进器工作原理" src="assets/36-03.png"/><span>腾讯科技原文图</span></div></div></figure>
+<div class="pointlist">
+<div class="point"><b>怎么飞</b>冷气推进器利用高压气体喷出产生反作用力，原理近似航天器 RCS；Rocket 版在座椅后方安装 COPV 复合缠绕储气罐，喷嘴朝下产生向上的推力，朝侧向控制姿态。</div>
+<div class="point blue"><b>为什么飞不久</b>悬停必须持续向下喷气抵消重力。按车辆 2 吨、有效喷射速度 600 m/s 估算，理想状态每秒约需 33 公斤气体，储气量、整车重量与补气效率互相牵制。</div>
+<div class="point acid"><b>定位</b>Rocket 版单座、仅面向受邀用户、未获准上公共道路；马斯克承认这不是以安全为优化目标的车。分析师认为这是旗舰技术展示，商业价值有限。</div>
+</div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573472&amp;idx=1&amp;sn=f52a40a6821d9c4dedc765a948ed436d&amp;chksm=a83a3f775526d558049563e7e0f8a9425865c28864878132c6d6d6757a7abf8621bb3dc3abbb&amp;mpshare=1&amp;scene=1&amp;srcid=1016jXaFGkljmrupqoSTnQNK&amp;sharer_shareinfo=f0fc1bc64a1893a30f7392cef10f2e16&amp;sharer_shareinfo_first=f0fc1bc64a1893a30f7392cef10f2e16" rel="noopener noreferrer" target="_blank" title="马斯克的汽车，是怎么飞起来的？（腾讯科技）">36 · 腾讯科技 · 马斯克的汽车，是怎么…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">产业 / 前沿竞赛</div>
+<h2>RSI 传闻与实锤：三大巨头集体冲刺</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>可核查的实测</b>谷歌前沿模型发布周期从 125 天压缩到 44 天；Anthropic 6 月发文称截至今年 5 月 Claude 撰写公司内部超过 80% 的合并代码，8 月由 AI 担任「Lead」的比例升至约 26%。</div>
+<div class="point blue"><b>传闻部分</b>纽约饭局流出的「行业共识」、xAI 抽调 SpaceX 员工备战 Grok 4.8、内部模型能力远超公开版本等说法，均来自匿名人士与社交平台转述，文章本身也标注为传言。</div>
+<div class="point acid"><b>作者总结</b>RSI 与自动化的本质区别在于「机器自己设计流程、自己改进自己」；文章给出的 2027 转折点、对齐无解等判断属评论性推演，需与实测数据分开看待。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="RSI 与自动化的本质区别" src="assets/05-03.png"/><span>新智元原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733949&amp;idx=2&amp;sn=12a797d69baf0a79d6281e18c339d265&amp;chksm=f06ce986e5165369f86afb0d25802db315238d4d39a91f8c1525f4f981cdf19470955f708980&amp;mpshare=1&amp;scene=1&amp;srcid=1013yHGnB5i7hixDkIaO3t8N&amp;sharer_shareinfo=9a7c7c30459c08ce0e1a4a39e0d3e76d&amp;sharer_shareinfo_first=9a7c7c30459c08ce0e1a4a39e0d3e76d" rel="noopener noreferrer" target="_blank" title="最新硅谷内幕：三大巨头正集体冲刺RSI！（新智元）">5 · 新智元 · 最新硅谷内幕：三大巨…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">内容 / 创作工具</div>
+<h2>开源 Skill 做科普视频：让 Agent 把原理做成动画</h2>
+<div class="split">
+<div class="pointlist">
+<div class="point"><b>Anatomy 的思路</b>「物体本身，就是解释」——把抽象原理做成能运转、可交互、可拆解的机械动画，再在其上生成带讲解与配音的科普视频。</div>
+<div class="point blue"><b>实测消耗</b>5 分钟视频约消耗 200 美元 Claude Max 会员周额度的 1%；Opus 5.5 开 Ultra 强度约需 1.5 小时生成。作者介绍该 Skill 刻意做慢以追求细节。</div>
+<div class="point acid"><b>作者视角</b>借用 Karpathy 的层次：更清晰的语言 → 图表 → 交互网页 → 专门的科普视频；不同知识、不同学习阶段适合不同形式。文章提醒 AI 生成内容仍需核对，并叠甲说明不保证完全正确。</div>
+</div>
+<figure class="wechat-figure single"><div class="wechat-grid"><div class="wechat-tile"><img alt="科普视频讲解界面" src="assets/26-09.png"/><span>数字生命卡兹克原文图</span></div></div></figure>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&amp;mid=2647687109&amp;idx=1&amp;sn=032fd9f6aab5ee20ea5d14f97bf48a86&amp;chksm=f16a08f7b068fd54a5d98c8f578bc89e2fbf226d22c95bcff95f660ccd149e44943e68f9695f&amp;mpshare=1&amp;scene=1&amp;srcid=10159Vgn3PDan65tlN7GnsN0&amp;sharer_shareinfo=8bb48ed6fc2df940afc1e6f6c6a56e3b&amp;sharer_shareinfo_first=8bb48ed6fc2df940afc1e6f6c6a56e3b" rel="noopener noreferrer" target="_blank" title="分享一个最近很惊艳的开源Skill，一句话让AI搓出任何原理的科普视频。（数字生命卡兹克）">26 · 数字生命卡兹克 · 分享一个最近很惊艳的…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">内容 / 独立开发</div>
+<h2>16 天，一个人用 Opus 5.5 把《小王子》做成 3D 游戏</h2>
+<div class="split">
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="《小王子：星辰之旅》3D 场景" src="assets/33-03.png"/><span>新智元原文图</span></div><div class="wechat-tile"><img alt="用 AI 工具链搭出的星球与剧情" src="assets/33-04.png"/><span>新智元原文图</span></div></div></figure>
+<div class="pointlist">
+<div class="point"><b>作品</b>开发者 Sac 于 10 月 13 日公布《小王子：星辰之旅》，把书里每颗星球做成可探索的 3D 场景，官网提供中文、英语、日语等 8 种语言。</div>
+<div class="point blue"><b>工具链</b>Opus 5.5 负责编码与串联，Tripo 由文字或图片生成 3D 模型，Blender 负责建模、材质、动画与渲染；难点在于把角色、场景、动作与剧情配合起来。</div>
+<div class="point acid"><b>提醒</b>上线后玩家反馈完成浇花任务后 A/D、W/S 方向反转；当前版本需要支持 WebGPU 的浏览器。作者表示后续会开源并公开制作流程与花费。</div>
+</div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734966&amp;idx=2&amp;sn=699bbcc7275d9b9ed8e1bcb31f133293&amp;chksm=f0c4c14ab409799354dd0481066d0c61da0a41bc0a44d108f70a9c613048e9f2331edd345669&amp;mpshare=1&amp;scene=1&amp;srcid=1016FdJ1J1Mks1E9FL0ts2k5&amp;sharer_shareinfo=ae97f46c4d4fcfc8743bcfdb989c55b0&amp;sharer_shareinfo_first=ae97f46c4d4fcfc8743bcfdb989c55b0" rel="noopener noreferrer" target="_blank" title="16天！他用Opus 5.5把《小王子》做成3D游戏，书里的星球能逛了（新智元）">33 · 新智元 · 16天！他用Opus…</a>。</p>
+</section>
+<section class="tight provenance-slide"><div class="folio"></div><div class="kicker">商业 / 模型数据边界</div><h2>Anthropic 反蒸馏：账号封禁与数据入口收紧</h2>
+<p class="slidelead">原文标题称「封禁数万账号」「蒸馏数据大砍 99%」。以下是文章标题中的报道口径，具体规模仍需原文或官方披露核实。</p>
+<div class="claim-grid"><div class="claim"><b>账号</b><strong>数万</strong><span>原文标题所称封禁量<br/>不是独立核验结果</span></div><div class="claim"><b>蒸馏数据</b><strong>−99%</strong><span>原文标题所称降幅<br/>缺少基线与统计口径</span></div><div class="claim"><b>商业取舍</b><strong>数万亿</strong><span>原文标题中的 token 量级<br/>没有可核对的交易数据</span></div></div>
+<div class="callout">观察点：模型公司正在重新划定 API 使用、批量采集与竞争性蒸馏的边界；评估商业影响时要先核对封禁对象、时间范围和计量方法。</div>
+<p class="source">来源：<a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734258&amp;idx=2&amp;sn=ef1a7a2c1909881efc91760c92e568a0&amp;chksm=f0acd0196472645df645ddc441d2ed2adf675759b4a6aedabc5ec5f9fc6d7ea072df07ca8563&amp;mpshare=1&amp;scene=1&amp;srcid=1014OyAPM90vSKT8zYAjmVV0&amp;sharer_shareinfo=b5f7ba458147e3a7a39534cc298398c2&amp;sharer_shareinfo_first=b5f7ba458147e3a7a39534cc298398c2#rd" rel="noopener noreferrer" target="_blank" title="数万亿token生意不要了！Anthropic 连封数万账号，蒸馏数据大砍99%（新智元）">11 · 新智元 · 数万亿token生意…（聊天记录 2026-10-14 转发）</a>。此页数字仅转述标题，未作独立验证。</p></section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">内容 / 一周爆款</div>
+<h2>一周 AIGC 热门：AI 二创与「猫子柒」的生意</h2>
+<figure class="wechat-figure two"><div class="wechat-grid"><div class="wechat-tile"><img alt="「黄仁勋世界巡演」AI 二创舞台" src="assets/21-02.gif"/><span>AI新榜原文图</span></div><div class="wechat-tile"><img alt="「猫子柒来了」植入 Prada 香水剧情" src="assets/21-07.jpg"/><span>AI新榜原文图</span></div></div></figure>
+<div class="story-grid">
+<div class="story hot"><div class="label">二创 / 现象</div><h3>「黄仁勋世界巡演」</h3>
+<p>B 站 AI 二创视频播放量 523 万，最高位居 B 站排名榜第 38；孙悟多、霍金等角色加入同款舞台，多期播放超 300 万。视频被传播到 X 后马斯克评论「这就是内存价格如此昂贵的原因」。</p></div>
+<div class="story"><div class="label">IP / 商业化</div><h3>「猫子柒来了」</h3>
+<p>两只 AI 小猫用连续剧情做做饭、赶集、手工，10 月 4 日单条 B 站播放 458 万；一周全网涨粉超 13 万，近两个月发布 23 条商单，占近六成，其中植入 Prada 香水元素。</p></div>
+<div class="story dark"><div class="label">内容 / 解释</div><h3>Opus 5.5 带火 AI 科普</h3>
+<p>信息论科普视频抖音获赞 129 万，被收录进抖音 vibe 知识大赏；海外创作者用长提示词让 Opus 5.5 在 12 小时内生成完整 MV，马斯克连续评论「next-level」。模型正被当作视频创作工具使用。</p></div>
+</div>
+<p class="source"><a href="https://mp.weixin.qq.com/s?__biz=MzA3NzUxMzQ5Mw==&amp;mid=2648149045&amp;idx=1&amp;sn=7b9f122bb087f8e445d9d409a5c753a2&amp;chksm=86ae47356b50c21960248b54e4472f92f6a8c3add7acb215e3b59ae483ab0cc2f5690c79286f&amp;mpshare=1&amp;scene=1&amp;srcid=1015PVmB6t0CCIa84k3x7Rjc&amp;sharer_shareinfo=035b41497ffb001c717a4a8d38d42f98&amp;sharer_shareinfo_first=035b41497ffb001c717a4a8d38d42f98" rel="noopener noreferrer" target="_blank" title="“黄仁勋AI巡演”爆火，马斯克：这就是内存贵的原因；猫子柒拿下Prada商单 | AIGC热门精选（AI新榜）">21 · AI新榜 · “黄仁勋AI巡演”爆…</a>。</p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">综述 / 三条分界线</div>
+<h2>把本周串起来：三条正在成形的分界线</h2>
+<div class="grid3">
+<div class="card"><div class="no">01 / 产出与验证</div><h3>「写」不再是瓶颈</h3>
+<p>Chrome 重构、内核补丁、Scion 迁移说明 coding 的瓶颈已转向源码控制、测试与审查。面试改革、Claude Code 的并行会话、Agent 评测同步指向同一件事：工程师的核心工作变成定义问题与判断结果。</p></div>
+<div class="card acid"><div class="no">02 / 自主与安全</div><h3>自主性的边界正在被实测</h3>
+<p>Agent 开始在无具体目标下自行探索，RSI 与自我复制从概念进入实验：一面是 DeepRSI 排行榜，一面是 15 台电视盒的蠕虫演示。能力提升与防滥用需要同时推进。</p></div>
+<div class="card ink"><div class="no">03 / 入口与资产</div><h3>上下文比模型更黏</h3>
+<p>Anthropic 开放订阅额度、ChatGPT 进入 Chrome、平台开始接入外部模型、个人知识空间把资料变成可复用资产——竞争的焦点从「模型多强」转向「谁积累了用户的工作上下文」。</p></div>
+</div>
+<p class="source">来源：对应正文页；<a href="#/39">逐条原文见附录索引</a></p>
+</section>
+<section class="tight"><div class="folio"></div>
+<div class="kicker">观察 / 下周信号</div>
+<h2>下周值得盯的五个可验证信号</h2>
+<div class="pointlist">
+<div class="point"><b>Gemini 4 后续版本</b>Business Insider 报道谷歌员工正测试 Barium 与 Carbon，观察编码能力是否兑现，以及 Antigravity 工具链是否改进。</div>
+<div class="point blue"><b>Fable 5.5 与 Opus 极速版的真实用量</b>Fable 5.5 传已进入早期访问；极速模式与标准模式不共享 Prompt Cache，关注实际账单与回退行为。</div>
+<div class="point acid"><b>REA 的边界</b>项目能否从玩具级目标推进到 Office 等大型商业软件，以及是否引发可执行的法务与合规反应。</div>
+<div class="point"><b>Scion 思路的外部落地</b>Anthropic 提出的 git 服务端 RPC、协商协议改进方向，是否被 GitHub / GitLab 社区采纳。</div>
+<div class="point blue"><b>自我复制与 cyber 能力的外部评估</b>Anthropic 蠕虫研究是否出现真实设备上的端到端闭环，以及 NIST CAISI 等机构对 GLM-5.3 后续版本的复测结论。</div>
+</div>
+<p class="source">来源：对应正文页；<a href="#/39">逐条原文见附录索引</a></p>
+</section>
+<section class="tight appx"><div class="folio"></div><div class="kicker">附录 / 原文索引</div><h2>公众号原文列表（1/3）</h2><p class="slidelead">标题可点击打开原文；「引用」表示已进入正文，「未用」表示仅保留在索引。日期为聊天记录中的转发日期。</p><table class="src-table"><thead><tr><th>序号</th><th>公众号</th><th>标题</th><th>日期</th><th>状态</th></tr></thead><tbody><tr><td class="ta-c">1</td><td>量子位</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247932360&amp;idx=1&amp;sn=18389d216f33ac1e61450092be36e75c&amp;chksm=e97bcf8fd555a72efaa62ae860005acc0a876581ed94708c5719a3a8e6000a28ee53da93793a&amp;mpshare=1&amp;scene=1&amp;srcid=10128WzDg7HEOxZvGDp3byyS&amp;sharer_shareinfo=d152644b1a87ae8f460ceba380cf1b88&amp;sharer_shareinfo_first=d152644b1a87ae8f460ceba380cf1b88#rd" rel="noopener noreferrer" target="_blank">智谱新模型，490 tokens/s！</a></td><td class="ta-c">2026-10-12</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">2</td><td>智东西</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzA4MTQ4NjQzMw==&amp;mid=2652811699&amp;idx=1&amp;sn=ef1b0c82f36e4b0494f07352df7abce6&amp;chksm=85538e1e849f6d6215c3c61b67f3a9fa672406d40099667a783f155691a6021493d8d480e228&amp;mpshare=1&amp;scene=1&amp;srcid=1012qWqDNbdTItQhvfYmaFWo&amp;sharer_shareinfo=5af340b066a883f67163289424b754ef&amp;sharer_shareinfo_first=5af340b066a883f67163289424b754ef#rd" rel="noopener noreferrer" target="_blank">10亿！上海大模型创企拿下新融资</a></td><td class="ta-c">2026-10-12</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">3</td><td>机器之心</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651062317&amp;idx=1&amp;sn=f39a8c0dda930e33e0953d143aaee2a1&amp;chksm=850c3e59e7373f70bceeb6809c7ed6613776e379cdde60987ad0e888c0fcdd682f86c2c6bab6&amp;mpshare=1&amp;scene=1&amp;srcid=1012CL8Dii2n3i33NklKu5bs&amp;sharer_shareinfo=d01bf3173f695728a0119491e57c8c1b&amp;sharer_shareinfo_first=d01bf3173f695728a0119491e57c8c1b#rd" rel="noopener noreferrer" target="_blank">刷LeetCode的时代要过去了？大厂面试正在转向</a></td><td class="ta-c">2026-10-12</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">4</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733949&amp;idx=1&amp;sn=92b620a00a1f3100bf28e271931d943c&amp;chksm=f02d07485c359ce73134c60e9ff15c182c694bc15f95ed9be50b36ca6c1ead5ccc597a56730f&amp;mpshare=1&amp;scene=1&amp;srcid=1013X2c05pTtTWeJS1e5Homj&amp;sharer_shareinfo=2901f386f9fa649b5955617b6a8f132b&amp;sharer_shareinfo_first=2901f386f9fa649b5955617b6a8f132b#rd" rel="noopener noreferrer" target="_blank">全球直播！Astra狂破整数乘法纪录，AI蜂群24小时击穿CS圣杯</a></td><td class="ta-c">2026-10-13</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">5</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733949&amp;idx=2&amp;sn=12a797d69baf0a79d6281e18c339d265&amp;chksm=f06ce986e5165369f86afb0d25802db315238d4d39a91f8c1525f4f981cdf19470955f708980&amp;mpshare=1&amp;scene=1&amp;srcid=1013yHGnB5i7hixDkIaO3t8N&amp;sharer_shareinfo=9a7c7c30459c08ce0e1a4a39e0d3e76d&amp;sharer_shareinfo_first=9a7c7c30459c08ce0e1a4a39e0d3e76d#rd" rel="noopener noreferrer" target="_blank">最新硅谷内幕：三大巨头正集体冲刺RSI！</a></td><td class="ta-c">2026-10-13</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">6</td><td>APPSO</td><td><a href="https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651111732&amp;idx=1&amp;sn=0d538ee2c8a316f0a1f6df3d13770fe6&amp;chksm=bce468379e04e2bafefa8d78b5f85c2616cb9adc548d56b0e1ae8cf133e7de853cd6fbd84fec&amp;mpshare=1&amp;scene=1&amp;srcid=1013FqzCa9jS43jm3HmCo6BW&amp;sharer_shareinfo=6339b9b373e248bca79cb66623a03248&amp;sharer_shareinfo_first=6339b9b373e248bca79cb66623a03248#rd" rel="noopener noreferrer" target="_blank">刚刚，小扎发布神秘「西瓜」模型，跑分媲美 Opus 5.5，口碑却一言难尽</a></td><td class="ta-c">2026-10-13</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">7</td><td>腾讯科技</td><td><a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573322&amp;idx=1&amp;sn=01d1cb4410c942935073302a78a71c84&amp;chksm=a8f21993252c4fab2e63210f1a3afa2b3fe7aacbd3cc793c61a52b1b71afe22e27f3f60595f2&amp;mpshare=1&amp;scene=1&amp;srcid=1013hJoxoYfWhZT0Q6yU19r2&amp;sharer_shareinfo=d76556830f198ae850d50160df5c943c&amp;sharer_shareinfo_first=d76556830f198ae850d50160df5c943c#rd" rel="noopener noreferrer" target="_blank">OpenAI也抄Jev，AI开始出现自主性｜AI一周观察2026W41</a></td><td class="ta-c">2026-10-13</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">8</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734109&amp;idx=1&amp;sn=ef1d746768f29ad3d704689eaaff99a1&amp;chksm=f01dd584c102720401a228053bae349d826befd9e76af9dd166775522aaeab3909fb997423a2&amp;mpshare=1&amp;scene=1&amp;srcid=1013uVFsWut1L44iRRjny2Mk&amp;sharer_shareinfo=56b174e028d31e489df2234931310953&amp;sharer_shareinfo_first=56b174e028d31e489df2234931310953#rd" rel="noopener noreferrer" target="_blank">Anthropic惊人预警：小模型已有生命迹象！AI蠕虫恐引爆全球物联网灾难</a></td><td class="ta-c">2026-10-13</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">9</td><td>腾讯科技</td><td><a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573352&amp;idx=1&amp;sn=493b2968fa5c99c8ee62d5eb4a58fcc1&amp;chksm=a8ceb30c9a2a190fa7447acbb3d2db51b1d503cb9cab99386786d88031e917e44de0adc92d23&amp;mpshare=1&amp;scene=1&amp;srcid=1014sYYJLa6YNKU8paXp1KVi&amp;sharer_shareinfo=4852eb2a935829cf9d66d14c204e163d&amp;sharer_shareinfo_first=4852eb2a935829cf9d66d14c204e163d#rd" rel="noopener noreferrer" target="_blank">前沿模型争霸！Gemini 4 Argon全面开放，谷歌用模型“操练”机器人</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">10</td><td>AGI Hunt</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzA4NzgzMjA4MQ==&amp;mid=2453488182&amp;idx=1&amp;sn=d8db652150620fff9d93b491b3a94c90&amp;chksm=863d7afe4877b3fbdba04966b49d0be27003a4b8b52a9c8d78fa5bdbc6d4b889aa9783da751c&amp;mpshare=1&amp;scene=1&amp;srcid=1014o1T9zcJO5W9t7gsbre1s&amp;sharer_shareinfo=e8051aaf032cfe524b5b0a95821615f8&amp;sharer_shareinfo_first=e8051aaf032cfe524b5b0a95821615f8#rd" rel="noopener noreferrer" target="_blank">刚刚，Anthropic 重新发明了 git</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">11</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734258&amp;idx=2&amp;sn=ef1a7a2c1909881efc91760c92e568a0&amp;chksm=f0acd0196472645df645ddc441d2ed2adf675759b4a6aedabc5ec5f9fc6d7ea072df07ca8563&amp;mpshare=1&amp;scene=1&amp;srcid=1014OyAPM90vSKT8zYAjmVV0&amp;sharer_shareinfo=b5f7ba458147e3a7a39534cc298398c2&amp;sharer_shareinfo_first=b5f7ba458147e3a7a39534cc298398c2#rd" rel="noopener noreferrer" target="_blank">数万亿token生意不要了！Anthropic 连封数万账号，蒸馏数据大砍99%</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">12</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734258&amp;idx=3&amp;sn=fb64c7fad03bacf53b64d93780f97ea0&amp;chksm=f0e1323190e4fc4684cc6ddc59bc707c04d58e719187c0f28f10d2ad07b08249d2f417ef5d89&amp;mpshare=1&amp;scene=1&amp;srcid=1014UlyD4K1ocz3SNpOu06VE&amp;sharer_shareinfo=ec86246c7cd2e236a2ab4eca49c0687a&amp;sharer_shareinfo_first=ec86246c7cd2e236a2ab4eca49c0687a#rd" rel="noopener noreferrer" target="_blank">源码公开，AI破解冷战档案！220个符号零修改，多项历史密码成果</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">13</td><td>APPSO</td><td><a href="https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&amp;mid=2651111817&amp;idx=1&amp;sn=58e0bc04ea58dd8fb24afcbb528dcd7b&amp;chksm=bca9ca6bc527cdf4b6122f03928727aea96b1c5df45c5da34a90c5f6dc42fdbe82d700f2b1b4&amp;mpshare=1&amp;scene=1&amp;srcid=10138dSep9K3NREzvupl780h&amp;sharer_shareinfo=4af82de4a28988167f17d17c668957c9&amp;sharer_shareinfo_first=4af82de4a28988167f17d17c668957c9#rd" rel="noopener noreferrer" target="_blank">AI学会「寄生繁殖」了，Anthropic 用 15台破电视盒子养活大模型</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr></tbody></table></section>
+<section class="tight appx"><div class="folio"></div><div class="kicker">附录 / 原文索引</div><h2>公众号原文列表（2/3）</h2><p class="slidelead">标题可点击打开原文；「引用」表示已进入正文，「未用」表示仅保留在索引。日期为聊天记录中的转发日期。</p><table class="src-table"><thead><tr><th>序号</th><th>公众号</th><th>标题</th><th>日期</th><th>状态</th></tr></thead><tbody><tr><td class="ta-c">14</td><td>量子位</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247933010&amp;idx=2&amp;sn=8f3352a8c2ebc76573a39dc3e5c927a2&amp;chksm=e9d2e23d439adb93a51ac7c4c31a1d250db953c7769d5b9f8688069d97606f5dc59c3ca05154&amp;mpshare=1&amp;scene=1&amp;srcid=1014QG3e0MouOOJJmf2SQAn0&amp;sharer_shareinfo=26cdec9dd66291832f437bf2da12ecf1&amp;sharer_shareinfo_first=26cdec9dd66291832f437bf2da12ecf1#rd" rel="noopener noreferrer" target="_blank">告别资料散落，让知识持续积累：openJiuwen首发个人知识空间，重塑个人办公智能体新体验！</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">15</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733514&amp;idx=1&amp;sn=e28255085a6acb816e2a9316390d6b6e&amp;chksm=f088dceffb3541e8b45c7be1445106d900c28c1009bf1604085ff7a09c2444b47f61c8b214c5&amp;mpshare=1&amp;scene=1&amp;srcid=1014Dv68AYSKP2lk5njLr1Xb&amp;sharer_shareinfo=c2ca9e98bd1dbecaf7c8a7543dc677c2&amp;sharer_shareinfo_first=c2ca9e98bd1dbecaf7c8a7543dc677c2#rd" rel="noopener noreferrer" target="_blank">比Jev更爆火！逆向灭霸 REA 一天登顶GitHub</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">16</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652733131&amp;idx=3&amp;sn=6b91c3fc0c4519f5dea8ad255b583b1f&amp;chksm=f006dd6cd5a77263a7f30a0f5c4129730917e833d4e2e54c3329a5d2264ae5e06bc8edfb47a5&amp;mpshare=1&amp;scene=1&amp;srcid=1013vMlTryrJEurPmROxX39M&amp;sharer_shareinfo=128e1b87b6d9bc68736eb12896c78ff8&amp;sharer_shareinfo_first=128e1b87b6d9bc68736eb12896c78ff8#rd" rel="noopener noreferrer" target="_blank">多会话语音记忆基准VoxMem，专治音频大模型记不住「谁说的、怎么说」</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">17</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734418&amp;idx=1&amp;sn=7f92b6ba19a7bef04126c1797a809a36&amp;chksm=f0df52098f92ae055ec639446feed74aaec3464c50abcd535147f21ebb6223f58b3d01c3b2bd&amp;mpshare=1&amp;scene=1&amp;srcid=10145W7nmn2lEJZ8ooUPamvJ&amp;sharer_shareinfo=e95267fe5a0eacfc33cfb462a9920b8e&amp;sharer_shareinfo_first=e95267fe5a0eacfc33cfb462a9920b8e#rd" rel="noopener noreferrer" target="_blank">刚刚，Gemini 4全球上线！</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">18</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734418&amp;idx=2&amp;sn=100e81770635aacf46d1ea7bdf0a5c82&amp;chksm=f06390b7f3702bb38e2b03c29b8594bb4b1846b4152a650bd48cb133d390ebba124f0b496102&amp;mpshare=1&amp;scene=1&amp;srcid=10145YZpQfuUR8YR2ts1LYqg&amp;sharer_shareinfo=bf3eaf55b6ff5f6b4d420595028dcbd7&amp;sharer_shareinfo_first=bf3eaf55b6ff5f6b4d420595028dcbd7#rd" rel="noopener noreferrer" target="_blank">亚历山大王首次自曝：Muse Wonder搞砸了，Meta就会直接破产！</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">19</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734488&amp;idx=2&amp;sn=812aea9d2ed0c01ba650f8c73a6ad14e&amp;chksm=f0244a4f4532d6163df690bb801e396c3e27ac02e8198936e34de5c767c1d54e54445bfe470e&amp;mpshare=1&amp;scene=1&amp;srcid=1014CsrYtNoKuUbM4Uf22NKg&amp;sharer_shareinfo=f8a3026a2ce0f600cb01e695df2f705f&amp;sharer_shareinfo_first=f8a3026a2ce0f600cb01e695df2f705f#rd" rel="noopener noreferrer" target="_blank">Linux之父彻底入坑AI！Claude Code写内核，性能暴涨3倍</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">20</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734488&amp;idx=1&amp;sn=cc45abfcfd3e6c620f9374f28d9af2be&amp;chksm=f0cc5e53688a7fb95e4d364a5f48b71217b055172cb9fcace1ad073bdd4d7883486e3ce7d1de&amp;mpshare=1&amp;scene=1&amp;srcid=1014Rgnqla9mlKZxR2SciwVM&amp;sharer_shareinfo=24630158c9f4f3dad2cd6ed7300d4002&amp;sharer_shareinfo_first=24630158c9f4f3dad2cd6ed7300d4002#rd" rel="noopener noreferrer" target="_blank">OpenAI高管会议室惊现窃听器！35岁工程师涉案被AI举报送进FBI</a></td><td class="ta-c">2026-10-14</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">21</td><td>AI新榜</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzA3NzUxMzQ5Mw==&amp;mid=2648149045&amp;idx=1&amp;sn=7b9f122bb087f8e445d9d409a5c753a2&amp;chksm=86ae47356b50c21960248b54e4472f92f6a8c3add7acb215e3b59ae483ab0cc2f5690c79286f&amp;mpshare=1&amp;scene=1&amp;srcid=1015PVmB6t0CCIa84k3x7Rjc&amp;sharer_shareinfo=035b41497ffb001c717a4a8d38d42f98&amp;sharer_shareinfo_first=035b41497ffb001c717a4a8d38d42f98#rd" rel="noopener noreferrer" target="_blank">“黄仁勋AI巡演”爆火，马斯克：这就是内存贵的原因；猫子柒拿下Prada商单 | AIGC热门精选</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">22</td><td>量子位</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&amp;mid=2247933280&amp;idx=2&amp;sn=d383f6e95d600ea9a08f25fc307ccda0&amp;chksm=e99f378f34cfb24c30fe06395038ee0df370cb1c99bdeabd4267009768a01c453054c0d29f32&amp;mpshare=1&amp;scene=1&amp;srcid=1015QWrMLDuZJT1FjQRfDY47&amp;sharer_shareinfo=5fd57219a86a7cc13ca4ab121b293d23&amp;sharer_shareinfo_first=5fd57219a86a7cc13ca4ab121b293d23#rd" rel="noopener noreferrer" target="_blank">Jeff Dean投的RSI出成果了：Kimi K3自我进化排国产第一</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">23</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734758&amp;idx=1&amp;sn=afe7493086c24097e4a4b5dd8c776ed9&amp;chksm=f02334ff01e00874d539a30c9342f2e329b46873b6ce95fd6c8e8a0cedb140cecba2ee8268dd&amp;mpshare=1&amp;scene=1&amp;srcid=1015fL5tYv6sAzOn0isger2t&amp;sharer_shareinfo=044d1128e7d271d05330357bccbd4aa3&amp;sharer_shareinfo_first=044d1128e7d271d05330357bccbd4aa3#rd" rel="noopener noreferrer" target="_blank">刚刚，Claude彻底解禁第三方应用！</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">24</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734758&amp;idx=2&amp;sn=3aa2c5ede4f48cd056cfe1bdc97ffb2f&amp;chksm=f0d775cc82daf21be91d212c3486322e74151b3a99a85894a3dbe5056c8eaab7e47273e5a493&amp;mpshare=1&amp;scene=1&amp;srcid=1015PQlXjnYWlJGFPF2NpIBZ&amp;sharer_shareinfo=8dbf92c09dbc3f7e52dbe1317a3bc5ac&amp;sharer_shareinfo_first=8dbf92c09dbc3f7e52dbe1317a3bc5ac#rd" rel="noopener noreferrer" target="_blank">Claude Code桌面版暴改，一人指挥AI军团飙代码！</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">25</td><td>Vista氢商业</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzIwMDQ2NTA4MQ==&amp;mid=2247696721&amp;idx=1&amp;sn=e275e6d61f26f54ba85140f53126e6a7&amp;chksm=97a56c209fffedbd41f2d75d2bac4eeafeec13d11a2868f757394f090834f9e373df83cea291&amp;mpshare=1&amp;scene=1&amp;srcid=1015wNZ5oSa4a7no18r2bZXZ&amp;sharer_shareinfo=16b225b521dd44e6e868b6d05252a09d&amp;sharer_shareinfo_first=16b225b521dd44e6e868b6d05252a09d#rd" rel="noopener noreferrer" target="_blank">纯过日子的打工人，把瑞幸三巨头当「续命圣水」？</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-no">未用</span></td></tr><tr><td class="ta-c">26</td><td>数字生命卡兹克</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&amp;mid=2647687109&amp;idx=1&amp;sn=032fd9f6aab5ee20ea5d14f97bf48a86&amp;chksm=f16a08f7b068fd54a5d98c8f578bc89e2fbf226d22c95bcff95f660ccd149e44943e68f9695f&amp;mpshare=1&amp;scene=1&amp;srcid=10159Vgn3PDan65tlN7GnsN0&amp;sharer_shareinfo=8bb48ed6fc2df940afc1e6f6c6a56e3b&amp;sharer_shareinfo_first=8bb48ed6fc2df940afc1e6f6c6a56e3b#rd" rel="noopener noreferrer" target="_blank">分享一个最近很惊艳的开源Skill，一句话让AI搓出任何原理的科普视频。</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr></tbody></table></section>
+<section class="tight appx"><div class="folio"></div><div class="kicker">附录 / 原文索引</div><h2>公众号原文列表（3/3）</h2><p class="slidelead">标题可点击打开原文；「引用」表示已进入正文，「未用」表示仅保留在索引。日期为聊天记录中的转发日期。</p><table class="src-table"><thead><tr><th>序号</th><th>公众号</th><th>标题</th><th>日期</th><th>状态</th></tr></thead><tbody><tr><td class="ta-c">27</td><td>腾讯科技</td><td><a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573388&amp;idx=1&amp;sn=d8da25b3c38bf857bc2af7c5f65e6cd7&amp;chksm=a8ae60dcdf5258188848eb6f9d03b6dcf1de789b958849fe001d86c897f615154c544fc1b1cb&amp;mpshare=1&amp;scene=1&amp;srcid=1015IwKrevYROMneAuf6U9uo&amp;sharer_shareinfo=4452a85651a725baeefead98dc20f4a8&amp;sharer_shareinfo_first=4452a85651a725baeefead98dc20f4a8#rd" rel="noopener noreferrer" target="_blank">顶尖“白帽”古河加入GLM模型组，智谱的“安全”野心有多大？</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">28</td><td>机器之心</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651062933&amp;idx=2&amp;sn=d234466308715a4fc0e9cc34c8fd73fb&amp;chksm=851abc19511ed01aa35b8645b604a05065c9c5fe827e6e283e728a152fce823bd4fad51c565b&amp;mpshare=1&amp;scene=1&amp;srcid=1015vbvHWJ8vI10zY1ciOtbo&amp;sharer_shareinfo=b554492fa5e326f41689ceed086b3525&amp;sharer_shareinfo_first=b554492fa5e326f41689ceed086b3525#rd" rel="noopener noreferrer" target="_blank">大模型下个范式：文本生成先写提纲，速度能快31倍</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">29</td><td>机器之心</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2651062933&amp;idx=3&amp;sn=b4e2b5d2f10f19a31cf4bb07da1446f5&amp;chksm=85e097a5e88b49cf15903eb51de032fc53b2c2dfaa85499666ec81efa2d1423bc8b90b632afd&amp;mpshare=1&amp;scene=1&amp;srcid=101523Pypa0kA0KAdEphpyKK&amp;sharer_shareinfo=fbc11f35e2ba0ab78432a778dccd7cc8&amp;sharer_shareinfo_first=fbc11f35e2ba0ab78432a778dccd7cc8#rd" rel="noopener noreferrer" target="_blank">从「预测未来」到「理解世界」：Tadpole与一种新的科学基础模型思路</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">30</td><td>AI前线</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&amp;mid=2247668393&amp;idx=1&amp;sn=6985e0e7e56c8102274e28ccdadc8335&amp;chksm=fa8b03c543c4b068bd7d35a05df153aed08497f86ce104c8f66baa3885671f8cc737177d3bf9&amp;mpshare=1&amp;scene=1&amp;srcid=1015RUIlThBg8xxIFwzvP1S8&amp;sharer_shareinfo=097ec038f2718e23b8e57654178316b1&amp;sharer_shareinfo_first=097ec038f2718e23b8e57654178316b1#rd" rel="noopener noreferrer" target="_blank">黄仁勋谈中国 AI 公司：算力越缺，越逼着他们把架构做到极致</a></td><td class="ta-c">2026-10-15</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">31</td><td>智东西</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzA4MTQ4NjQzMw==&amp;mid=2652811995&amp;idx=1&amp;sn=b9ba3497b61b9b0de08654eb0b4b8fe6&amp;chksm=85aad69769bf0360e5b9229a9bf70c598e0b8d41164d7bfba27377015cb3ae4ef548585e1234&amp;mpshare=1&amp;scene=1&amp;srcid=1016BHTbAr8EI0Vpq7GWQzi2&amp;sharer_shareinfo=87864fc42fcd72369ac21e2fc1b54808&amp;sharer_shareinfo_first=87864fc42fcd72369ac21e2fc1b54808#rd" rel="noopener noreferrer" target="_blank">英伟达RTX Spark真机上手！黄仁勋的AI PC杀招终于来了</a></td><td class="ta-c">2026-10-16</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">32</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734941&amp;idx=1&amp;sn=320b88edc6d5520ad0cb578de21a0cb7&amp;chksm=f0153d24a93ee1d6e7b0398cddc3771785267b1190c17156ff900cffa93f3bfa10626f394854&amp;mpshare=1&amp;scene=1&amp;srcid=10169NHYhiLY0oYJuqyktetX&amp;sharer_shareinfo=71d1175f47b4bcfda0972f776064fdda&amp;sharer_shareinfo_first=71d1175f47b4bcfda0972f776064fdda#rd" rel="noopener noreferrer" target="_blank">刚刚，Opus 5.5极速版全面解禁！</a></td><td class="ta-c">2026-10-16</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">33</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652734966&amp;idx=2&amp;sn=699bbcc7275d9b9ed8e1bcb31f133293&amp;chksm=f0c4c14ab409799354dd0481066d0c61da0a41bc0a44d108f70a9c613048e9f2331edd345669&amp;mpshare=1&amp;scene=1&amp;srcid=1016FdJ1J1Mks1E9FL0ts2k5&amp;sharer_shareinfo=ae97f46c4d4fcfc8743bcfdb989c55b0&amp;sharer_shareinfo_first=ae97f46c4d4fcfc8743bcfdb989c55b0#rd" rel="noopener noreferrer" target="_blank">16天！他用Opus 5.5把《小王子》做成3D游戏，书里的星球能逛了</a></td><td class="ta-c">2026-10-16</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">34</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735259&amp;idx=1&amp;sn=1211affbf6b105954337331117e04c57&amp;chksm=f026075d793b12cf6699ed3b2030eede6a62b5aba49282da21fdd9d30ac82869b8055027f0db&amp;mpshare=1&amp;scene=1&amp;srcid=1016Qw1PmfQWS9Un4jqpkSsY&amp;sharer_shareinfo=0e9b9b088359205c76924c43ae047648&amp;sharer_shareinfo_first=0e9b9b088359205c76924c43ae047648#rd" rel="noopener noreferrer" target="_blank">断层领先Jev，全球第一！决策模型新王震撼发布新版本</a></td><td class="ta-c">2026-10-16</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">35</td><td>新智元</td><td><a href="https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&amp;mid=2652735259&amp;idx=2&amp;sn=2002a96ca077b7a910bc2fc0f017c321&amp;chksm=f02b4ebf6e897aa185e43ef92fb3fc9c7e72b031bc84e39c57001e0d4187b24d6111adce3b3d&amp;mpshare=1&amp;scene=1&amp;srcid=1016RnNNOgKC5Z9R3yCTBAck&amp;sharer_shareinfo=23c1b253afbb260b70d5a56dc9826fda&amp;sharer_shareinfo_first=23c1b253afbb260b70d5a56dc9826fda#rd" rel="noopener noreferrer" target="_blank">OpenAI突袭Chrome！ChatGPT长出「双手」，自动打工了</a></td><td class="ta-c">2026-10-16</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr><tr><td class="ta-c">36</td><td>腾讯科技</td><td><a href="https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&amp;mid=2691573472&amp;idx=1&amp;sn=f52a40a6821d9c4dedc765a948ed436d&amp;chksm=a83a3f775526d558049563e7e0f8a9425865c28864878132c6d6d6757a7abf8621bb3dc3abbb&amp;mpshare=1&amp;scene=1&amp;srcid=1016jXaFGkljmrupqoSTnQNK&amp;sharer_shareinfo=f0fc1bc64a1893a30f7392cef10f2e16&amp;sharer_shareinfo_first=f0fc1bc64a1893a30f7392cef10f2e16#rd" rel="noopener noreferrer" target="_blank">马斯克的汽车，是怎么飞起来的？</a></td><td class="ta-c">2026-10-16</td><td class="ta-c"><span class="tbl-yes">引用</span></td></tr></tbody></table></section>
+</div></div>
+<div id="image-lightbox" hidden role="dialog" aria-modal="true" aria-label="图片放大预览"><button id="lightbox-close" type="button" aria-label="关闭图片预览">×</button><img id="lightbox-image" alt=""><div id="lightbox-caption"></div></div>
+<div id="edit-toolbar" hidden role="toolbar" aria-label="幻灯片编辑工具"><span id="edit-status">点击文字直接修改</span><button id="save-edits" type="button" title="快捷键 ⌘/Ctrl+S">暂存浏览器</button><button id="save-html" type="button">导出独立 HTML…</button><button id="reset-edits" type="button">还原</button><button id="exit-edit" type="button">完成</button></div>
+
+<script src="assets/reveal.js"></script><script>
+  const originalDeckHtml = '<!doctype html>\n' + document.documentElement.outerHTML;
+  const deckSections = [...document.querySelectorAll('.slides > section')];
+  deckSections.forEach((section, index) => { const folio = section.querySelector('.folio'); if (folio) folio.textContent = `${String(index + 1).padStart(2, '0')} / ${deckSections.length}`; });
+  Reveal.initialize({scrollLayout:'compact',hash:true,controls:true,progress:true,center:false,slideNumber:false,transition:'slide',backgroundTransition:'fade',width:1280,height:720,margin:.02});
+  // Balance short pages within the space above their fixed source and takeaway.
+  function balanceSlideContent() {
+    deckSections.forEach(section => {
+      if (section.matches('.cover,.chapter')) return;
+      const blocks = [...section.children].filter(node => !node.matches('.folio,.source,.takeaway'));
+      blocks.forEach(node => { node.style.translate = ''; });
+      if (!blocks.length || !section.offsetHeight) return;
+      const bottom = Math.max(...blocks.map(node => node.offsetTop + node.offsetHeight));
+      const takeaway = section.querySelector('.takeaway');
+      const limit = takeaway ? takeaway.offsetTop - 24 : 640;
+      const shift = Math.max(0, Math.floor((limit - bottom) / 2));
+      blocks.forEach(node => { node.style.translate = `0 ${shift}px`; });
+    });
+  }
+  Reveal.on('ready', balanceSlideContent);
+  Reveal.on('slidechanged', balanceSlideContent);
+  window.addEventListener('resize', balanceSlideContent);
+  document.fonts.ready.then(balanceSlideContent);
+
+  const lightbox = document.querySelector('#image-lightbox');
+  const lightboxImage = document.querySelector('#lightbox-image');
+  const lightboxCaption = document.querySelector('#lightbox-caption');
+  const closeLightbox = () => { lightbox.hidden = true; lightbox.classList.remove('zoomed'); lightboxImage.removeAttribute('src'); };
+  document.querySelectorAll('.slides img').forEach(img => img.addEventListener('click', event => {
+    if (document.body.classList.contains('edit-mode')) return;
+    event.preventDefault(); event.stopPropagation(); lightboxImage.src = img.currentSrc || img.src; lightboxImage.alt = img.alt || '幻灯片图片'; lightboxCaption.textContent = img.alt || '点击图片可切换原始尺寸，Esc 关闭'; lightbox.hidden = false;
+  }));
+  lightboxImage.addEventListener('click', event => { event.stopPropagation(); lightbox.classList.toggle('zoomed'); });
+  lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+  document.querySelector('#lightbox-close').addEventListener('click', closeLightbox);
+
+  Reveal.on('slidechanged',()=>document.querySelectorAll('section:not(.present) video').forEach(v=>v.pause()));
+  const editStorageKey = 'weekly-ai-w42-browser-edits-v1';
+  const editToolbar = document.querySelector('#edit-toolbar'); const editStatus = document.querySelector('#edit-status');
+  const editableSelector = ['h1','h2','h3','p:not(.source)', '.kicker','.date','.no','.big-number','.metric-label','.caption','.takeaway span','.trust span','.signal span:last-child','.arch-row span','.step','.matrix span','.matrix b','.bar-row .label','.bar-row .value','.claim b','.claim strong','.claim span','.metric-strip b','.metric-strip span','.cover-pillars b','.cover-pillars span'].join(',');
+  const editableNodes = [...document.querySelectorAll(`.slides ${editableSelector}`)];
+  editableNodes.forEach((node,index) => { node.dataset.editKey=String(index); node.dataset.originalHtml=node.innerHTML; });
+  const readEdits = () => { try { return JSON.parse(localStorage.getItem(editStorageKey) || '{}'); } catch (_) { return {}; } };
+  const restoreEdits = () => { const saved=readEdits(); editableNodes.forEach(node => { if (Object.prototype.hasOwnProperty.call(saved,node.dataset.editKey)) node.innerHTML=saved[node.dataset.editKey]; }); };
+  const saveEdits = () => { const changes={}; editableNodes.forEach(node => { if(node.innerHTML!==node.dataset.originalHtml) changes[node.dataset.editKey]=node.innerHTML; }); try { localStorage.setItem(editStorageKey,JSON.stringify(changes)); editStatus.textContent=`已保存 ${Object.keys(changes).length} 处修改`; } catch (_) { editStatus.textContent='保存失败：浏览器未开放本地存储'; } };
+  const sanitizeEditedHtml = markup => {
+    const input = document.createElement('template'); input.innerHTML = markup;
+    const output = document.createElement('div');
+    const allowed = new Set(['B','STRONG','EM','I','U','BR','SPAN','A','CODE','SUP','SUB']);
+    const copy = (node, target) => {
+      if (node.nodeType === Node.TEXT_NODE) { target.appendChild(document.createTextNode(node.textContent)); return; }
+      if (node.nodeType !== Node.ELEMENT_NODE) return;
+      const tag = node.tagName;
+      if (!allowed.has(tag)) { [...node.childNodes].forEach(child => copy(child,target)); return; }
+      const clean = document.createElement(tag.toLowerCase());
+      if (tag === 'A') {
+        const href = node.getAttribute('href') || '';
+        if (/^https?:\/\//i.test(href)) { clean.setAttribute('href',href); clean.setAttribute('rel','noopener noreferrer'); }
+      }
+      [...node.childNodes].forEach(child => copy(child,clean)); target.appendChild(clean);
+    };
+    [...input.content.childNodes].forEach(node => copy(node,output));
+    return output.innerHTML;
+  };
+  const ensureOfflineAssets = async () => {
+    if (!/(?:src|href)="assets\/[^"]+"/.test(originalDeckHtml)) return {};
+    if (window.deckOfflineAssets) return window.deckOfflineAssets;
+    return await new Promise((resolve,reject) => {
+      const script = document.createElement('script'); script.src='assets/offline-assets.js';
+      script.onload=() => window.deckOfflineAssets ? resolve(window.deckOfflineAssets) : reject(new Error('资源清单未加载'));
+      script.onerror=() => reject(new Error('资源清单不可用，请从完整 PPT 文件夹打开'));
+      document.head.appendChild(script);
+    });
+  };
+  const buildEditedHtml = assetMap => {
+    const exported = new DOMParser().parseFromString(originalDeckHtml,'text/html');
+    const targets = [...exported.querySelectorAll(`.slides ${editableSelector}`)];
+    if (targets.length !== editableNodes.length) throw new Error('可编辑文字数量不一致，无法安全导出');
+    editableNodes.forEach((node,index) => {
+      if (node.innerHTML !== node.dataset.originalHtml) targets[index].innerHTML = sanitizeEditedHtml(node.innerHTML);
+    });
+    exported.querySelectorAll('img[src],script[src],link[href]').forEach(node => {
+      const attr = node.hasAttribute('src') ? 'src' : 'href';
+      const value = node.getAttribute(attr);
+      if (value && value.startsWith('assets/')) {
+        if (!assetMap[value]) throw new Error(`缺少资源：${value}`);
+        node.setAttribute(attr,assetMap[value]);
+      }
+    });
+    const script = [...exported.querySelectorAll('script:not([src])')].find(node => node.textContent.includes('const editStorageKey'));
+    if (!script) throw new Error('未找到编辑脚本，无法导出');
+    script.textContent = script.textContent.replace(editStorageKey, `${editStorageKey}-file-${Date.now().toString(36)}`);
+    return '<!doctype html>\n' + exported.documentElement.outerHTML;
+  };
+  const saveHtmlFile = async () => {
+    let blob;
+    try {
+      editStatus.textContent='正在打包图片与脚本…';
+      blob = new Blob([buildEditedHtml(await ensureOfflineAssets())], {type:'text/html;charset=utf-8'});
+    } catch (error) { editStatus.textContent=`导出失败：${error.message}`; return; }
+    if (typeof window.showSaveFilePicker === 'function') {
+      try {
+        const handle = await window.showSaveFilePicker({suggestedName:'AI一周进展-已编辑.html',types:[{description:'独立 HTML 网页',accept:{'text/html':['.html']}}]});
+        const writable = await handle.createWritable(); await writable.write(blob); await writable.close();
+        editStatus.textContent=`已导出 ${handle.name}，图片和脚本均已包含`;
+      } catch (error) { if (error.name !== 'AbortError') editStatus.textContent=`导出失败：${error.message}`; }
+      return;
+    }
+    const url = URL.createObjectURL(blob); const link = document.createElement('a');
+    link.href=url; link.download='AI一周进展-已编辑.html'; document.body.appendChild(link); link.click(); link.remove();
+    setTimeout(() => URL.revokeObjectURL(url),30000);
+    editStatus.textContent='已下载独立 HTML，图片和脚本均已包含';
+  };
+  const setEditMode = enabled => { document.body.classList.toggle('edit-mode',enabled); editToolbar.hidden=!enabled; editableNodes.forEach(node => { node.contentEditable=enabled?'true':'false'; }); if(window.Reveal) Reveal.configure({keyboard:!enabled}); };
+  restoreEdits();
+  document.querySelector('#save-edits').addEventListener('click',saveEdits); document.querySelector('#save-html').addEventListener('click',saveHtmlFile); document.querySelector('#exit-edit').addEventListener('click',()=>setEditMode(false));
+  document.querySelector('#reset-edits').addEventListener('click',()=>{ localStorage.removeItem(editStorageKey); editableNodes.forEach(node=>{node.innerHTML=node.dataset.originalHtml;}); editStatus.textContent='已还原'; });
+  document.addEventListener('keydown',event => { const editing=document.body.classList.contains('edit-mode'); if(event.key==='Escape'&&!lightbox.hidden){closeLightbox();event.preventDefault();return;} if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='s'&&editing){saveEdits();event.preventDefault();return;} if(event.key.toLowerCase()==='e'&&!event.metaKey&&!event.ctrlKey&&!event.altKey&&!event.target.isContentEditable){setEditMode(!editing);event.preventDefault();return;} if(editing&&event.target.isContentEditable) event.stopPropagation(); },true);
+</script>
+</body></html>

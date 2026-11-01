@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026.09.06-09.12 AI 进展周报网页演示">
+  <title>AI 进展周报 | 2026.09.06-09.12</title>
+  <link rel="stylesheet" href="assets/reveal.css">
+  <style>
+    :root{--paper:#f3f0e8;--ink:#151713;--muted:#65675f;--line:rgba(21,23,19,.18);--acid:#c6f43d;--red:#f0442e;--blue:#1b56d8;--sand:#d5c8ad;--serif:"Noto Serif SC","Songti SC",serif;--mono:"IBM Plex Mono","PingFang SC",monospace}
+    *{box-sizing:border-box}body{background:var(--paper)}.reveal{color:var(--ink);font-family:var(--serif);font-size:26px}.reveal-viewport{background:var(--paper)}
+    .reveal .slides section{height:100%;padding:44px 62px 38px;text-align:left}.reveal .slides section::before{content:"";position:absolute;inset:18px;border:1px solid var(--line);pointer-events:none}
+    .reveal h1,.reveal h2,.reveal h3{color:var(--ink);font-family:var(--serif);text-transform:none}.reveal h1{font-size:3.05em;font-weight:900;line-height:1.04;letter-spacing:-.05em;margin:0}.reveal h2{font-size:1.7em;font-weight:900;line-height:1.12;letter-spacing:-.035em;margin:0 0 18px}.reveal h3{font-size:.9em;font-weight:900;margin:0 0 7px}.reveal p{line-height:1.5;margin:.42em 0}.reveal strong{color:var(--red);font-weight:900}.reveal a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+    .reveal .slide-number{display:none!important}.reveal .progress{color:var(--red);height:4px}
+    .kicker,.folio,.tag,.metric-label,.source,.caption,.hint,.eyebrow{font-family:var(--mono)}.kicker{color:var(--red);font-size:.53em;font-weight:600;letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px}.folio{position:absolute;top:29px;right:34px;font-size:.45em;color:var(--muted);letter-spacing:.08em}.rule{width:76px;height:8px;background:var(--red);margin:20px 0}.lede{max-width:990px;font-size:1.02em;line-height:1.52}.muted{color:var(--muted)}.small{font-size:.69em;line-height:1.43}.tiny{font-size:.52em;line-height:1.42}.source{position:absolute;bottom:30px;left:63px;right:88px;color:var(--muted);font-size:.39em;line-height:1.35}.source a{color:var(--muted)}
+    .tag{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:4px 9px;font-size:.43em;font-weight:600;letter-spacing:.04em;margin-right:5px}.tag.red{color:var(--red)}.tag.blue{color:var(--blue)}.tag.warn{color:#8b4c00;background:#f6dfb3;border-color:#c58a30}.tag.dark{color:var(--ink)}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.split{display:grid;grid-template-columns:1.06fr .94fr;gap:27px;align-items:start}.split.reverse{grid-template-columns:.9fr 1.1fr}.split.equal{grid-template-columns:1fr 1fr}.card{border:1px solid var(--ink);padding:16px 17px;background:rgba(255,255,255,.28);min-height:130px}.card.acid{background:var(--acid)}.card.ink{background:var(--ink);color:var(--paper)}.card.ink h3,.card.ink strong{color:var(--acid)}.card.red{background:var(--red);color:#fff}.card.red h3,.card.red strong{color:#fff}.card p{font-size:.66em;margin:0;line-height:1.45}.card .no{font:600 .46em var(--mono);color:var(--muted);margin-bottom:12px}.card.ink .no,.card.red .no{color:rgba(255,255,255,.68)}.big-number{font:600 1.95em/1 var(--mono);letter-spacing:-.07em}.metric-label{font-size:.44em;color:var(--muted);margin-top:7px}.card.ink .metric-label,.card.red .metric-label{color:rgba(255,255,255,.7)}
+    .signal-list{display:grid;gap:0;border-top:1px solid var(--ink)}.signal{display:grid;grid-template-columns:58px 170px 1fr;gap:12px;align-items:center;padding:10px 6px;border-bottom:1px solid var(--line)}.signal .n{font:600 .62em var(--mono);color:var(--red)}.signal b{font-size:.69em}.signal span:last-child{display:block;font-size:.6em;line-height:1.42;color:var(--muted)}
+    .cover::after{content:"W37";position:absolute;right:58px;bottom:41px;font:600 6.5em/1 var(--mono);color:rgba(21,23,19,.055);letter-spacing:-.12em;z-index:-1}.cover .date{font:600 .72em var(--mono);letter-spacing:.08em;margin-top:28px}.cover .bands{display:flex;gap:8px;margin-top:40px}.cover .bands span{height:12px;display:block}.cover .bands span:nth-child(1){width:31%;background:var(--red)}.cover .bands span:nth-child(2){width:19%;background:var(--acid);border:1px solid var(--ink)}.cover .bands span:nth-child(3){width:50%;background:var(--blue)}.cover .hint{position:absolute;left:63px;bottom:42px;font-size:.41em;color:var(--muted)}
+    .takeaway{position:absolute;left:62px;right:62px;bottom:64px;display:grid;grid-template-columns:112px 1fr;border-top:2px solid var(--ink);padding-top:11px}.takeaway b{font:600 .45em var(--mono);color:var(--red)}.takeaway span{font-size:.6em;line-height:1.4}
+    .chapter{background:var(--ink)!important;color:var(--paper)!important}.chapter::before{border-color:rgba(243,240,232,.28)!important}.chapter h2{color:var(--paper);font-size:2.65em;margin-top:145px}.chapter .kicker{color:var(--acid)}.chapter .folio{color:rgba(243,240,232,.55)}.chapter .rule{background:var(--acid);width:180px}.chapter p{color:rgba(243,240,232,.72);max-width:850px}
+    .visual{display:block;width:100%;height:338px;object-fit:contain;border:1px solid var(--ink);background:#fff}.visual.covered{object-fit:cover}.visual.short{height:218px}.visual.mini{height:160px}.visual.tall{height:390px}.caption{margin-top:6px;color:var(--muted);font-size:.39em;line-height:1.38}.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.media-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.media-tile{position:relative;border:1px solid var(--ink);background:#fff;overflow:hidden}.media-tile img{display:block;width:100%;height:176px;object-fit:cover}.media-tile.contain img{object-fit:contain}.media-tile span{position:absolute;left:7px;bottom:7px;padding:4px 7px;background:var(--ink);color:var(--paper);font:600 .35em var(--mono)}
+    .metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:11px}.metric-row.four{grid-template-columns:repeat(4,1fr);gap:8px}.metric{border-top:5px solid var(--red);padding:9px 8px;background:rgba(255,255,255,.28)}.metric:nth-child(even){border-color:var(--blue)}.metric b{display:block;font:600 1.2em/1 var(--mono);color:var(--ink)}.metric span{display:block;margin-top:6px;font:.41em/1.32 var(--mono);color:var(--muted)}
+    .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:9px;align-items:center;margin-top:17px}.flow .step{border:1px solid var(--ink);padding:15px 9px;text-align:center;font-size:.59em;background:rgba(255,255,255,.28)}.flow .step.hot{background:var(--acid)}.flow .arrow{font:600 .95em var(--mono);color:var(--red)}
+    .arch-stack{display:grid;gap:8px}.arch-row{display:grid;grid-template-columns:92px 1fr;gap:9px;align-items:center}.arch-row b{font:600 .46em var(--mono);color:var(--red)}.arch-row span{display:block;border:1px solid var(--ink);padding:9px 11px;font-size:.55em;line-height:1.32}.arch-row:nth-child(even) span{background:var(--acid)}
+    .quote{border-left:8px solid var(--red);padding:3px 0 3px 17px;font-size:1em;line-height:1.48;margin:18px 0}.trust{display:grid;grid-template-columns:125px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line)}.trust:last-child{border-bottom:1px solid var(--line)}.trust b{font:600 .48em var(--mono);color:var(--red)}.trust span{font-size:.61em;line-height:1.4}.dense h2{font-size:1.48em}.dense .card{min-height:108px;padding:13px 15px}.dense .small{margin:.28em 0}
+    .bars{margin-top:10px}.bar-row{display:grid;grid-template-columns:165px 1fr 68px;gap:9px;align-items:center;margin:9px 0}.bar-row .label{font:500 .46em var(--mono)}.bar{height:17px;border:1px solid var(--ink)}.bar i{display:block;height:100%;background:var(--red)}.bar-row:nth-child(even) .bar i{background:var(--blue)}.bar-row .value{font:600 .49em var(--mono);text-align:right}
+    .matrix{display:grid;grid-template-columns:150px repeat(3,1fr);border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin-top:15px}.matrix>*{border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:11px 10px}.matrix b{font:600 .48em var(--mono)}.matrix span{font-size:.54em;line-height:1.33}.matrix .head{background:var(--ink);color:var(--paper)}.matrix .hot{background:var(--acid)}
+    .slides img{cursor:zoom-in}#image-lightbox[hidden],#edit-toolbar[hidden]{display:none!important}#image-lightbox{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:56px;background:rgba(9,11,10,.94);backdrop-filter:blur(6px)}#image-lightbox img{display:block;max-width:92vw;max-height:84vh;object-fit:contain;cursor:zoom-in;box-shadow:0 20px 70px rgba(0,0,0,.45)}#image-lightbox.zoomed{display:block;overflow:auto;text-align:center}#image-lightbox.zoomed img{max-width:none;max-height:none;margin:0 auto;cursor:zoom-out}#lightbox-close{position:fixed;right:24px;top:18px;z-index:1002;border:1px solid rgba(255,255,255,.55);background:#111;color:#fff;width:42px;height:42px;border-radius:50%;font:28px/1 var(--mono);cursor:pointer}#lightbox-caption{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);max-width:78vw;padding:7px 12px;background:rgba(0,0,0,.75);color:#fff;font:12px/1.4 var(--mono);text-align:center}
+    #edit-toolbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--ink);background:var(--acid);box-shadow:0 5px 20px rgba(0,0,0,.18);font:12px var(--mono)}#edit-toolbar button{border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:5px 9px;font:12px var(--mono);cursor:pointer}body.edit-mode [contenteditable="true"]{outline:1px dashed rgba(27,86,216,.6);outline-offset:3px;cursor:text}body.edit-mode [contenteditable="true"]:focus{outline:3px solid var(--blue);background:rgba(255,255,255,.72)}body.edit-mode .slides img{cursor:default}
+    @media(max-width:800px){body{overflow:hidden}.reveal{font-size:26px}.reveal .slides section{padding:44px 62px 38px}.reveal .slides section>*{max-width:78%}.source{left:63px;right:auto;width:72%}.takeaway{right:auto;width:72%}.grid3,.grid4{grid-template-columns:repeat(3,minmax(0,1fr))}.signal{grid-template-columns:58px 170px 1fr}.visual{max-width:100%}}
+  </style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+  <section class="cover">
+    <div class="folio"></div><div class="kicker">Weekly intelligence brief / issue 37</div>
+    <h1>本周 AI<br>进展周报</h1><div class="rule"></div>
+    <p class="lede">Agent 从“会调用工具”进入<strong>托管运行时</strong>；模型内部的空间与推理表征开始被<strong>读取、操纵与攻击</strong>；性能竞争进一步转向单位结果成本。</p>
+    <div class="date">2026.09.06 — 09.12</div><div class="bands"><span></span><span></span><span></span></div>
+    <div class="hint">方向键翻页 · 点击图片放大 · E 编辑 · F 全屏 · O 总览</div>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Executive scan</div>
+    <h2>本周三条主线：<br>智能正在变成一套可运营的系统</h2>
+    <div class="grid3">
+      <div class="card acid"><div class="no">SHIFT 01</div><h3>运行时成为产品</h3><p>OpenAI 把 Agent 循环、会话、压缩与恢复托管化；Anthropic 把 Prompt、Skills、工具与 Harness 做成生产配方。</p></div>
+      <div class="card ink"><div class="no">SHIFT 02</div><h3>内部状态变成接口</h3><p>S-Space 可读取并干预空间坐标；加密推理块却能被跨会话重放，能力接口与攻击面同时扩大。</p></div>
+      <div class="card"><div class="no">SHIFT 03</div><h3>成本向“结果”结算</h3><p>KV Cache、单任务轮次、并发 Agent、少步生成与多卡推理共同决定完成一件事要花多久、多少钱。</p></div>
+    </div>
+    <div class="quote">本周真正的变量，不再只是“模型分数多了几分”，而是模型如何被运行、验证、压缩，以及能否安全地嵌入生产系统。</div>
+    <div class="takeaway"><b>核心判断</b><span>2026 年的竞争单位正从单次调用，转向可恢复的任务、可审计的状态与可复现的单位结果成本。</span></div>
+  </section>
+
+  <section class="dense">
+    <div class="folio"></div><div class="kicker">Frontier companies / weekly scan</div>
+    <h2>前沿公司：运行时、科研基础设施与开发工具并进</h2>
+    <div class="signal-list">
+      <div class="signal"><div class="n">01</div><b>OPENAI</b><span>Agents API 提供托管 Codex 运行循环；内部研究数据显示 Agent 工作日已超过人类工作日，复杂任务仍依赖人工干预。</span></div>
+      <div class="signal"><div class="n">02</div><b>ANTHROPIC</b><span>电商生产经验收敛到“单 Agent + Skills + 既有业务工具 + Harness + 快照 Eval”，优化目标转向每个完成任务的成本。</span></div>
+      <div class="signal"><div class="n">03</div><b>GOOGLE DEEPMIND</b><span>AlphaGenome Atlas 把公司披露的约 90 亿种单碱基变异预测组织成可搜索数据库，科研模型开始沉淀为公共数据基础设施。</span></div>
+      <div class="signal"><div class="n">04</div><b>MICROSOFT</b><span>开源 tgrep，用本地 trigram 索引减少大仓库重复扫描；报道口径最高约 52 倍，并已用于 GitHub Copilot CLI。</span></div>
+    </div>
+    <div class="metric-row four"><div class="metric"><b>Agent API</b><span>托管会话与循环</span></div><div class="metric"><b>3.1×</b><span>Agent / 人类研究日</span></div><div class="metric"><b>≈1 PB</b><span>AlphaGenome 数据规模</span></div><div class="metric"><b>≈52×</b><span>tgrep 报道峰值加速</span></div></div>
+    <p class="source"><a href="https://openai.com/index/introducing-the-agents-api/">OpenAI</a> · <a href="https://claude.com/blog/the-anatomy-of-effective-commerce-agents">Claude Blog</a> · <a href="https://x.com/googledeepmind/status/2097325048109384166">Google DeepMind</a> · <a href="https://mp.weixin.qq.com/s/tct_TRhUW4zWNylBoKtixA">tgrep 报道</a>。数字按各来源披露。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">OpenAI / Agents API</div>
+    <h2>把 Codex 式循环托管出去，<br>但执行环境仍是产品责任</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/openai-agents-1.png" alt="OpenAI Agents API 从任务到会话、模型与工具的托管循环"><div class="caption">公开架构图：任务进入托管会话，模型与工具循环持续运行并返回结果</div></div>
+      <div>
+        <div class="arch-stack"><div class="arch-row"><b>HOSTED</b><span>模型—工具循环、会话状态、上下文压缩与恢复</span></div><div class="arch-row"><b>YOUR APP</b><span>环境资源、网络连接、重连、关闭与持久文件</span></div><div class="arch-row"><b>FEEDBACK</b><span>用户拿到结果后继续追问，沿同一任务历史迭代</span></div></div>
+        <p class="small"><strong>可观察闭环：</strong>用户给目标 → 托管 Agent 规划并调用工具 → 外部执行环境返回观察 → 会话继续压缩与恢复 → 产品交付结果。</p>
+        <p class="small"><strong>没有被证明的部分：</strong>托管运行时不等于托管你的数据生命周期，也不自动解决工具权限、文件留存与错误恢复。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://openai.com/index/introducing-the-agents-api/">OpenAI 官方发布</a> · <a href="https://developers.openai.com/api/docs/guides/agents-api/architecture">官方架构文档</a> · <a href="https://mp.weixin.qq.com/s/MlV92tRKoMTA1CVpY7RHwQ">AINLP 中文解读</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">OpenAI / research acceleration</div>
+    <h2>AI 研究进入高并发：<br>3.1 个 Agent 工作日对应 1 个人类工作日</h2>
+    <div class="split reverse">
+      <div>
+        <div class="grid2"><div class="card acid"><div class="big-number">$600+</div><div class="metric-label">中位数研究员每日推理资源 · API 标价折算</div></div><div class="card ink"><div class="big-number">$7,000+</div><div class="metric-label">P90 研究员每日推理资源 · 同口径</div></div></div>
+        <p class="small"><strong>证据：</strong>公司内部数据称，2026 年 6 月后 Agent 总运行时长超过人类劳动；代码与实验量同时上升。</p>
+        <p class="small"><strong>限制：</strong>预计需人类 4—8 小时的任务，成功案例中超过一半仍至少有 1 次人工介入；这不是无人自治。</p>
+      </div>
+      <div class="media-grid"><div><img class="visual short" src="assets/openai-research-3.png" alt="OpenAI 研究部门 Agent 工作日增长曲线"><div class="caption">Agent 工作日相对人类研究日持续上升</div></div><div><img class="visual short" src="assets/openai-research-11.png" alt="不同任务时长的完成与人工介入比例"><div class="caption">任务越长，人工介入比例越高</div></div></div>
+    </div>
+    <div class="takeaway"><b>为何重要</b><span>研发速度开始取决于并发编排、实验基础设施与验证带宽，而不只是单个研究员写代码的速度。</span></div>
+    <p class="source"><a href="https://openai.com/index/research-acceleration-view-inside-openai/">OpenAI 官方内部观察</a> · <a href="https://mp.weixin.qq.com/s/NjCOtCiK62_9MiGQzlx9LA">AINLP 译文</a>。全部数字为公司披露，并非外部审计。</p>
+  </section>
+
+  <section class="dense">
+    <div class="folio"></div><div class="kicker">Anthropic / production agents</div>
+    <h2>生产 Agent 的收敛配方：<br>一个主循环，Skills 管长尾，Harness 管边界</h2>
+    <div class="split equal">
+      <div><img class="visual short" src="assets/anthropic-agent-4.jpg" alt="Anthropic 电商 Agent 中 Prompt 与 Skills 的分层"><div class="caption">高频共性进 Prompt，垂直长尾按需加载为 Skills</div><img class="visual mini" src="assets/anthropic-agent-8.jpg" alt="Anthropic Agent 的分段缓存结构"><div class="caption">稳定前缀优先命中缓存，避免每轮重算整段上下文</div></div>
+      <div>
+        <div class="arch-stack"><div class="arch-row"><b>PROMPT</b><span>覆盖至少约 1/3 流量的共性语义，以及安全、法务、品牌约束</span></div><div class="arch-row"><b>SKILLS</b><span>按需加载购买指南、退换货、旅行或电信等长尾知识</span></div><div class="arch-row"><b>TOOLS</b><span>调用既有搜索、库存、购物车与促销系统，不在模型里重造业务逻辑</span></div><div class="arch-row"><b>HARNESS</b><span>maker-checker、敏感内容消毒、快照 Eval 与恢复规则</span></div></div>
+        <p class="small"><strong>经济性：</strong>比较“每个完成任务的成本”，而非单次调用价格；延迟由轮次、工具耗时与 token 速度共同决定。</p>
+        <p class="small"><strong>边界：</strong>这是 Anthropic 与客户的工程总结，不是所有业务都天然适合单 Agent。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://claude.com/blog/the-anatomy-of-effective-commerce-agents">Claude Blog 官方文章</a> · <a href="https://github.com/anthropics/commerce-agents/tree/main">示例仓库</a> · <a href="https://mp.weixin.qq.com/s/W8LAP0vPqeBnB6C9qjnV2g">PaperAgent 解析</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Google DeepMind / scientific infrastructure</div>
+    <h2>AlphaGenome Atlas：<br>模型输出沉淀成可检索的生命科学底图</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/alphagenome-13.png" alt="AlphaGenome Atlas 浏览器检索与位点预测演示"><div class="caption">官方演示截图：浏览器中检索基因组位点并查看预测轨道</div></div>
+      <div>
+        <div class="grid2"><div class="card acid"><div class="big-number">≈9B</div><div class="metric-label">单碱基变异组合</div></div><div class="card"><div class="big-number">≈27K</div><div class="metric-label">每种变异的预测指标</div></div><div class="card ink"><div class="big-number">240T+</div><div class="metric-label">预测数值总量</div></div><div class="card red"><div class="big-number">≈1 PB</div><div class="metric-label">披露数据规模</div></div></div>
+        <p class="small"><strong>产品变化：</strong>过去需要按课题逐次运行模型，现在先把全局预测批量计算，再让研究者按位点与细胞类型查询。</p>
+        <p class="small"><strong>边界：</strong>预测数据库是筛选与假设生成工具，不能替代湿实验与临床验证；规模数字为公司与报道口径。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://x.com/googledeepmind/status/2097325048109384166">Google DeepMind 公告信号</a> · <a href="https://mp.weixin.qq.com/s/P1MtqQ15A8p4KNTH1ARiyw">新智元完整报道与演示图</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Domestic open model / DeepSeek</div>
+    <h2>DeepSeek V4.1 Flash：<br>非对称计算，把 KV Cache 压到系统级变量</h2>
+    <div class="split">
+      <div><img class="visual short" src="assets/deepseek-5.png" alt="DeepSeek V4.1 Flash Causal Encoder Decoder 总体架构"><div class="caption">技术报告原图：前 20 层因果编码器与后 20 层解码器分工</div><img class="visual mini" src="assets/deepseek-3.png" alt="DeepSeek 历代模型每 token KV Cache 字节数对比"><div class="caption">报告对比：历代全局 KV Cache 每 token 字节数持续下降</div></div>
+      <div>
+        <div class="metric-row"><div class="metric"><b>552B</b><span>MoE 总参数</span></div><div class="metric"><b>8B / 16B</b><span>输入 / 输出激活</span></div><div class="metric"><b>FP4</b><span>主 KV Cache</span></div></div>
+        <div class="flow"><div class="step">Prompt<br>Encoder</div><div class="arrow">→</div><div class="step hot">共享 / 重索引<br>全局 KV</div><div class="arrow">→</div><div class="step">Decode<br>逐 token</div></div>
+        <p class="small"><strong>报告口径：</strong>缓存相关 HBM 需求降至上一代的 1/4，SSD 需求降至 1/8；这不等于整模型显存直接降到四分之一。</p>
+        <p class="small"><strong>工程取舍：</strong>SWA KV 保留 FP8，主 KV 采用 FP4；有界回放和分层存储把持久化成本与短时缓存分开。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/blob/main/DeepSeek_V41_Tech_Report.pdf">DeepSeek 技术报告</a> · <a href="https://mp.weixin.qq.com/s/-a3MXvHw4PtZNlfNjMtaig">量子位解析</a>。规格与缓存比例按报告口径。</p>
+  </section>
+
+  <section class="dense">
+    <div class="folio"></div><div class="kicker">Domestic open model / InclusionAI</div>
+    <h2>LLaDA-Image：先学会画，再用文本完成对齐</h2>
+    <div class="split reverse">
+      <div>
+        <div class="metric-row"><div class="metric"><b>6B</b><span>核心 DiT 参数</span></div><div class="metric"><b>90%+</b><span>累计生成训练样本为纯图片监督</span></div><div class="metric"><b>2—4</b><span>Turbo 采样步数</span></div></div>
+        <p class="small"><strong>方法：</strong>纯图片预训练 / 中期训练建立视觉先验；后续用图文对做语言对齐，再联合训练生成与编辑，最后用 TwinFlow 蒸馏。</p>
+        <p class="small"><strong>证据：</strong>技术报告给出 Qwen-Image-Bench 英文 53.53、中文 53.38，在其列出的开源模型中双榜第一。</p>
+        <p class="small"><strong>限制：</strong>领先口径绑定特定基准与标准推理设置；计数、长文本和多区域排版仍是后续方向。</p>
+      </div>
+      <div><img class="visual short" src="assets/llada-13.png" alt="LLaDA-Image 模型主体与训练流程"><div class="caption">技术报告原图：理解骨干、连接器与 DiT 生成器组成统一系统</div><div class="media-grid"><div class="media-tile"><img src="assets/llada-14.png" alt="LLaDA-Image 指令编辑前的真人图"><span>INPUT</span></div><div class="media-tile"><img src="assets/llada-15.png" alt="LLaDA-Image 吉卜力风格编辑结果"><span>EDIT</span></div></div></div>
+    </div>
+    <p class="source"><a href="https://arxiv.org/pdf/2609.03796">LLaDA-Image 论文</a> · <a href="https://huggingface.co/collections/inclusionAI/llada-image">模型集合</a> · <a href="https://mp.weixin.qq.com/s/6vfgiKelrm5IxWujwNiHew">机器之心解读与原图</a></p>
+  </section>
+
+  <section class="chapter" id="paper-divider">
+    <div class="folio"></div><div class="kicker">Three deliberately selected deep reads</div>
+    <h2>本周论文精读</h2><div class="rule"></div>
+    <p>S-Space 追问模型把“空间”存在哪里；Stolen Thoughts 追问隐藏推理能否被窃取；Action Map Policy 追问连续动作能否转写成分类问题。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Paper deep read 01 / spatial workspace</div>
+    <h2>S-Space：模型内部真的存在<br>“左 / 上 / 远”三条空间轴</h2>
+    <div class="split equal">
+      <div><img class="visual" src="assets/sspace-3.png" alt="S-Space 的物理三维空间、内部激活空间与线性空间轴"><div class="caption">技术报告机制图：对象 token 在水平、垂直、距离方向上形成可线性读出的坐标</div></div>
+      <div>
+        <div class="arch-stack"><div class="arch-row"><b>问题</b><span>空间问答正确，究竟来自语言模式，还是模型内部真的维护了坐标？</span></div><div class="arch-row"><b>方法</b><span>从对象 token 激活中寻找低维线性子空间，跨数据集与提示读取连续坐标</span></div><div class="arch-row"><b>因果检验</b><span>沿轴移动激活：左变右、上变下、近变远；颜色等无关判断基本保持</span></div><div class="arch-row"><b>意义</b><span>“感知到位置”与“正确计算坐标变换”可以被分开诊断</span></div></div>
+        <p class="small"><strong>更意外的结果：</strong>画外足球、观察者自身，甚至带有“左 / 右”隐喻的抽象概念，也会投影到同一空间几何中。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://mirros.ai/report/s-space.pdf">MirroS 技术报告</a> · <a href="https://github.com/MirroS-Lab/S-Space">代码</a> · <a href="https://mp.weixin.qq.com/s/gHkDFBsw0tfTUwsK7UfmDA">机器之心解读</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Paper deep read 01 / evidence &amp; limits</div>
+    <h2>模型知道“物体在哪”，<br>却未必转得好内部坐标系</h2>
+    <div class="split">
+      <div><img class="visual short" src="assets/sspace-6.png" alt="S-Space 中参照系混淆与视角转换问题"><div class="caption">原报告：基本方位与图像相对方向发生耦合，导致参照系误用</div><img class="visual mini" src="assets/sspace-7.png" alt="S-Space 视角变换的直接回答、思维链与显式计算对比"><div class="caption">原报告：读取坐标并外部旋转，优于模型直接生成与思维链</div></div>
+      <div>
+        <div class="bars"><div class="bar-row"><span class="label">直接回答</span><span class="bar"><i style="width:61%"></i></span><span class="value">60.96%</span></div><div class="bar-row"><span class="label">Chain-of-thought</span><span class="bar"><i style="width:84%"></i></span><span class="value">83.56%</span></div><div class="bar-row"><span class="label">S-Space + 外部旋转</span><span class="bar"><i style="width:95%"></i></span><span class="value">≈95%</span></div></div>
+        <p class="small"><strong>证据：</strong>SpinBench 视角转换中，显式读取内部坐标，再用固定旋转矩阵与确定规则作答，显著优于原生生成。</p>
+        <p class="small"><strong>局限：</strong>低维空间同时承载物理方向和语言隐喻，可能缠绕参照系；探针可读不等于所有模型都稳定使用。</p>
+        <p class="small"><strong>本周意义：</strong>下一代空间 Agent 可能需要把模型内表征交给外部几何工具，而不是要求语言推理独自完成全部变换。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://mirros.ai/report/s-space.pdf">MirroS Technical Report · Fig. 13–14</a>。图中约 95% 为跨模型结果的演示性概括；具体模型与数值以原表为准。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Paper deep read 02 / reasoning security</div>
+    <h2>Stolen Thoughts：<br>“加密思维链”可被同厂商弱模型还原</h2>
+    <div class="split reverse">
+      <div>
+        <div class="flow"><div class="step">强模型生成<br>加密推理块</div><div class="arrow">→</div><div class="step hot">跨会话重放给<br>弱模型</div><div class="arrow">→</div><div class="step">越狱后输出<br>明文推理</div></div>
+        <div class="metric-row"><div class="metric"><b>6,708</b><span>公开 Agent 轨迹</span></div><div class="metric"><b>315,320</b><span>重建推理块</span></div><div class="metric"><b>704</b><span>去重隐私材料</span></div></div>
+        <p class="small"><strong>问题：</strong>厂商返回给客户端的签名 / 加密推理块，本来用于延续会话，却能在同一厂商的其他会话、用户与模型间重放。</p>
+        <p class="small"><strong>局限：</strong>攻击依赖推理块可移植、同厂商弱模型可被越狱；修复可以通过绑定会话 / 用户 / 模型与服务端状态来收紧。</p>
+      </div>
+      <div><img class="visual" src="assets/stolen-extraction-fidelity.svg" alt="Anthropic OpenAI Google 三家模型的隐藏推理 token 与解码 token 一致性散点图"><div class="caption">项目官方图：三家模型中，解码后 token 数与 API 报告的隐藏推理 token 紧贴 y=x</div></div>
+    </div>
+    <p class="source"><a href="https://stolen-thoughts.com/">官方项目页</a> · <a href="https://arxiv.org/abs/2608.09867">论文</a> · <a href="https://mp.weixin.qq.com/s/px2bGiL0wwfi1NOHO3ux9g">中文报道</a>。隐私材料只展示统计，不展示任何凭据内容。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Paper deep read 03 / robot policy</div>
+    <h2>Action Map Policy：<br>把高维动作回归改写成像素分类</h2>
+    <div class="split equal">
+      <div><img class="visual short" src="assets/action-map-1.png" alt="回归、扩散与 Action Map Policy 三种策略学习框架对比"><div class="caption">原论文 Fig.1：回归给单解，扩散迭代采样，AMP 输出像素概率图</div><img class="visual mini" src="assets/action-map-3.png" alt="Action Map Policy 的多视角 X-Net 与热力图解码架构"><div class="caption">原论文 Fig.2：多视角图像编码、跨视角通信，再解码为关键点 heatmap</div></div>
+      <div>
+        <div class="arch-stack"><div class="arch-row"><b>问题</b><span>6 维动作每维只分 10 档，联合空间已经是 10⁶；连续回归又难表达多峰动作</span></div><div class="arch-row"><b>表示</b><span>把 orientation + translation 变成 3D 关键点轨迹，再投影到相机平面</span></div><div class="arch-row"><b>学习</b><span>对每个时刻、每个关键点预测像素概率分布，用交叉熵端到端训练</span></div><div class="arch-row"><b>执行</b><span>多视角 heatmap 取峰值，经相机标定与三角测量恢复 3D 动作</span></div></div>
+        <p class="small"><strong>为什么有效：</strong>输入与输出都在 image space，多模态选择由概率图自然表达；一次前向即可获得整段动作候选。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://haojhuang.github.io/amp_page/">官方项目页</a> · <a href="https://arxiv.org/abs/2607.10706">论文</a> · <a href="https://mp.weixin.qq.com/s/h05elhMfbmVewWxKeCFEFA">机器之心解读</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Paper deep read 03 / evidence &amp; limits</div>
+    <h2>从“会抓”到“闭环做早餐”：<br>速度、精度与长任务一起验证</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/action-map-4.png" alt="Action Map Policy 与 Diffusion Policy、ACT 在咖啡、烤面包和蒸鸡蛋任务中的速度与成功率对比表"><div class="caption">原论文真机结果表：三项早餐任务的速度与分阶段成功率；完整条件以论文为准</div></div>
+      <div>
+        <div class="grid2"><div class="card acid"><div class="big-number">13.80 ms</div><div class="metric-label">AMP 单次推理</div></div><div class="card"><div class="big-number">93.53 ms</div><div class="metric-label">DiffPo · 16 步 DDIM</div></div><div class="card ink"><div class="big-number">≈1 mm</div><div class="metric-label">224×224 下位置重建误差</div></div><div class="card red"><div class="big-number">+50—70%</div><div class="metric-label">三项真机任务成功率提升 · 论文口径</div></div></div>
+        <p class="small"><strong>证据：</strong>咖啡、烤面包、蒸鸡蛋都包含多步状态与狭窄空间操作；细粒度激光指向实验中 AMP 报告 100% 成功率。</p>
+        <p class="small"><strong>局限：</strong>需要多相机标定与三角测量；结果来自作者设置，跨本体、遮挡、动态相机与更开放场景仍需复现。</p>
+        <p class="small"><strong>本周意义：</strong>机器人策略的 Scaling 未必只能复制语言 token；先找到可分类、可组合的动作表示，可能更关键。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://haojhuang.github.io/amp_page/">Action Map Policy 项目</a> · <a href="https://arxiv.org/abs/2607.10706">论文</a>。全部性能数字为作者报告。</p>
+  </section>
+
+  <section class="chapter">
+    <div class="folio"></div><div class="kicker">From internal mechanisms to usable products</div>
+    <h2>能力如何进入工作流</h2><div class="rule"></div>
+    <p>前一章回答“模型内部怎样表示、怎样失守”；下一章看这些能力如何通过编辑界面、推理加速与产业土壤变成真实供给。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Generative media / editable images</div>
+    <h2>Images 2.5：生成不再是终点，<br>编辑反馈环才是产品</h2>
+    <div class="split equal">
+      <div><img class="visual short covered" src="assets/openai-images-4.gif" alt="Images 2.5 对人物服装进行局部修改的前后对比动图"><div class="caption">公开演示：指定局部修改，同时尽量保持主体、构图和风格</div><div class="media-grid"><div class="media-tile"><img src="assets/openai-images-20.png" alt="用户手绘笔记本与钢笔草图"><span>SKETCH</span></div><div class="media-tile"><img src="assets/openai-images-21.png" alt="Images 2.5 根据草图生成的笔记本与钢笔"><span>RESULT</span></div></div></div>
+      <div>
+        <div class="flow"><div class="step">图片 / 草图<br>+ 指令</div><div class="arrow">→</div><div class="step hot">局部生成<br>保留上下文</div><div class="arrow">→</div><div class="step">用户评论<br>再次修改</div></div>
+        <p class="small"><strong>确认能力：</strong>精确编辑、多轮一致性、Sketch 视觉输入与图片内评论式修改；公司称 API 端延迟最多降低 50%。</p>
+        <p class="small"><strong>实际变化：</strong>难以用文字描述的布局，可以先画出来；图像模型从“一次性出图”变成持续吸收视觉反馈的编辑器。</p>
+        <p class="small"><strong>边界：</strong>公开样例仍有噪点与细节错误；“保持一致”是相对改善，不是像素级保证。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://mp.weixin.qq.com/s/LnUELzf0IyALtS4sCoEolw">APPSO 完整体验与原始演示</a> · <a href="https://mp.weixin.qq.com/s/37bo6MT5K2tfCZjVtA3eWQ">规模披露</a>。性能与生成量按公司 / 报道口径。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Generative media / inference engineering</div>
+    <h2>H3 Lightning：开源权重之后，<br>真正的门槛是创作等待时间</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/h3-lightning-2.gif" alt="RunningHub 使用 H3 Lightning 生成 15 秒短剧的过程与结果"><div class="caption">媒体实测动图：15 秒短剧约 54 秒生成；画面经倍速展示</div></div>
+      <div>
+        <div class="grid2"><div class="card"><div class="big-number">348.8 s</div><div class="metric-label">基础方案 · 5 秒视频</div></div><div class="card acid"><div class="big-number">28.7 s</div><div class="metric-label">H3 Lightning · 项目方测试</div></div><div class="card ink"><div class="big-number">≈12×</div><div class="metric-label">推理速度提升</div></div><div class="card red"><div class="big-number">−92%</div><div class="metric-label">等待时间</div></div></div>
+        <p class="small"><strong>机制：</strong>多 GPU 并行、算子与编译优化，把开放模型接入更短的试错循环。</p>
+        <p class="small"><strong>口径：</strong>5 秒对照测试使用 4 张 RTX 6000D；媒体 15 秒实测和项目方对照不是同一实验，不能直接横比。</p>
+        <p class="small"><strong>产品含义：</strong>创作者是否愿意多试五次，往往比一次 benchmark 的 Elo 更接近商业价值。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://github.com/RH-RunningHub/MiniMax-H3-MultiGPU-Lightning">开源项目</a> · <a href="https://mp.weixin.qq.com/s/_LoP2CgrMlzSLheRxNBomA">智东西测试与原视频</a>。速度数字按对应硬件与测试口径。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Industry structure / article deep read</div>
+    <h2>中美 AI 不是同一张地图：<br>软件密度与物理经济塑造不同生态</h2>
+    <div class="split reverse">
+      <div>
+        <div class="grid2"><div class="card acid"><div class="big-number">743</div><div class="metric-label">美国样本公司</div></div><div class="card"><div class="big-number">438</div><div class="metric-label">中国样本公司</div></div></div>
+        <p class="small"><strong>美国：</strong>更多公司服务医疗、生命科学、科研与网络安全——高价知识劳动与成熟企业软件市场提供了回报。</p>
+        <p class="small"><strong>中国：</strong>制造、交通、能源和具身组合更宽——产业链、机器人装机与物理场景提供了不同训练场。</p>
+        <p class="small"><strong>限制：</strong>样本筛选、公司归类与母体公司识别会显著改变比例；这是结构性观察，不是国家能力总分。</p>
+      </div>
+      <div><img class="visual short" src="assets/rand-7.png" alt="美国与中国 AI 公司行业分布对比图"><div class="caption">报告转述图：美国更多集中于纯软件，中国在实体产业类别占比更高</div><img class="visual mini" src="assets/rand-8.png" alt="美国与中国 AI 公司细分行业数量对比"><div class="caption">细分行业数量揭示两套生态对不同高价值问题的选择</div></div>
+    </div>
+    <div class="takeaway"><b>为什么重要</b><span>如果更强智能必须依赖世界模型、机器人与物理交互，中国组合是一种对冲；如果智能主要通过软件交付，这套对冲也会更昂贵。</span></div>
+    <p class="source"><a href="https://mp.weixin.qq.com/s/Bv1w-1DuWlKdJVN6JcN1rQ">虎嗅对 RAND 数据集与报告的长文解读</a>。比例与样本量按该研究转述，未把媒体解读升级为独立验证事实。</p>
+  </section>
+
+  <section class="dense">
+    <div class="folio"></div><div class="kicker">Commercialization / unit economics</div>
+    <h2>商业化的新矛盾：需求越强，配额、推理成本与交付责任越重</h2>
+    <div class="grid3">
+      <div class="card red"><div class="no">CAPACITY</div><h3>订阅也会遇到供给约束</h3><p>媒体称 OpenAI 停止新增 Pro 20X 订阅；高强度使用者可能迅速穿透固定订阅的毛利安全垫。</p></div>
+      <div class="card acid"><div class="no">ENTERPRISE</div><h3>大客户价值上升</h3><p>Anthropic 面向单一超级客户招聘高薪销售，说明模型消费正进入需要采购、合规与长期服务的企业合同。</p></div>
+      <div class="card ink"><div class="no">INFRASTRUCTURE</div><h3>模型利润来自系统工程</h3><p>DeepSeek 压缓存、RunningHub 压等待、Anthropic 压轮次：利润空间由硬件、缓存、工具与完成率共同决定。</p></div>
+    </div>
+    <div class="matrix"><b class="head">计价层</b><b class="head">今天常见指标</b><b class="head">更接近真实价值</b><b class="head">主要风险</b><b>模型</b><span>$/M token</span><span>每个可接受答案成本</span><span>长上下文与高思考档</span><b>Agent</b><span>每次调用 / 配额</span><span class="hot">每个完成任务成本</span><span>重试、人工介入、权限</span><b>产品</b><span>月订阅 / 席位</span><span>留存、转化、节省工时</span><span>供给波动与责任边界</span></div>
+    <p class="source"><a href="https://mp.weixin.qq.com/s/3a4XdRaZxpOnDOq9DL2QcA">OpenAI 订阅报道</a> · <a href="https://mp.weixin.qq.com/s/heNKavi56U2pMNNFhnV4MA">Anthropic 企业销售报道</a> · 本周各公司 / 项目技术材料。订阅与薪酬为媒体披露。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Synthesis</div>
+    <h2>本周结论：能力曲线正在被四层系统重新定义</h2>
+    <div class="matrix"><b class="head">层级</b><b class="head">本周信号</b><b class="head">决定性问题</b><b class="head">可验证指标</b><b>模型</b><span>DeepSeek CED、LLaDA 纯图训练</span><span>同等任务需要多少激活、缓存与采样步？</span><span>质量 × 延迟 × 显存</span><b>表征</b><span>S-Space、加密推理块</span><span>内部状态能否读、算、隔离和授权？</span><span>因果干预、泄露面</span><b>运行时</b><span>Agents API、单 Agent + Skills</span><span>长任务如何压缩、恢复、调用与验证？</span><span class="hot">完成率、介入率、恢复率</span><b>产业</b><span>AlphaGenome、H3 Lightning、实体经济</span><span>谁拥有数据、场景、工具链与分发？</span><span>单位结果成本、留存</span></div>
+    <div class="quote">模型仍是上限，但“把模型变成可靠结果”的工程，正在吞下越来越多的价值。</div>
+    <div class="takeaway"><b>行动建议</b><span>评估一个新模型时，至少同步记录任务完成率、人工介入、缓存 / 显存、恢复行为与端到端耗时，而不是只看榜单分数。</span></div>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">What to watch next</div>
+    <h2>下周观察：四个可证伪信号</h2>
+    <div class="grid2">
+      <div class="card acid"><div class="no">WATCH 01</div><h3>托管 Agent 的故障边界</h3><p>Agents API 在重连、权限撤销、文件持久化和长任务恢复上，能否给出公开可复现的失败语义？</p></div>
+      <div class="card"><div class="no">WATCH 02</div><h3>推理块是否绑定上下文</h3><p>主流厂商是否把加密推理块绑定到用户、会话、模型或服务端状态，并公布迁移影响？</p></div>
+      <div class="card ink"><div class="no">WATCH 03</div><h3>国产模型的系统复现</h3><p>DeepSeek 的缓存节省与 LLaDA 的少步生成，能否在不同硬件、上下文和质量门槛下稳定复现？</p></div>
+      <div class="card red"><div class="no">WATCH 04</div><h3>具身策略跨环境扩展</h3><p>AMP 的像素动作表示能否跨本体、动态相机与遮挡泛化，同时保持毫米级精度与实时闭环？</p></div>
+    </div>
+    <div class="takeaway"><b>验证方式</b><span>优先找官方修复说明、公开 benchmark 配置、第三方复现和真实任务失败样本；下周用同一套指标更新判断。</span></div>
+    <p class="source">本页为编辑部观察清单，不是对未来结果的预测。</p>
+  </section>
+
+</div></div>
+
+<div id="image-lightbox" hidden role="dialog" aria-modal="true" aria-label="图片放大预览">
+  <button id="lightbox-close" type="button" aria-label="关闭图片预览">×</button>
+  <img id="lightbox-image" alt=""><div id="lightbox-caption"></div>
+</div>
+<div id="edit-toolbar" hidden role="toolbar" aria-label="幻灯片编辑工具">
+  <span id="edit-status">点击文字直接修改</span><button id="save-edits" type="button">保存到浏览器</button><button id="reset-edits" type="button">还原</button><button id="exit-edit" type="button">完成</button>
+</div>
+
+<script src="assets/reveal.js"></script>
+<script>
+  const deckSections = [...document.querySelectorAll('.slides > section')];
+  deckSections.forEach((section, index) => { const folio = section.querySelector('.folio'); if (folio) folio.textContent = `${String(index + 1).padStart(2, '0')} / ${deckSections.length}`; });
+  Reveal.initialize({hash:true,controls:true,progress:true,center:false,slideNumber:false,transition:'slide',backgroundTransition:'fade',width:1280,height:720,margin:.02});
+
+  const lightbox = document.querySelector('#image-lightbox');
+  const lightboxImage = document.querySelector('#lightbox-image');
+  const lightboxCaption = document.querySelector('#lightbox-caption');
+  const closeLightbox = () => { lightbox.hidden = true; lightbox.classList.remove('zoomed'); lightboxImage.removeAttribute('src'); };
+  document.querySelectorAll('.slides img').forEach(img => img.addEventListener('click', event => {
+    if (document.body.classList.contains('edit-mode')) return;
+    event.preventDefault(); event.stopPropagation(); lightboxImage.src = img.currentSrc || img.src; lightboxImage.alt = img.alt || '幻灯片图片'; lightboxCaption.textContent = img.alt || '点击图片可切换原始尺寸，Esc 关闭'; lightbox.hidden = false;
+  }));
+  lightboxImage.addEventListener('click', event => { event.stopPropagation(); lightbox.classList.toggle('zoomed'); });
+  lightbox.addEventListener('click', event => { if (event.target === lightbox) closeLightbox(); });
+  document.querySelector('#lightbox-close').addEventListener('click', closeLightbox);
+
+  const editStorageKey = 'weekly-ai-260912-browser-edits-v1';
+  const editToolbar = document.querySelector('#edit-toolbar'); const editStatus = document.querySelector('#edit-status');
+  const editableSelector = ['h1','h2','h3','p:not(.source)', '.kicker','.date','.no','.big-number','.metric-label','.caption','.takeaway span','.trust span','.signal span:last-child','.arch-row span','.step','.matrix span','.matrix b','.bar-row .label','.bar-row .value'].join(',');
+  const editableNodes = [...document.querySelectorAll(`.slides ${editableSelector}`)];
+  editableNodes.forEach((node,index) => { node.dataset.editKey=String(index); node.dataset.originalHtml=node.innerHTML; });
+  const readEdits = () => { try { return JSON.parse(localStorage.getItem(editStorageKey) || '{}'); } catch (_) { return {}; } };
+  const restoreEdits = () => { const saved=readEdits(); editableNodes.forEach(node => { if (Object.prototype.hasOwnProperty.call(saved,node.dataset.editKey)) node.innerHTML=saved[node.dataset.editKey]; }); };
+  const saveEdits = () => { const changes={}; editableNodes.forEach(node => { if(node.innerHTML!==node.dataset.originalHtml) changes[node.dataset.editKey]=node.innerHTML; }); try { localStorage.setItem(editStorageKey,JSON.stringify(changes)); editStatus.textContent=`已保存 ${Object.keys(changes).length} 处修改`; } catch (_) { editStatus.textContent='保存失败：浏览器未开放本地存储'; } };
+  const setEditMode = enabled => { document.body.classList.toggle('edit-mode',enabled); editToolbar.hidden=!enabled; editableNodes.forEach(node => { node.contentEditable=enabled?'true':'false'; }); if(window.Reveal) Reveal.configure({keyboard:!enabled}); };
+  restoreEdits();
+  document.querySelector('#save-edits').addEventListener('click',saveEdits); document.querySelector('#exit-edit').addEventListener('click',()=>setEditMode(false));
+  document.querySelector('#reset-edits').addEventListener('click',()=>{ localStorage.removeItem(editStorageKey); editableNodes.forEach(node=>{node.innerHTML=node.dataset.originalHtml;}); editStatus.textContent='已还原'; });
+  document.addEventListener('keydown',event => { const editing=document.body.classList.contains('edit-mode'); if(event.key==='Escape'&&!lightbox.hidden){closeLightbox();event.preventDefault();return;} if((event.metaKey||event.ctrlKey)&&event.key.toLowerCase()==='s'&&editing){saveEdits();event.preventDefault();return;} if(event.key.toLowerCase()==='e'&&!event.metaKey&&!event.ctrlKey&&!event.altKey&&!event.target.isContentEditable){setEditMode(!editing);event.preventDefault();return;} if(editing&&event.target.isContentEditable) event.stopPropagation(); },true);
+</script>
+</body>
+</html>

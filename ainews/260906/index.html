@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026.08.30-09.05 AI 进展周报网页演示">
+  <title>AI 进展周报 | 2026.08.30-09.05</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <style>
+    :root{--paper:#f3f0e8;--ink:#151713;--muted:#65675f;--line:rgba(21,23,19,.18);--acid:#c6f43d;--red:#f0442e;--blue:#1b56d8;--sand:#d5c8ad;--serif:"Noto Serif SC","Songti SC",serif;--mono:"IBM Plex Mono","PingFang SC",monospace}
+    *{box-sizing:border-box} body{background:var(--paper)} .reveal{color:var(--ink);font-family:var(--serif);font-size:26px}.reveal-viewport{background:var(--paper)}
+    .reveal .slides section{height:100%;padding:44px 62px 38px;text-align:left}.reveal .slides section::before{content:"";position:absolute;inset:18px;border:1px solid var(--line);pointer-events:none}
+    .reveal h1,.reveal h2,.reveal h3{color:var(--ink);font-family:var(--serif);text-transform:none}.reveal h1{font-size:3.05em;font-weight:900;line-height:1.04;letter-spacing:-.05em;margin:0}.reveal h2{font-size:1.72em;font-weight:900;line-height:1.12;letter-spacing:-.035em;margin:0 0 20px}.reveal h3{font-size:.92em;font-weight:900;margin:0 0 8px}.reveal p{line-height:1.5;margin:.45em 0}.reveal strong{color:var(--red);font-weight:900}.reveal a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+    .reveal .slide-number{display:none!important}.reveal .progress{color:var(--red);height:4px}
+    .kicker,.folio,.tag,.metric-label,.source,.eyebrow{font-family:var(--mono)}.kicker{color:var(--red);font-size:.53em;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}.folio{position:absolute;top:29px;right:34px;font-size:.45em;color:var(--muted);letter-spacing:.08em}.rule{width:76px;height:8px;background:var(--red);margin:20px 0}.lede{max-width:940px;font-size:1.05em;line-height:1.5}.muted{color:var(--muted)}.small{font-size:.72em;line-height:1.45}.tiny{font-size:.54em;line-height:1.45}.source{position:absolute;bottom:31px;left:63px;right:88px;color:var(--muted);font-size:.4em;line-height:1.4}.source a{color:var(--muted)}
+    .tag{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:4px 9px;font-size:.44em;font-weight:600;letter-spacing:.05em;margin-right:5px}.tag.red{color:var(--red)}.tag.blue{color:var(--blue)}.tag.warn{color:#8b4c00;background:#f6dfb3;border-color:#c58a30}.tag.dark{color:var(--ink)}
+    .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.split{display:grid;grid-template-columns:1.06fr .94fr;gap:28px;align-items:start}.card{border:1px solid var(--ink);padding:17px 18px;background:rgba(255,255,255,.28);min-height:134px}.card.acid{background:var(--acid)}.card.ink{background:var(--ink);color:var(--paper)}.card.ink h3,.card.ink strong{color:var(--acid)}.card.red{background:var(--red);color:#fff}.card.red h3,.card.red strong{color:#fff}.card p{font-size:.69em;margin:0;line-height:1.48}.card .no{font:600 .48em var(--mono);color:var(--muted);margin-bottom:14px}.card.ink .no,.card.red .no{color:rgba(255,255,255,.68)}.big-number{font:600 2.05em/1 var(--mono);letter-spacing:-.08em}.metric-label{font-size:.46em;color:var(--muted);margin-top:7px}.card.ink .metric-label,.card.red .metric-label{color:rgba(255,255,255,.7)}
+    .signal-list{display:grid;gap:0;border-top:1px solid var(--ink)}.signal{display:grid;grid-template-columns:58px 180px 1fr;gap:12px;align-items:center;padding:11px 6px;border-bottom:1px solid var(--line)}.signal .n{font:600 .65em var(--mono);color:var(--red)}.signal b{font-size:.72em}.signal span:last-child{display:block;font-size:.63em;line-height:1.45;color:var(--muted)}
+    .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin-top:22px}.flow .step{border:1px solid var(--ink);padding:17px 10px;text-align:center;font-size:.62em;background:rgba(255,255,255,.25)}.flow .arrow{font:600 1em var(--mono);color:var(--red)}.quote{border-left:8px solid var(--red);padding:4px 0 4px 18px;font-size:1.06em;line-height:1.5;margin:22px 0}
+    .cover::after{content:"W36";position:absolute;right:58px;bottom:41px;font:600 6.5em/1 var(--mono);color:rgba(21,23,19,.055);letter-spacing:-.12em;z-index:-1}.cover .date{font:600 .72em var(--mono);letter-spacing:.08em;margin-top:28px}.cover .bands{display:flex;gap:8px;margin-top:40px}.cover .bands span{height:12px;display:block}.cover .bands span:nth-child(1){width:31%;background:var(--red)}.cover .bands span:nth-child(2){width:19%;background:var(--acid);border:1px solid var(--ink)}.cover .bands span:nth-child(3){width:50%;background:var(--blue)}.cover .hint{position:absolute;left:63px;bottom:42px;font:.42em var(--mono);color:var(--muted)}
+    .takeaway{position:absolute;left:62px;right:62px;bottom:66px;display:grid;grid-template-columns:110px 1fr;border-top:2px solid var(--ink);padding-top:12px}.takeaway b{font:600 .46em var(--mono);color:var(--red)}.takeaway span{font-size:.62em;line-height:1.42}
+    .chapter{background:var(--ink)!important;color:var(--paper)!important}.chapter::before{border-color:rgba(243,240,232,.28)!important}.chapter h2{color:var(--paper);font-size:2.7em;margin-top:150px}.chapter .kicker{color:var(--acid)}.chapter .folio{color:rgba(243,240,232,.55)}.chapter .rule{background:var(--acid);width:180px}.chapter p{color:rgba(243,240,232,.72);max-width:800px}
+    .diagram{border:1px solid var(--ink);background:#fff;padding:16px;height:348px}.diagram-title{font:600 .48em var(--mono);color:var(--muted);margin-bottom:12px}.arch-stack{display:grid;gap:9px}.arch-row{display:grid;grid-template-columns:90px 1fr;gap:10px;align-items:center}.arch-row b{font:600 .48em var(--mono);color:var(--red)}.arch-row span{display:block;border:1px solid var(--ink);padding:10px 12px;font-size:.58em;line-height:1.35}.arch-row:nth-child(even) span{background:var(--acid)}
+    .pipeline{display:flex;align-items:stretch;gap:8px;height:270px}.pipe{flex:1;border:1px solid var(--ink);padding:16px 10px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:var(--paper)}.pipe:nth-child(3){background:var(--acid)}.pipe b{font-size:.72em}.pipe small{font:400 .43em/1.4 var(--mono);color:var(--muted);margin-top:7px}.chev{align-self:center;font:600 1.1em var(--mono);color:var(--red)}
+    .bars{margin-top:12px}.bar-row{display:grid;grid-template-columns:170px 1fr 70px;gap:10px;align-items:center;margin:11px 0}.bar-row .label{font:500 .48em var(--mono)}.bar{height:18px;border:1px solid var(--ink)}.bar i{display:block;height:100%;background:var(--red)}.bar-row:nth-child(even) .bar i{background:var(--blue)}.bar-row .value{font:600 .52em var(--mono);text-align:right}
+    .trust{display:grid;grid-template-columns:128px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}.trust:last-child{border-bottom:1px solid var(--line)}.trust b{font:600 .51em var(--mono);color:var(--red)}.trust span{font-size:.64em;line-height:1.42}.dense h2{font-size:1.5em}.dense .card{min-height:112px;padding:14px 16px}.dense .small{margin:.3em 0}
+    .visual{display:block;width:100%;height:340px;object-fit:contain;border:1px solid var(--ink);background:#fff}.visual.covered{object-fit:cover}.visual.short{height:220px}.visual.mini{height:165px}.visual.tall{height:390px}.media-video{display:block;width:100%;height:330px;object-fit:contain;border:1px solid var(--ink);background:#090b0a}.media-video.short{height:250px}.caption{margin-top:6px;color:var(--muted);font:.4em/1.4 var(--mono)}.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.media-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.media-tile{position:relative;border:1px solid var(--ink);background:#fff;overflow:hidden}.media-tile img{display:block;width:100%;height:176px;object-fit:cover}.media-tile.contain img{object-fit:contain}.media-tile span{position:absolute;left:7px;bottom:7px;padding:4px 7px;background:var(--ink);color:var(--paper);font:600 .36em var(--mono)}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.metric-row.four{grid-template-columns:repeat(4,1fr);gap:8px}.metric-row.four .metric b{font-size:1.02em}.metric{border-top:5px solid var(--red);padding:10px 8px;background:rgba(255,255,255,.28)}.metric b{display:block;font:600 1.25em/1 var(--mono);color:var(--ink)}.metric span{display:block;margin-top:7px;font:.43em/1.35 var(--mono);color:var(--muted)}
+    .story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.story-card{border:1px solid var(--ink);background:rgba(255,255,255,.3);overflow:hidden}.story-card img{display:block;width:100%;height:190px;object-fit:cover;background:#fff;border-bottom:1px solid var(--ink)}.story-card img.contain{object-fit:contain}.story-card .story-body{padding:13px 15px}.story-card .story-no{font:600 .42em var(--mono);color:var(--red);margin-bottom:6px}.story-card h3{font-size:.82em;margin-bottom:6px}.story-card p{font-size:.58em;line-height:1.4;margin:0}.story-card .story-metric{font:600 1.35em/1 var(--mono);margin-bottom:7px}.story-card.red{background:var(--red);color:#fff}.story-card.red h3,.story-card.red .story-no{color:#fff}.story-card.acid{background:var(--acid)}.story-card.ink{background:var(--ink);color:var(--paper)}.story-card.ink h3{color:var(--acid)}
+    .slides img{cursor:zoom-in}#image-lightbox[hidden],#edit-toolbar[hidden]{display:none!important}#image-lightbox{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:56px;background:rgba(9,11,10,.94);backdrop-filter:blur(6px)}#image-lightbox img{display:block;max-width:92vw;max-height:84vh;object-fit:contain;cursor:zoom-in;box-shadow:0 20px 70px rgba(0,0,0,.45)}#image-lightbox.zoomed{display:block;overflow:auto;text-align:center}#image-lightbox.zoomed img{max-width:none;max-height:none;margin:0 auto;cursor:zoom-out}#lightbox-close{position:fixed;right:24px;top:18px;z-index:1002;border:1px solid rgba(255,255,255,.55);background:#111;color:#fff;width:42px;height:42px;border-radius:50%;font:28px/1 var(--mono);cursor:pointer}#lightbox-caption{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);max-width:78vw;padding:7px 12px;background:rgba(0,0,0,.75);color:#fff;font:12px/1.4 var(--mono);text-align:center}
+    #edit-toolbar{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:900;display:flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--ink);background:var(--acid);box-shadow:0 5px 20px rgba(0,0,0,.18);font:12px var(--mono)}#edit-toolbar button{border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:5px 9px;font:12px var(--mono);cursor:pointer}body.edit-mode [contenteditable="true"]{outline:1px dashed rgba(27,86,216,.6);outline-offset:3px;cursor:text}body.edit-mode [contenteditable="true"]:focus{outline:3px solid var(--blue);background:rgba(255,255,255,.72)}body.edit-mode .slides img{cursor:default}
+    /* Reveal already scales the 1280×720 stage. Keep the internal geometry fixed
+       on narrow screens to avoid a second responsive reflow and right-edge clipping. */
+    @media(max-width:800px){body{overflow:hidden}.reveal{font-size:26px}.reveal .slides section{padding:44px 62px 38px}.reveal .slides section>*{max-width:78%}.source{left:63px;right:auto;width:72%}.takeaway{right:auto;width:72%}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.signal{grid-template-columns:58px 180px 1fr}.media-video,.visual{max-width:100%}}
+  </style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+  <section class="cover">
+    <div class="kicker">Weekly intelligence brief / issue 36</div>
+    <h1>本周 AI<br>进展周报</h1><div class="rule"></div>
+    <p class="lede">Astra、Fable 5.1 与 Gemini 3.8 同周推进<strong>模型能力</strong>；真机环境、外部脚手架与可验证闭环同步推进<strong>系统能力</strong>。</p>
+    <div class="date">2026.08.30 — 09.05</div><div class="bands"><span></span><span></span><span></span></div>
+    <div class="hint">方向键翻页 · 点击图片放大 · E 编辑 · F 全屏 · O 总览</div>
+  </section>
+
+  <section>
+    <div class="folio">02 / 18</div><div class="kicker">Executive scan</div>
+    <h2>本周三条主线：<br>模型跃迁，与系统工程同时发生</h2>
+    <div class="grid3">
+      <div class="card acid"><div class="no">SHIFT 01</div><h3>前沿模型争夺电脑</h3><p>Astra 主打跨软件执行，Fable 5.1 强化科研与工程，Gemini 3.8 Flash 押注长周期代码 Agent。</p></div>
+      <div class="card ink"><div class="no">SHIFT 02</div><h3>外部骨架放大能力</h3><p>真机训练、任务依赖图、跨窗口记忆与确定性验证器，开始决定任务能否真正做完。</p></div>
+      <div class="card"><div class="no">SHIFT 03</div><h3>从 Token 到结果</h3><p>缓存价格、执行耗时、工具调用和任务成功率，共同定义“完成一件事多少钱”。</p></div>
+    </div>
+    <div class="quote">这不是“模型不重要了”，而是模型、环境、记忆、工具与验证第一次被放进同一条能力曲线。</div>
+    <div class="takeaway"><b>核心判断</b><span>模型上限继续抬高；产品差距则越来越取决于真实环境中的完成率、恢复能力与单位结果成本。</span></div>
+  </section>
+
+  <section class="dense">
+    <div class="folio"></div><div class="kicker">Frontier companies / weekly scan</div>
+    <h2>前沿公司：模型、运行时与价格一起更新</h2>
+    <div class="split">
+      <div>
+        <div class="trust"><b>OPENAI</b><span>发布 GPT-6 Astra / Astra Pro：电脑操作、跨软件工程、科学与网安成为主线；Codex 同步引入跨窗口笔记与历史检索实验。</span></div>
+        <div class="trust"><b>ANTHROPIC</b><span>发布 Claude Fable 5.1 / Mythos 5.1，缓存读取价格降至原来的四分之一；自动对齐研究与费马大定理形式化展示科研 Agent 路线。</span></div>
+        <div class="trust"><b>GOOGLE</b><span>推出 Gemini 3.8 Flash 与 Flash Cyber：保持 Flash 定价，强化长周期代码、工具调用与防御性漏洞发现。</span></div>
+        <div class="trust"><b>NVIDIA / OTHERS</b><span>训练数据与本地 Agent 继续升温；未经官方原文支撑的并购传闻不进入确定性结论。</span></div>
+      </div>
+      <div class="media-grid">
+        <div class="media-tile"><img src="assets/openai-astra-cover.png" alt="GPT-6 Astra 发布主视觉"><span>OPENAI · ASTRA</span></div>
+        <div class="media-tile contain"><img src="assets/claude-fable-bench.png" alt="Claude Fable 5.1 能力对比"><span>ANTHROPIC · FABLE</span></div>
+        <div class="media-tile contain"><img src="assets/google-gemini38.png" alt="Gemini 3.8 Flash 发布图"><span>GOOGLE · FLASH</span></div>
+        <div class="media-tile contain"><img src="assets/openai-codex-memory.png" alt="Codex 跨窗口记忆功能"><span>RUNTIME · MEMORY</span></div>
+      </div>
+    </div>
+    <p class="source">原文与官方入口：<a href="https://openai.com/index/gpt-6-astra/">OpenAI Astra</a> · <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Claude Fable / Mythos 5.1</a> · <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Gemini 3.8 Flash</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">OpenAI / model release</div>
+    <h2>GPT-6 Astra：从“回答问题”<br>转向“接管专业软件工作流”</h2>
+    <div class="split">
+      <div><img class="visual covered" src="assets/openai-astra-cover.png" alt="GPT-6 Astra 发布主视觉"><div class="caption">公众号原图：腾讯科技对 OpenAI Astra 发布的主视觉</div></div>
+      <div>
+        <div class="metric-row four"><div class="metric"><b>$10</b><span>百万输入 Token</span></div><div class="metric"><b>$1</b><span>百万缓存读取</span></div><div class="metric"><b>$12.5</b><span>百万缓存写入</span></div><div class="metric"><b>$50</b><span>百万输出 Token</span></div></div>
+        <p class="tiny"><strong>价格门槛：</strong>发布稿称输入超过 272K Token 后，整次请求的输入与缓存费率 ×2、输出费率 ×1.5；快速模式价格 ×2，速度最高约 ×2.5。</p>
+        <p class="small"><strong>怎样进入 CAD：</strong>公开演示显示，Astra 并不是把 KiCad 改造成聊天框，而是通过通用 Computer Use 运行时操作现有桌面软件。</p>
+        <div class="arch-stack" style="margin-top:10px">
+          <div class="arch-row"><b>01 · 看</b><span>运行环境把 KiCad 当前屏幕与任务状态回传给模型，模型识别原理图、元件、菜单和画布。</span></div>
+          <div class="arch-row"><b>02 · 操作</b><span>模型给出鼠标点击、拖拽、键盘输入与快捷键等下一步动作；运行时在真实界面中执行。</span></div>
+          <div class="arch-row"><b>03 · 验证</b><span>执行后重新截取屏幕，检查元件位置、连线、布局或错误提示；未完成就继续下一轮。</span></div>
+        </div>
+        <p class="tiny"><strong>机制边界：</strong>公开材料尚未披露 CAD 专用插件、对象级 API 或底层训练细节；本页描述的是演示可确认的视觉—动作—反馈闭环。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://openai.com/index/gpt-6-astra/">OpenAI 官方发布</a> · <a href="https://mp.weixin.qq.com/s/A_TIjkMwa-mzTgLdzV7kkg">腾讯科技原文</a> · <a href="https://mp.weixin.qq.com/s/2AhoFeit7OK81aT4YRBsOw">AINLP 规格与价格</a>。价格按发布稿口径；交互机制按公开演示归纳。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">OpenAI / computer use demo</div>
+    <h2>Astra 真正新增的能力：<br>跨软件完成，而不是只会操作界面</h2>
+    <div class="split">
+      <div><video class="media-video" controls preload="metadata" poster="assets/astra_bench-video-1-poster.jpg"><source src="assets/astra_bench-video-1.mp4" type="video/mp4">浏览器不支持视频播放。</video><div class="caption">公众号原视频 · 2:43：语音下达目标后，Astra 在电脑环境中连续执行</div></div>
+      <div>
+        <div class="media-grid">
+          <div class="media-tile contain"><img src="assets/openai-astra-pcb.gif" alt="Astra 在 KiCad 中完成 PCB 布局"><span>KICAD · PCB</span></div>
+          <div class="media-tile"><img src="assets/openai-astra-3d.gif" alt="Astra 将 Blender 模型导入 UE5"><span>BLENDER → UE5</span></div>
+          <div class="media-tile contain"><img src="assets/openai-ppt.png" alt="Astra 生成并检查办公交付物"><span>OFFICE DELIVERY</span></div>
+          <div class="media-tile contain"><img src="assets/openai-automation-bench.png" alt="Astra AutomationBench 成本效果曲线"><span>AUTOMATION BENCH</span></div>
+        </div>
+        <p class="small"><strong>三层进步：</strong>理解目标 → 调用多种软件 → 检查交付物。官方基准仍应与真实企业权限、失败恢复和人工复核成本一起看。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://mp.weixin.qq.com/s/ICv0Dra1PFr7sxAGqO_MVA">量子位发布解读与原视频</a> · <a href="https://mp.weixin.qq.com/s/A_TIjkMwa-mzTgLdzV7kkg">腾讯科技深度报道</a></p>
+  </section>
+
+  <section id="deep-openai-architecture">
+    <div class="folio"></div><div class="kicker">Paper deep read 01 / latent reasoning</div>
+    <h2>循环深度：把一部分“多想几步”<br>移到输出 Token 之前</h2>
+    <div class="split">
+      <div><img class="visual tall" src="assets/openai-recurrent-depth.png" alt="普通 Transformer 与循环 Transformer 对比"><div class="caption">公众号原图：普通 Transformer 与 Looped Transformer 的计算路径对比</div></div>
+      <div>
+        <div class="card acid"><h3>方法信号</h3><p>同一组 Transformer 层被重复使用，上一轮隐藏状态回到循环块继续加工；推理深度可以与参数深度部分解耦。</p></div>
+        <p class="small"><strong>潜在收益：</strong>不同比增加参数和显存，用更多串行计算换取困难任务能力，并减少显式思维链 Token。</p>
+        <p class="small"><strong>可解释性代价：</strong>更多推理发生在潜在状态中，文本化思维链更少，监控与归因更困难。</p>
+        <p class="small"><span class="tag warn">注意</span>架构细节最初来自媒体与研究推断；正式模型实现应以 OpenAI 技术材料为准。</p>
+      </div>
+    </div>
+    <p class="source">原文：<a href="https://mp.weixin.qq.com/s/jPJ9v0qkeTY2D5mF8BKKJw">Astra 循环深度架构解读</a></p>
+  </section>
+
+  <section id="openai-codex-runtime">
+    <div class="folio"></div><div class="kicker">OpenAI / Codex runtime</div>
+    <h2>105 万上下文还不够：<br>Codex 开始跨窗口留下“工作记忆”</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/openai-codex-memory.png" alt="Codex 跨窗口笔记与历史搜索功能"><div class="caption">公众号原图：Codex 的工作注释与历史搜索两项实验功能</div></div>
+      <div>
+        <div class="card red"><h3>旧路径 · compaction</h3><p>窗口将满时压缩旧上下文；多轮压缩可能丢失失败原因、已跑测试和用户边界。</p></div>
+        <div class="card acid" style="margin-top:12px"><h3>新路径 · handoff + history</h3><p>切换窗口前留下结构化工作注释；新窗口按需检索完整历史，而不是只依赖一份摘要。</p></div>
+        <p class="small"><strong>意义：</strong>长任务的上限不只由上下文长度决定，还由跨窗口交接质量决定。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://developers.openai.com/api/docs/models/gpt-6-astra">OpenAI 模型文档</a> · <a href="https://mp.weixin.qq.com/s/2AhoFeit7OK81aT4YRBsOw">Codex 跨窗口记忆解读</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Anthropic / model release</div>
+    <h2>Claude Fable 5.1：<br>能力升级，与缓存成本下探并行</h2>
+    <div class="split">
+      <div><video class="media-video" controls preload="metadata" poster="assets/claude_fable-video-1-poster.jpg"><source src="assets/claude_fable-video-1.mp4" type="video/mp4">浏览器不支持视频播放。</video><div class="caption">公众号原视频 · 32 秒：Fable 5.1 与 GPT-5.6 Sol 的生成效果对比</div></div>
+      <div>
+        <img class="visual short" src="assets/claude-fable-bench.png" alt="Claude Fable 5.1 与其他模型基准对比">
+        <div class="metric-row"><div class="metric"><b>$10</b><span>百万输入 Token</span></div><div class="metric"><b>$50</b><span>百万输出 Token</span></div><div class="metric"><b>$0.25</b><span>百万缓存读取 Token</span></div></div>
+        <p class="small"><strong>产品分层：</strong>Fable 5.1 面向通用用户；Mythos 5.1 通过准入机制服务高风险网安与生命科学场景。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic 官方发布</a> · <a href="https://mp.weixin.qq.com/s/w_2kjXpj7PLco-KeyI-mfA">新智元原文与视频</a></p>
+  </section>
+
+  <section id="deep-claude-aar">
+    <div class="folio"></div><div class="kicker">Anthropic / alignment research</div>
+    <h2>Claude 改进 Claude：<br>自动科研开始形成闭环实验室</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/claude-aar-overview.png" alt="自动对齐研究框架总览"><div class="caption">论文原图：AAR 围绕失败类型提出方法、训练、评测并继续迭代</div></div>
+      <div>
+        <img class="visual mini" src="assets/claude-aar-curves.png" alt="十种对齐失败的自动爬山曲线">
+        <div class="metric-row"><div class="metric"><b>50+</b><span>约 60 小时内尝试方案</span></div><div class="metric"><b>6.4h</b><span>平均超过最佳人类点子</span></div><div class="metric"><b>2.4K</b><span>继任模型实验训练样本</span></div></div>
+        <p class="small"><strong>严谨性：</strong>能力基准退化即淘汰；留出基准与开放式行为审计用于检查分布外泛化。</p>
+        <p class="small"><strong>边界：</strong>“15000 倍”比较的是特定对齐流程的样本效率，不是通用研究速度。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures">Anthropic 研究</a> · <a href="https://mp.weixin.qq.com/s/u_veIsnmNHT1qV_4re_CJg">PaperAgent 中文精读</a></p>
+  </section>
+
+  <section id="frontier-google">
+    <div class="folio"></div><div class="kicker">Google / Gemini 3.8 Flash</div>
+    <h2>Gemini 3.8 Flash：<br>小步快跑，目标却是长周期 Agent</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/google-gemini38.png" alt="Gemini 3.8 Flash 与 Flash Cyber 发布图"><div class="caption">公众号原图：Google 同时推出 Gemini 3.8 Flash 与 Flash Cyber</div></div>
+      <div>
+        <div class="media-grid"><div class="media-tile contain"><img src="assets/google-deepswe.png" alt="Gemini 3.8 Flash DeepSWE 性能成本图"><span>DEEPSWE · COST</span></div><div class="media-tile contain"><img src="assets/google-cyber.png" alt="Gemini 3.8 Flash Cyber 漏洞发现基准"><span>CYBERGYM</span></div></div>
+        <div class="metric-row"><div class="metric"><b>$0.75</b><span>百万输入 Token</span></div><div class="metric"><b>$3.75</b><span>百万输出 Token</span></div><div class="metric"><b>47.2%</b><span>CWE-Bench Pass@1</span></div></div>
+        <p class="small"><strong>策略：</strong>保持 Flash 定价，用更高 effort、更多工具调用换取复杂任务深度；Cyber 版本优先服务防御与修复。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google 官方发布</a> · <a href="https://mp.weixin.qq.com/s/JHZVEmZexvadAinLYc-GIg">机器之心原文</a></p>
+  </section>
+
+  <section class="chapter" id="deep-read-divider">
+    <div class="folio"></div><div class="kicker">Three selected paper deep reads</div>
+    <h2>本周论文精读</h2><div class="rule"></div>
+    <p>只选三篇，围绕同一个问题：怎样把有限计算更有效地分配到推理时间、真实环境与模型记忆。</p>
+    <div class="media-grid three" style="margin-top:32px;max-width:930px">
+      <div class="card ink"><div class="no">01 · TIME</div><h3>循环深度</h3><p>把更多串行推理移到输出 Token 之前。</p></div>
+      <div class="card red"><div class="no">02 · ENVIRONMENT</div><h3>Qwen-UI-Agent</h3><p>把训练场从模拟器搬到真实手机。</p></div>
+      <div class="card acid"><div class="no">03 · MEMORY</div><h3>Kimi K3</h3><p>把容量拆到可检索、可遗忘、可路由的位置。</p></div>
+    </div>
+  </section>
+
+  <section id="frontier-claude-fermat">
+    <div class="folio"></div><div class="kicker">Anthropic / formal mathematics</div>
+    <h2>11 天形式化费马大定理：<br>突破点是协作基础设施</h2>
+    <div class="split">
+      <div><video class="media-video" controls preload="metadata" poster="assets/claude_fermat-video-1-poster.jpg"><source src="assets/claude_fermat-video-1.mp4" type="video/mp4">浏览器不支持视频播放。</video><div class="caption">公众号原视频 · 35 秒：完整形式化工程与定理依赖图</div></div>
+      <div>
+        <img class="visual mini" src="assets/claude-fermat-proof.png" alt="费马大定理形式化任务依赖图">
+        <div class="grid2"><div class="card red"><div class="big-number">11d</div><div class="metric-label">公司披露的工程周期</div></div><div class="card ink"><div class="big-number">≈13M</div><div class="metric-label">生成的 Lean 代码行数</div></div></div>
+        <p class="small"><strong>问题：</strong>多个 Agent 很快失去全局进度，难以复用彼此结果。</p>
+        <p class="small"><strong>方法：</strong>把定理组织成依赖图，让 Agent 知道下一步做什么、哪些结论已可复用。</p>
+        <p class="small"><strong>边界：</strong>这是既有证明的形式化，不是新的数学证明；数字来自 Anthropic 披露。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Anthropic 研究</a> · <a href="https://github.com/anthropics/fermats-last-theorem">证明仓库</a> · <a href="https://mp.weixin.qq.com/s/s0wF5uUtTenW4Ff26FFaKg">机器之心原文与视频</a></p>
+  </section>
+
+  <section id="deep-qwen-ui">
+    <div class="folio"></div><div class="kicker">Paper deep read 02 / GUI agent</div>
+    <h2>Qwen-UI-Agent：<br>把训练场搬到 100+ 台真机</h2>
+    <div class="split">
+      <div class="diagram"><div class="diagram-title">SIM-TO-REAL TRAINING LOOP</div><div class="arch-stack"><div class="arch-row"><b>ENV</b><span>100+ 台真实手机 · 150+ App · 动态登录态与随机弹窗</span></div><div class="arch-row"><b>ACTION</b><span>GUI 点击 + CLI 命令 + API 调用统一动作空间</span></div><div class="arch-row"><b>TRAIN</b><span>SFT → Action RL → 百步以上 Online RL</span></div><div class="arch-row"><b>HARNESS</b><span>故障切换 · 结果验证 · 主动服务与跨端协作</span></div></div></div>
+      <div>
+        <div class="grid2"><div class="card acid"><div class="big-number">20×</div><div class="metric-label">虚拟屏幕并发 rollout 提升</div></div><div class="card red"><div class="big-number">92.2%</div><div class="metric-label">MobileWorld-Real 报告成功率</div></div></div>
+        <p class="small"><strong>问题：</strong>模拟器无法覆盖登录过期、随机弹窗、真实网络与国内超级应用的深层路径。</p>
+        <p class="small"><strong>方法：</strong>真机集群 + 统一 GUI / CLI / API 动作 + SFT、Action RL、Online RL + 结果验证 Harness。</p>
+        <p class="small"><strong>证据：</strong>原文报告 MobileWorld-Real 92.2%；失败中 52% 来自真实干扰，40% 来自执行缺陷。</p>
+        <p class="small"><strong>局限：</strong>跨品牌、跨系统版本、账号稳定性与长期运维成本仍待独立复现。</p>
+      </div>
+    </div>
+    <p class="source">来源：<a href="https://36kr.com/p/3947989442591877">Qwen-UI-Agent 长文与论文解读</a>。架构图为编辑重绘；基准与比例均为团队报告口径。</p>
+  </section>
+
+  <section id="domestic-qwen-report">
+    <div class="folio"></div><div class="kicker">Domestic open model / technical report</div>
+    <h2>Qwen3.8-Flash-Next：<br>同时压缩训练、激活与长上下文成本</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/qwen-qsa.png" alt="Qwen Sparse Attention 与索引器结构图"><div class="caption">技术报告原图：QSA 先用轻量索引器选块，再对入选原始 Token 做注意力</div></div>
+      <div>
+        <img class="visual mini" src="assets/qwen-flash-overview.png" alt="Qwen3.8-Flash-Next 总体架构">
+        <div class="metric-row"><div class="metric"><b>6B</b><span>每 Token 激活参数</span></div><div class="metric"><b>≈1/9</b><span>相对上一代训练 FLOPs</span></div><div class="metric"><b>8 / 14</b><span>预训练评测领先项</span></div></div>
+        <p class="small"><strong>问题：</strong>长上下文完整注意力过贵。</p>
+        <p class="small"><strong>方法：</strong>Gated DeltaNet、QSA、四路残差、CPU n-gram 与 Muon 联合设计。</p>
+        <p class="small"><strong>证据：</strong>其余 6 项评测最多落后 2.6 分；训练 FLOPs 约为上一代九分之一。</p>
+        <p class="small"><strong>局限：</strong>百万上下文质量、系统吞吐与各组件贡献仍需独立复现。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf">Qwen 技术报告</a> · <a href="https://github.com/QwenLM/Qwen3.8-Flash-Next">官方仓库</a> · <a href="https://mp.weixin.qq.com/s/6FuFRKKa4_ffnZTzy5-cZw">AINLP 原文</a></p>
+  </section>
+
+  <section id="deep-kimi-k3">
+    <div class="folio"></div><div class="kicker">Paper deep read 03 / model memory</div>
+    <h2>Kimi K3：把容量放到<br>“可检索、可遗忘、可路由”的位置</h2>
+    <div class="split">
+      <div class="diagram"><div class="diagram-title">EDITORIAL RECONSTRUCTION · K3 ARCHITECTURE</div><div class="arch-stack"><div class="arch-row"><b>KDA</b><span>固定状态递归记忆：用门控 Delta Rule 写入、替换与整体衰减</span></div><div class="arch-row"><b>MLA</b><span>周期性完整上下文检索：保留 Softmax 对精确历史位置的访问</span></div><div class="arch-row"><b>MOE</b><span>898 个专家扩展知识容量；每个 Token 路由 16 个非共享专家</span></div><div class="arch-row"><b>ATTNRES</b><span>8 个分块选择性访问早期层表示，改善深度方向的信息与梯度路由</span></div></div><div class="caption">编辑重绘：依据本周 K3 长篇技术材料整理</div></div>
+      <div>
+        <div class="metric-row"><div class="metric"><b>23</b><span>四层宏循环</span></div><div class="metric"><b>898</b><span>专家总数</span></div><div class="metric"><b>16</b><span>每 Token 路由专家</span></div></div>
+        <p class="small"><strong>问题：</strong>完整注意力成本随序列增长；固定残差把不同层信息等权混合；有限递归记忆又会发生容量过载。</p>
+        <p class="small"><strong>方法：</strong>KDA 管常量状态记忆，周期性 MLA 管精确检索，MoE 管稀疏容量，AttnRes 管跨层选择。</p>
+        <p class="small"><strong>证据：</strong>长文把 K3 描述为 23 个宏循环、8 个 AttnRes 分块，并报告 AttnRes 以不足 2% 额外成本带来约 25% 训练效率提升。</p>
+        <p class="small"><strong>局限：</strong>架构数字和效率来自团队材料及二手精读，独立复现与同口径消融仍是关键。</p>
+      </div>
+    </div>
+    <p class="source">精读来源：本周 Kimi K3 长篇技术材料 · <a href="https://mp.weixin.qq.com/s/Mv2V6ZJgIeJFp0a3shlVAA">从 GPT-2 到 K3 的选择性记忆演进</a> · <a href="https://mp.weixin.qq.com/s/BSZFXmzi2P4uTcDmZw1K9w">文章精读：苏剑林的时代</a></p>
+  </section>
+
+  <section id="feature-nanogpt">
+    <div class="folio"></div><div class="kicker">Featured article / training engineering</div>
+    <h2>NanoGPT Speedrun：<br>固定 8 张 H100，一秒一秒逼出训练技术</h2>
+    <div class="split">
+      <div><img class="visual short" src="assets/nanogpt-record.png" alt="NanoGPT Speedrun 世界纪录变化"><div class="caption">公众号原图：榜单从长期平台期被连续两次刷新</div><img class="visual mini" style="margin-top:10px" src="assets/nanogpt-speed.png" alt="NanoGPT Speedrun 两次提交的训练耗时"></div>
+      <div>
+        <div class="media-grid"><div class="media-tile contain"><img src="assets/nanogpt-mudd.png" alt="MUDD Skip Connections 结构"><span>#81 · MUDD SKIP</span></div><div class="media-tile contain"><img src="assets/nanogpt-dcmha.png" alt="Lightweight DCMHA 结构"><span>#85 · LIGHTWEIGHT DC</span></div></div>
+        <div class="metric-row"><div class="metric"><b>84.36s</b><span>原纪录</span></div><div class="metric"><b>81.78s</b><span>#81 MUDD Skip</span></div><div class="metric"><b>76.3s</b><span>#85 MUDD + DC</span></div></div>
+        <p class="small"><strong>方法：</strong>不照搬完整论文模块，只保留低开销的动态跨层路由与 Lightweight DC，在端到端计时中兑现训练步数收益。</p>
+        <p class="small"><strong>为什么值得精读：</strong>固定硬件、数据与目标 loss，把架构、优化器和 Kernel 放到同一块真实秒表下检验。</p>
+        <p class="small"><strong>局限：</strong>GPT-2 Small 规模的胜出方案能否迁移到万亿参数训练，仍需更大规模验证。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://mp.weixin.qq.com/s/xvfk9naY2bpb8lCs4XBHsA">夕小瑶科技说：NanoGPT Speedrun 文章精读</a> · <a href="https://github.com/KellerJordan/modded-nanogpt">NanoGPT Speedrun 项目</a></p>
+  </section>
+
+  <section class="chapter" id="agent-engineering-divider">
+    <div class="folio"></div><div class="kicker">From model methods to reliable systems</div>
+    <h2>Agent 工程与应用落地</h2><div class="rule"></div>
+    <p>三篇精读回答“能力从哪里来”；接下来关注这些能力怎样被验证、外包、部署，并进入真实业务。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Agent engineering / formal methods</div>
+    <h2>Specula：让 Coding Agent<br>把反例带回真实代码</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/specula-loops.png" alt="Specula 模型代码一致性与缺陷复现双闭环"><div class="caption">论文原图：模型—代码一致性与缺陷复现两条闭环相互校正</div></div>
+      <div>
+        <div class="grid2"><div class="card red"><div class="big-number">67</div><div class="metric-label">项目方称覆盖的开源系统</div></div><div class="card ink"><div class="big-number">382</div><div class="metric-label">项目方称发现的缺陷</div></div></div>
+        <img class="visual mini" style="margin-top:10px" src="assets/specula-comparison.png" alt="Specula 与原始 Coding Agent 和仅加 TLA+ 工具的对比">
+        <p class="small"><strong>证据：</strong>5 个代表性系统中，Specula 找到 62 个 bug；原始 Claude Code 与只加 TLA+ 工具分别找到 2 个和 3 个。</p>
+        <p class="small"><strong>局限：</strong>自动生成的不变量是否覆盖真实业务意图，仍决定最终能找到哪类 bug。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://arxiv.org/abs/2607.25333">论文</a> · <a href="https://github.com/specula-org/Specula">项目</a> · <a href="https://mp.weixin.qq.com/s/GEoNjOIu4TVCQJUTyJlHiw">中文报道</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Agent engineering / scaffolding</div>
+    <h2>认知外骨骼：<br>不训练模型，也能迁移系统能力</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/ai4ai-framework.png" alt="强模型构建 Harness 帮助弱模型的实验流程"><div class="caption">论文原图：Builder 只使用验证集设计 Harness，冻结后进入隐藏测试</div></div>
+      <div>
+        <img class="visual mini" src="assets/ai4ai-results.png" alt="GPT-5.4-mini 在不同 Harness 下的结果">
+        <div class="bars"><div class="bar-row"><span class="label">裸模型</span><div class="bar"><i style="width:48.8%"></i></div><span class="value">0.488</span></div><div class="bar-row"><span class="label">最佳 Harness</span><div class="bar"><i style="width:91.2%"></i></div><span class="value">0.912</span></div></div>
+        <p class="small"><strong>证据：</strong>针对 GPT-5.4-mini 的 57 次自动构建全部超过裸模型；被确定性程序真正外包的工作比例与准确率相关系数为 0.72。</p>
+        <p class="small"><strong>防泄漏：</strong>Builder 只见 5% 验证集，方案冻结后再跑 Hidden Test。</p>
+        <p class="small"><strong>局限：</strong>收益依赖任务可程序化程度；Harness 的维护成本与迁移性尚待考察。</p>
+      </div>
+    </div>
+    <p class="source">来源：<a href="https://mp.weixin.qq.com/s/3vzDjFytSipUpy3ZCEMCcA">AI 为 AI 设计 Harness 的实验报道</a></p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Applied AI / verified editing</div>
+    <h2>RefineCut：视频剪辑<br>从一次生成变成可验证闭环</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/refinecut-framework.png" alt="RefineCut 数据训练部署闭环"><div class="caption">论文原图：同一个确定性验证器贯穿数据生成、训练与端侧迭代</div></div>
+      <div>
+        <img class="visual mini" src="assets/refinecut-benchmark.png" alt="RefineCut 与教师模型对比">
+        <p class="small"><strong>两阶段：</strong>验证器回放蒸馏把 62.0 推至 85.8；偏好训练与自进化最终达到 92.4。</p>
+        <p class="small"><strong>端侧：</strong>平均每个任务 11.7 秒，最多迭代三步，不调用外部大模型。</p>
+        <p class="small"><strong>关键：</strong>顺序、时长、素材覆盖等约束可直接检查，奖励不必完全由另一个模型猜测。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://arxiv.org/abs/2608.25622">论文</a> · <a href="https://mp.weixin.qq.com/s/vqeVAOIZlTuDly39C6RiPA">量子位原文</a>。结果按论文与作者报告口径。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Applied AI / deployed recommender</div>
+    <h2>STEPS：推荐系统开始决定<br>“此刻是否值得打扰用户”</h2>
+    <div class="split">
+      <div><img class="visual" src="assets/steps-framework.png" alt="STEPS 三智能体自触发推送闭环"><div class="caption">论文原图：规划、执行、过滤三个智能体形成自触发闭环</div></div>
+      <div>
+        <img class="visual mini" src="assets/steps-online-results.png" alt="STEPS 线上实验的活跃体验与资源结果">
+        <div class="grid2"><div class="card red"><div class="big-number">14d</div><div class="metric-label">论文所述线上 A/B 测试</div></div><div class="card acid"><div class="big-number">1B+</div><div class="metric-label">论文所述部署用户规模</div></div></div>
+        <p class="small"><strong>证据：</strong>相对生产基线，论文报告活跃天数 +0.2843%、关闭推送权限 −1.9089%、计算资源 −79.42%。</p>
+        <p class="small"><strong>价值：</strong>系统先决定是否唤醒、是否推送，再决定内容与下一次决策时间。</p>
+        <p class="small"><strong>边界：</strong>线上收益、分流方式与长期用户体验需以论文完整实验条件为准。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://arxiv.org/abs/2608.01949">论文</a> · <a href="https://mp.weixin.qq.com/s/PVNpPhRMyKA9OL6xqktt6Q">机器之心原文</a>。部署与实验信息按团队披露。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Embodied intelligence</div>
+    <h2>万元级机器人：<br>硬件价格开始接近开发套件</h2>
+    <div class="split">
+      <div><img class="visual covered" src="assets/zeroth-bridge-flip.gif" alt="Zeroth Bridge 小桥机器人后空翻"><div class="caption">公众号原动图：13kg 小型人形机器人完成后空翻</div></div>
+      <div><img class="visual mini" src="assets/zeroth-bridge-product.png" alt="Zeroth Bridge 产品图"><div class="metric-row"><div class="metric"><b>¥8,888</b><span>极客版首发价</span></div><div class="metric"><b>13kg</b><span>产品披露重量</span></div><div class="metric"><b>88cm</b><span>产品披露高度</span></div></div><p class="small"><strong>开放定位：</strong>底层接口、全身遥操与 OpenBridge 生态面向二次开发；真实任务稳定性、续航与维护成本仍待验证。</p></div>
+    </div>
+    <div class="takeaway"><b>观察重点</b><span>低价本体会扩大数据生产，但“会后空翻”与可稳定交付工作仍是两套指标。</span></div>
+    <p class="source">来源：<a href="https://mp.weixin.qq.com/s/_ugPl2G0nCnwURdxryv0Hw">元点机器人 Zeroth Bridge 发布报道</a>。规格与价格按厂商发布口径。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">World models / interfaces</div>
+    <h2>Solaris：如果界面不是被编程，<br>而是在交互中逐帧生成</h2>
+    <div class="split">
+      <div><video class="media-video" controls preload="metadata" poster="assets/solaris-video-1-poster.jpg"><source src="assets/solaris-video-1.mp4" type="video/mp4">浏览器不支持视频播放。</video><div class="caption">公众号原视频 · 1:23：Solaris 在生成式界面中持续响应点击与拖拽</div></div>
+      <div>
+        <div class="media-grid"><div class="media-tile"><img src="assets/solaris-tryon.gif" alt="Solaris 虚拟试衣交互"><span>TRY-ON</span></div><div class="media-tile"><img src="assets/solaris-realtime.gif" alt="Solaris 实时持续生成"><span>REAL-TIME</span></div></div>
+        <div class="card acid" style="margin-top:12px"><h3>技术路线</h3><p>基于 Gen-4.5 / GWM-1：逐帧自回归、少步蒸馏，再用自身生成结果训练以减少长时漂移。</p></div>
+        <p class="small"><strong>风险：</strong>像素连续不等于状态可靠；权限、可访问性、可测试性与确定性仍需传统软件层兜底。</p>
+      </div>
+    </div>
+    <p class="source"><a href="https://runway.com/news/research/introducing-solaris">Runway 研究</a> · <a href="https://mp.weixin.qq.com/s/XVkG0L2-QalkliAiqHJryw">机器之心原文与视频</a></p>
+  </section>
+
+  <section class="dense">
+    <div class="folio">15 / 18</div><div class="kicker">Generative media / capability map</div>
+    <h2>生成媒体穿过三道门：<br>世界规则、可验证剪辑、真实播出</h2>
+    <div class="story-grid">
+      <div class="story-card ink"><img class="contain" src="assets/code-world-overview.png" alt="Code World Model 从 Coding Agent、Proxy 到生成世界的流程"><div class="story-body"><div class="story-no">01 · WORLD RULES</div><h3>代码负责世界如何演化</h3><p>Coding Agent 更新白盒规则与世界状态，低分辨率 Proxy 约束视频模型；画面之外的事件与因果因此可以持续存在。</p></div></div>
+      <div class="story-card acid"><img class="contain" src="assets/refinecut-framework.png" alt="RefineCut 验证器贯穿数据训练与端侧剪辑"><div class="story-body"><div class="story-no">02 · EDITING LOOP</div><h3>验证器负责成片是否合格</h3><p>顺序、时长和必保镜头被写成可检查约束；8B 模型最多迭代三步，平均 11.7 秒完成端侧剪辑。</p></div></div>
+      <div class="story-card red"><img src="assets/drama-scene.gif" alt="AI 长剧后西游记中的连续镜头"><div class="story-body"><div class="story-no">03 · DISTRIBUTION</div><h3>播出系统负责进入真实供应链</h3><p>《后西游记》用 4 个月完成备案到上线，并采用边制作、边审核、边播出的连续交付方式。</p></div></div>
+    </div>
+    <div class="takeaway"><b>判断</b><span>生成媒体的竞争单位正从“单个好看镜头”升级为“可持续世界 × 可修改成片 × 可审核交付”。</span></div>
+    <p class="source">原图与原文：<a href="https://mp.weixin.qq.com/s/A_HTUUeEbIrHhMbohN_zwQ">Code 视频世界模型</a> · <a href="https://mp.weixin.qq.com/s/vqeVAOIZlTuDly39C6RiPA">RefineCut</a> · <a href="https://mp.weixin.qq.com/s/jd4xDIAFDoImlJT1K8w5Rg">《后西游记》播出报道</a></p>
+  </section>
+
+  <section class="dense">
+    <div class="folio">16 / 18</div><div class="kicker">Commercialization</div>
+    <h2>商业化护城河：<br>专业数据、模型渠道与个人上下文</h2>
+    <div class="story-grid">
+      <div class="story-card red"><img src="assets/handshake-expert-data.png" alt="Handshake 专业人士网络"><div class="story-body"><div class="story-no">HUMAN DATA · CEO CLAIM</div><div class="story-metric">≈$1B</div><h3>专业网络变成训练基础设施</h3><p>Handshake CEO 所述新 AI 业务规模；稀缺资产不是普通文本，而是专家完成真实工作的过程数据。</p></div></div>
+      <div class="story-card acid"><img class="contain" src="assets/kimi-providers.png" alt="Kimi K3 的第三方推理服务商"><div class="story-body"><div class="story-no">MODEL CHANNEL · MEDIA REPORT</div><div class="story-metric">≤30%</div><h3>开放权重尝试收取渠道租金</h3><p>K3 已进入多家 Provider；最高 30% 是报道中的谈判目标，并非已签约的统一分成。</p></div></div>
+      <div class="story-card ink"><img src="assets/oura-context.png" alt="Oura 戒指作为个人身体上下文传感器"><div class="story-body"><div class="story-no">PERSONAL CONTEXT · MEDIA ESTIMATE</div><div class="story-metric">$16B+</div><h3>低打扰硬件占据身体数据入口</h3><p>报道中的潜在 IPO 估值；戒指、订阅与 AI Advisor 共同提高长期数据积累和迁移成本。</p></div></div>
+    </div>
+    <div class="takeaway"><b>共同点</b><span>三种业务都在控制模型本身难以复制的东西：专家行为、全球分发关系，或连续多年的个人身体数据。</span></div>
+    <p class="source">原图与原文：<a href="https://mp.weixin.qq.com/s/CAHDOiqKy-e-6KYWPSX2zA">Handshake 访谈</a> · <a href="https://mp.weixin.qq.com/s/QsHGxtFHu7l7VVg4LwOJ2g">Kimi 渠道分成</a> · <a href="https://mp.weixin.qq.com/s/h82dsmBDD6hxaboKYZQx-A">Oura IPO</a>。数字均为访谈、公司披露或媒体估算，非审计口径。</p>
+  </section>
+
+  <section>
+    <div class="folio"></div><div class="kicker">Synthesis</div>
+    <h2>本周四个结构性变化</h2>
+    <div class="grid2">
+      <div class="card acid"><div class="no">01 / MODEL</div><h3>前沿模型进入专业软件</h3><p>Astra、Fable 5.1 与 Gemini 3.8 的共同目标，是跨工具完成工程、科研与安全任务。</p></div>
+      <div class="card"><div class="no">02 / RUNTIME</div><h3>外部系统放大模型能力</h3><p>真机环境、任务图、跨窗口记忆和工具路由决定长周期任务能否持续推进。</p></div>
+      <div class="card red"><div class="no">03 / VERIFIER</div><h3>可验证奖励进入产品</h3><p>Lean 内核、模型检查、剪辑规则与线上实验，把“看起来完成”改成“可检查完成”。</p></div>
+      <div class="card ink"><div class="no">04 / ECONOMICS</div><h3>计价单位靠近业务结果</h3><p>模型成本、工具调用、专业数据和渠道分成都围绕每个可靠结果重新组合。</p></div>
+    </div>
+    <div class="takeaway"><b>核心结论</b><span>模型 Scaling 继续抬高能力上限；环境、反馈、协作结构与商业闭环决定这些能力能否稳定交付。</span></div>
+  </section>
+
+  <section>
+    <div class="folio">18 / 18</div><div class="kicker">What to watch next</div>
+    <h2>下周观察清单</h2>
+    <div class="grid2">
+      <div class="card red"><div class="no">01</div><h3>真机 Agent 能否跨设备复现</h3><p>关注不同品牌、网络、账户状态下的成功率，以及故障恢复后的最终结果。</p></div>
+      <div class="card"><div class="no">02</div><h3>形式化 Agent 能否覆盖业务意图</h3><p>会写 TLA+ 还不够；自动生成的不变量是否抓住真正重要的错误。</p></div>
+      <div class="card acid"><div class="no">03</div><h3>开放模型能否获得渠道租金</h3><p>Kimi 式收入分成是否签约、如何计量，以及云平台是否愿意长期接受。</p></div>
+      <div class="card ink"><div class="no">04</div><h3>世界模型如何补上软件确定性</h3><p>生成式界面的权限、状态保存、自动测试与无障碍接口会如何落地。</p></div>
+    </div>
+    <p class="quote">本周关键词：<strong>真实环境 · 外部骨架 · 可验证闭环 · 结果计价</strong></p>
+    <p class="source">下周用可复现测试更新以上四项观察。</p>
+  </section>
+</div></div>
+
+<div id="image-lightbox" hidden role="dialog" aria-modal="true" aria-label="图片放大预览">
+  <button id="lightbox-close" type="button" aria-label="关闭图片预览">×</button>
+  <img id="lightbox-image" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<div id="edit-toolbar" hidden role="toolbar" aria-label="幻灯片编辑工具">
+  <strong>编辑模式</strong>
+  <span id="edit-status">点击文字直接修改</span>
+  <button id="save-edits" type="button">保存到浏览器</button>
+  <button id="reset-edits" type="button">还原</button>
+  <button id="exit-edit" type="button">完成</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  const deepReadDivider = document.querySelector('#deep-read-divider');
+  document.querySelector('#frontier-google').insertAdjacentElement('beforebegin', document.querySelector('#frontier-claude-fermat'));
+  deepReadDivider.insertAdjacentElement('beforebegin', document.querySelector('#domestic-qwen-report'));
+  deepReadDivider.insertAdjacentElement('afterend', document.querySelector('#deep-openai-architecture'));
+  const deckSections = [...document.querySelectorAll('.slides > section')];
+  deckSections.forEach((section, index) => {
+    const folio = section.querySelector('.folio');
+    if (folio) folio.textContent = `${String(index + 1).padStart(2, '0')} / ${deckSections.length}`;
+  });
+  Reveal.initialize({hash:true,controls:true,progress:true,center:false,slideNumber:false,transition:"slide",backgroundTransition:"fade",width:1280,height:720,margin:.02});
+
+  const lightbox = document.querySelector('#image-lightbox');
+  const lightboxImage = document.querySelector('#lightbox-image');
+  const lightboxCaption = document.querySelector('#lightbox-caption');
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightbox.classList.remove('zoomed');
+    lightboxImage.removeAttribute('src');
+  };
+  document.querySelectorAll('.slides img').forEach(img => {
+    img.addEventListener('click', event => {
+      if (document.body.classList.contains('edit-mode')) return;
+      event.preventDefault();
+      event.stopPropagation();
+      lightboxImage.src = img.currentSrc || img.src;
+      lightboxImage.alt = img.alt || '幻灯片图片';
+      lightboxCaption.textContent = img.alt || '点击图片可切换原始尺寸，Esc 关闭';
+      lightbox.hidden = false;
+    });
+  });
+  lightboxImage.addEventListener('click', event => {
+    event.stopPropagation();
+    lightbox.classList.toggle('zoomed');
+  });
+  lightbox.addEventListener('click', event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.querySelector('#lightbox-close').addEventListener('click', closeLightbox);
+
+  const editStorageKey = 'weekly-ai-260906-browser-edits-v1';
+  const editToolbar = document.querySelector('#edit-toolbar');
+  const editStatus = document.querySelector('#edit-status');
+  const editableSelector = [
+    'h1', 'h2', 'h3', '.kicker', '.lede', '.card p', '.trust span',
+    '.signal span:last-child', '.small', '.tiny', '.quote', '.takeaway span',
+    '.arch-row span', '.metric b', '.metric span', '.caption',
+    '.story-no', '.story-metric', '.story-card p'
+  ].join(',');
+  const editableNodes = [...document.querySelectorAll(`.slides ${editableSelector}`)];
+  editableNodes.forEach((node, index) => {
+    node.dataset.editKey = String(index);
+    node.dataset.originalHtml = node.innerHTML;
+  });
+
+  const readSavedEdits = () => {
+    try { return JSON.parse(localStorage.getItem(editStorageKey) || '{}'); }
+    catch (_) { return {}; }
+  };
+  const applySavedEdits = () => {
+    const saved = readSavedEdits();
+    editableNodes.forEach(node => {
+      if (Object.prototype.hasOwnProperty.call(saved, node.dataset.editKey)) {
+        node.innerHTML = saved[node.dataset.editKey];
+      }
+    });
+  };
+  const saveEdits = () => {
+    const changes = {};
+    editableNodes.forEach(node => {
+      if (node.innerHTML !== node.dataset.originalHtml) changes[node.dataset.editKey] = node.innerHTML;
+    });
+    try {
+      localStorage.setItem(editStorageKey, JSON.stringify(changes));
+      editStatus.textContent = `已保存 ${Object.keys(changes).length} 处修改`;
+    } catch (_) {
+      editStatus.textContent = '保存失败：浏览器未开放本地存储';
+    }
+  };
+  const setEditMode = enabled => {
+    document.body.classList.toggle('edit-mode', enabled);
+    editToolbar.hidden = !enabled;
+    editableNodes.forEach(node => {
+      node.contentEditable = enabled ? 'true' : 'false';
+      node.spellcheck = enabled;
+    });
+    Reveal.configure({ keyboard: !enabled });
+    if (!enabled) saveEdits();
+  };
+  applySavedEdits();
+  document.querySelector('#save-edits').addEventListener('click', saveEdits);
+  document.querySelector('#exit-edit').addEventListener('click', () => setEditMode(false));
+  document.querySelector('#reset-edits').addEventListener('click', () => {
+    if (!window.confirm('还原本浏览器保存的全部文字修改？')) return;
+    localStorage.removeItem(editStorageKey);
+    editableNodes.forEach(node => { node.innerHTML = node.dataset.originalHtml; });
+    editStatus.textContent = '已还原';
+  });
+  document.addEventListener('keydown', event => {
+    const editing = document.body.classList.contains('edit-mode');
+    if (event.key === 'Escape' && !lightbox.hidden) {
+      event.preventDefault();
+      closeLightbox();
+      return;
+    }
+    if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's' && editing) {
+      event.preventDefault();
+      saveEdits();
+      return;
+    }
+    if (event.key.toLowerCase() === 'e' && !event.metaKey && !event.ctrlKey && !event.altKey && !event.target.isContentEditable) {
+      event.preventDefault();
+      setEditMode(!editing);
+      return;
+    }
+    if (editing && event.target.isContentEditable) event.stopPropagation();
+  }, true);
+</script>
+</body>
+</html>

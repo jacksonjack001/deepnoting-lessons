@@ -1,0 +1,410 @@
+{
+ "1": {
+  "pub": "夕小瑶科技说",
+  "title": "实时视频AI第一份公开成绩单出炉！最高才15分，37个模型全军覆没",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzIwNzc2NTk0NQ==&mid=2247622709&idx=1&sn=77b6f06dba7a445c63825f95ee0280e5&chksm=9701c8e3a07641f5c0e614fd0576d18686c194ed92607935d877f5f098062cd173101b71dd18#rd",
+  "date": "2026-10-23"
+ },
+ "2": {
+  "pub": "Tech星球",
+  "title": "微信发力绿泡泡硬刚红果，腾讯短剧能否支棱起来？",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzU5MTczNjIyNA==&mid=2247615548&idx=1&sn=26d94d1e4ad00f748eefa5b12389db3e&chksm=ff749bc441718a8fe6a1e3340c7c6c925ac9a53dada1c73f2b4dcec2647653bd3ae4bc9c8bbf&mpshare=1&scene=1&srcid=1024xygsaV8Bv0A1CVPWaddW&sharer_shareinfo=96b739e5d4338ef80a281d869bb16166&sharer_shareinfo_first=96b739e5d4338ef80a281d869bb16166#rd",
+  "date": "2026-10-24"
+ },
+ "3": {
+  "pub": "PaperAgent",
+  "title": "智谱&清华唐杰：全新统一大模型，GLM-5.5核心技术",
+  "url": "http://mp.weixin.qq.com/s?__biz=Mzk0MTYzMzMxMA==&mid=2247512942&idx=1&sn=e87d4515b938ea3251606fa9a567d776&chksm=c3b08c3e99373a1f1a1e5aea80585e9ecd2f0e94343b12fed54655318e68a34c95cea914967f&scene=0&xtrack=1#rd",
+  "date": "2026-10-24"
+ },
+ "4": {
+  "pub": "量子位",
+  "title": "Kimi K3.1 Pro一手实测：Godot、Blender全能接，23轮测试自己跑",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936037&idx=1&sn=bf6d1be84803b31989b53ff65be3ea62&chksm=e9384b41de875a0835d940ef898e821fde18759066105761ce7598afc3cface54800f44a98dc&mpshare=1&scene=1&srcid=1024ficKnzLlWs8rm7dxn4NK&sharer_shareinfo=4320c409352add2f66da10965e21bf20&sharer_shareinfo_first=4320c409352add2f66da10965e21bf20#rd",
+  "date": "2026-10-24"
+ },
+ "5": {
+  "pub": "APPSO",
+  "title": "实测 Kimi K3.1 Pro，国模终于继续卷旗舰",
+  "url": "https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&mid=2651113501&idx=1&sn=ba9ae1969eaef7a196a7b81823e71eea&chksm=bc32f5092fcb7e0fbb0a4216fe1e50b339c4c773afa12d69a02cbbec7378e7c68c76a7ac1ac4&mpshare=1&scene=1&srcid=1024a6KRZ9c8m5NZ2dvtNBWO&sharer_shareinfo=ba65e782fb3c92e360f14d517c40e464&sharer_shareinfo_first=ba65e782fb3c92e360f14d517c40e464#rd",
+  "date": "2026-10-24"
+ },
+ "6": {
+  "pub": "机器之心",
+  "title": "意外！79%企业GPU利用率竟不足一半",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069798&idx=1&sn=43cc35085db6430349e0918dc2e79d9f&chksm=858b0fecd46aa14675e435192019d4118173398126ef559c7d20b743706a4bd53781887a5dd7&scene=0&xtrack=1#rd",
+  "date": "2026-10-24"
+ },
+ "7": {
+  "pub": "机器之心",
+  "title": "Google Labs怎样判断一个AI点子值得做下去？",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069798&idx=2&sn=60c17f629ae32f48bfaa88d4f7fff2cb&chksm=85147112db19993d735470453825b30d42eb77d91b8d891d455c10185ffb0e5d0d53f914077d&scene=126&sessionid=1792828026#rd",
+  "date": "2026-10-24"
+ },
+ "8": {
+  "pub": "新智元",
+  "title": "刚刚，Claude不聊天了！一句话出看板、出动画，直接交成品",
+  "url": "https://mp.weixin.qq.com/s/a9MHZXf_ZZoAFIx5DaUvOw",
+  "date": "2026-10-24"
+ },
+ "9": {
+  "pub": "机器之心",
+  "title": "数千亿Token测安全，AI仍能「隔墙传话」！OpenAI前沿训练全面断网",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069852&idx=1&sn=186ab1f117eb9f3338111205bacf5b80&chksm=858d08442ba6ab08e130c6a290c4e2d7cd3092ee41b32b26070ab712013ae30979f93bfc3564&scene=0&xtrack=1#rd",
+  "date": "2026-10-25"
+ },
+ "10": {
+  "pub": "AGI Hunt",
+  "title": "Anthropic 长文详解 Claude Duet 安全设计：密码永远不经过模型",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzA4NzgzMjA4MQ==&mid=2453488371&idx=1&sn=2dd31cec7546084cf53ad1c00e3e263e&chksm=8697601b7f0237386dbee9c5ba7c09a904065edb70ef4a85efb014ba0cd372e8537b68617032&scene=0&xtrack=1#rd",
+  "date": "2026-10-25"
+ },
+ "11": {
+  "pub": "语音之家",
+  "title": "多方言语音识别的“跷跷板”：干扰如何产生，又该如何评测与缓解？",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzI4OTQyNzA0Ng==&mid=2247549401&idx=1&sn=087ece91f247e32063264c1f170735e1&chksm=ed9211214f6937c5620c8444adb65a4669b3f8c6833320d919bd1fd1185c08f49d0def386b76&scene=0&xtrack=1#rd",
+  "date": "2026-10-25"
+ },
+ "12": {
+  "pub": "机器之心",
+  "title": "PyTorch、JAX都被点名！Softmax曝出隐藏Bug，Gemini立功",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651069889&idx=1&sn=f243963ab47a3c32471ca7d3319ef4c6&chksm=85edc87fcfb850dadb3686d56e83abaa3f9932f0b222e20f0d1163ffe97737e76f1c427bf5a1&scene=0&xtrack=1#rd",
+  "date": "2026-10-25"
+ },
+ "13": {
+  "pub": "ReadingFun",
+  "title": "经常用 Claude Code / Codex 跑实验的，推荐阅读这篇",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzE5ODYxOTkxMg==&mid=2247487649&idx=1&sn=84e0c4fabfc55bb1f0832a4ae6fc5c09&chksm=97ac33fade2eccdc19079cde2d17ae49ecb9cde7267e9b4bddf1bf30df4a1e3768afcdc97b0c&mpshare=1&scene=1&srcid=1025fZmswGpNjyST7pgVgoj3&sharer_shareinfo=f84314a711f618472f68ef326667e5f0&sharer_shareinfo_first=f84314a711f618472f68ef326667e5f0#rd",
+  "date": "2026-10-25"
+ },
+ "14": {
+  "pub": "量子位",
+  "title": "被OpenAI、Gemini共同选择的实时语音交互，凭什么是这家中国公司？",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936167&idx=2&sn=861b9be5e248b2899ccab1afb676e52a&chksm=e9651675f5c8798b22ce18cb8181eafc7eac03d154415d66095412914b65db674c878dcdca32&mpshare=1&scene=1&srcid=1026EGJJjzu6bmRJOH0SBQeh&sharer_shareinfo=fd6643be13035b5f4e1f121e1fbc5dc6&sharer_shareinfo_first=fd6643be13035b5f4e1f121e1fbc5dc6#rd",
+  "date": "2026-10-26"
+ },
+ "15": {
+  "pub": "差评X.PIN",
+  "title": "我找到几位大厂优秀女性，问她们为什么战略性怀孕。",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA5NDc1NzQ4MA==&mid=2654704295&idx=1&sn=77bfd746d70bf40c97c3f7433c8e8410&chksm=8ac7fbe140654a0fe5be82463be79a38fa97686956b4b45e5e0293935682be16628d5326f8ae&mpshare=1&scene=1&srcid=1026WDf65ezUC9BIbJg8j5rQ&sharer_shareinfo=d5823ff073ad4b0a21203229566977d9&sharer_shareinfo_first=d5823ff073ad4b0a21203229566977d9#rd",
+  "date": "2026-10-26"
+ },
+ "16": {
+  "pub": "爱范儿",
+  "title": "算力中心千千万，AI 短剧占一半？",
+  "url": "https://mp.weixin.qq.com/s?__biz=MjgzMTAwODI0MA==&mid=2652472242&idx=1&sn=e2e3feae60390f002381f031a57d6663&chksm=9af04da4f54094054e02175f2e3a32fd4342952d1614de9b02faf9e955962829e042ac5c5f1d&mpshare=1&scene=1&srcid=1026YlduLQNceaxcFMXZORw6&sharer_shareinfo=56078f265178c79f41192a2eb9ca269a&sharer_shareinfo_first=56078f265178c79f41192a2eb9ca269a#rd",
+  "date": "2026-10-26"
+ },
+ "17": {
+  "pub": "机器之心",
+  "title": "硬件之外，脑机接口的壁垒是什么？华超神控押注NeuroAI的进化能力",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070117&idx=1&sn=ac5e4ee449532abef2723dd03ce816af&chksm=85b62d4a03f0cc49c1919caa852ddddee67de89c0464324889c13aac3604db918e0acfb4a135&mpshare=1&scene=1&srcid=1026qKWmOkoY64ZrMJvUg52C&sharer_shareinfo=2160125836caab9e6b47ae3586aba566&sharer_shareinfo_first=2160125836caab9e6b47ae3586aba566#rd",
+  "date": "2026-10-26"
+ },
+ "18": {
+  "pub": "跨境卖家集中营",
+  "title": "刚刚！马斯克要干倒亚马逊！",
+  "url": "https://mp.weixin.qq.com/s?__biz=Mzg3MzIzMzkwMQ==&mid=2247515973&idx=1&sn=4809b6c559d5f62bf891a9f389ecec12&chksm=cfd5897cd122299a129ac520b09898697412fa946dc6c2ae6e43a6f67ce68671b33ba60cfb01&mpshare=1&scene=1&srcid=1026D8fJjdJT0LMWESo0Afr0&sharer_shareinfo=b997ff487d8573e19978d4640e76e63f&sharer_shareinfo_first=b997ff487d8573e19978d4640e76e63f#rd",
+  "date": "2026-10-26"
+ },
+ "19": {
+  "pub": "新智元",
+  "title": "ChatGPT攻克26年猜想，千位数学家宣战AI！数学界彻底撕裂了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652738046&idx=1&sn=4ae15bda73be23fc870380401c33cfc0&chksm=f02d00653b476e6303b200874a4f89b9a0cdcd0aaa331379a3ee7c386b08e2d3507dde18e39c&mpshare=1&scene=1&srcid=1026lZm9gjd4wVoULwrieHw8&sharer_shareinfo=db346f3bf537b5fdab7aad6e2c528bce&sharer_shareinfo_first=db346f3bf537b5fdab7aad6e2c528bce#rd",
+  "date": "2026-10-26"
+ },
+ "20": {
+  "pub": "新智元",
+  "title": "AI教科书全错！底层公式惊天Bug曝光，Gemini率先自我修复",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652738046&idx=2&sn=e4ff95b3c4f36b314a7d86b533da3a1e&chksm=f0b5a2812c50fc13d8f4b1e5c8d685a62f15676f8c1f9829f030a89c0cbf5a24b7085626e88f&mpshare=1&scene=1&srcid=10265sWZkPSSSWcMDjHCjv3u&sharer_shareinfo=d3453f4ccc16e288ff9c2cc92c56aecf&sharer_shareinfo_first=d3453f4ccc16e288ff9c2cc92c56aecf#rd",
+  "date": "2026-10-26"
+ },
+ "21": {
+  "pub": "量子位",
+  "title": "DeepSeek开源真香！vLLM/SGLang连夜性能反超，推理速度卷出新高度",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936298&idx=1&sn=03d6b1b73afaf5cdea152d171aeca26a&chksm=e99539cafc5cfd0a7e4982f2c87d64efb12eb8f91dfb36d33d569bb0870b096884db98a3159f&mpshare=1&scene=1&srcid=1026zMzZxFpNdAJ5E3NUOoVO&sharer_shareinfo=6308f2b1083363af7beab2cb79279f3a&sharer_shareinfo_first=6308f2b1083363af7beab2cb79279f3a#rd",
+  "date": "2026-10-26"
+ },
+ "22": {
+  "pub": "量子位",
+  "title": "刚刚，Anthropic公开335页招股书：史上最大IPO，史上最亏AI公司",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936344&idx=1&sn=109f873c5ca79bef7a89b3bcef96b24b&chksm=e9b9257b94203d3c1a087e6d571b67e0dfcbbf96c29dd84b5be67a6f7f10d5e824e0d6045b4a&scene=0&xtrack=1#rd",
+  "date": "2026-10-27"
+ },
+ "23": {
+  "pub": "AIGC Studio",
+  "title": "电影级视频生成新解法！港科大MMLab与腾讯视频推出FAPL不动架构：把镜头运动准确率从48%提到61%。",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzU2OTg5NTU2Ng==&mid=2247502832&idx=1&sn=92d6067f7ca8e63d9a8c278eae0edbef&chksm=fd45a888ce21673a8cd8f52fd365a31ef192155d0626d14b26437193dd9eb71e9d2571ffda95&scene=0&xtrack=1#rd",
+  "date": "2026-10-27"
+ },
+ "24": {
+  "pub": "都市快报",
+  "title": "“别杀我我是浙江人”，一条棉毛裤引出一个爆梗！这题你会答吗？",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjM4NjI2OQ==&mid=2249446769&idx=1&sn=42ace513de4f46a5cab3882557912df8&chksm=c3292fdef32a265d5b0ffa059fad6ada5c37135a59c53cad6a9a884e42141e48bff11d45ce0f&mpshare=1&scene=1&srcid=1026vNPj6bXl6ahFDKc7K8Cz&sharer_shareinfo=640484ccc402bf7a6007b2ac516cf7bd&sharer_shareinfo_first=640484ccc402bf7a6007b2ac516cf7bd#rd",
+  "date": "2026-10-27"
+ },
+ "25": {
+  "pub": "夕小瑶科技说",
+  "title": "Anthropic正式交表IPO，7%收入来自违规账号。。",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIwNzc2NTk0NQ==&mid=2247622775&idx=1&sn=b83e09842df65eab296e61579006b5b5&chksm=963f4a3eaa726dff22779f9119fcc6073f55cae0c5dd6e10ca6ec6071dd7366a22a823c436ff&mpshare=1&scene=1&srcid=1027tmWQjSrZPIWfzxkkWqgK&sharer_shareinfo=97e1de1b89b2758b39b8093830cea371&sharer_shareinfo_first=97e1de1b89b2758b39b8093830cea371#rd",
+  "date": "2026-10-27"
+ },
+ "26": {
+  "pub": "数字生命卡兹克",
+  "title": "Anthropic要IPO了，帮大家总结了一下招股书里11个有趣的细节。",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIyMzA5NjEyMA==&mid=2647687831&idx=1&sn=6502cb593318d6e324e29d278fae4fcc&chksm=f1ca82e4a996404581b4a8e518423b77ecfb6c5ecf5f056e78d7df61c92b58b0ddebf427fb44&mpshare=1&scene=1&srcid=1027oL0nYQR9cfzHmPWilZjQ&sharer_shareinfo=4bb1cd60e7a551042c9e67b0e7d8b0bc&sharer_shareinfo_first=4bb1cd60e7a551042c9e67b0e7d8b0bc#rd",
+  "date": "2026-10-27"
+ },
+ "27": {
+  "pub": "机器之心",
+  "title": "刚刚，GPT-6.1 Terra发布！电脑操作比肩Astra，成本仅其1/10",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070362&idx=2&sn=67b94ea083a7fce7d109ee6f44e428bf&chksm=8533872ecaa732401bc03333dc6d5f2b6468ca3da835eef74aabcc29b87bbecf71b138ecd65e&mpshare=1&scene=1&srcid=1027TJTrIqqKaqzwl3hcW9mG&sharer_shareinfo=2d0ac0a90e11cffede674501c0fc9bd9&sharer_shareinfo_first=2d0ac0a90e11cffede674501c0fc9bd9#rd",
+  "date": "2026-10-27"
+ },
+ "28": {
+  "pub": "机器之心",
+  "title": "10小时数据+一段人手视频=？SkeLAM的零样本跨形态迁移",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070362&idx=3&sn=9c21d8c66fbf4a058e437690509a24b1&chksm=8521d876f60de06383d9324dd8973f927beb08cc4af4482c41731574e7f3d7e8a30de3efce6b&mpshare=1&scene=1&srcid=1027M0TFGCZ9VNWTXCt9MQit&sharer_shareinfo=d4d34421b47f74c80c16a8be45cf2e2d&sharer_shareinfo_first=d4d34421b47f74c80c16a8be45cf2e2d#rd",
+  "date": "2026-10-27"
+ },
+ "29": {
+  "pub": "51CTO技术栈",
+  "title": "npm创始人认为AI正在改写工程师这份工作：程序员的下一个瓶颈已经到来了，未来的资深工程师来源堪忧",
+  "url": "https://mp.weixin.qq.com/s?__biz=MjM5ODI5Njc2MA==&mid=2655943485&idx=1&sn=88dba1815ee2dc60b7d246405655fd5b&chksm=bc6c9d1d18934ea0aed58631c37ecd615265eec914047abff358d7bd3b70f13b00c92f3446ff&mpshare=1&scene=1&srcid=102757QvcmHnxXt4Yxf7kew3&sharer_shareinfo=0ba36a22d67fb2dc4c7a9d2c66245832&sharer_shareinfo_first=0ba36a22d67fb2dc4c7a9d2c66245832#rd",
+  "date": "2026-10-27"
+ },
+ "30": {
+  "pub": "虎嗅APP",
+  "title": "推特创始人做了个不需要网络的聊天App，在法国杀疯了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MTQzMjE1NjQwMQ==&mid=2656215294&idx=1&sn=af25973558697f72d0ff07c0fbf2198a&chksm=67a9530e151d6b373e11c769b589e6b4e9c16eb0e68842e544bdaf16a41a7bda4dcb0a86af5d&mpshare=1&scene=1&srcid=1028HB8s03SnB5jpfp6xDJm3&sharer_shareinfo=738a33c352e7180b4e74be8a9d8e39e7&sharer_shareinfo_first=738a33c352e7180b4e74be8a9d8e39e7#rd",
+  "date": "2026-10-28"
+ },
+ "31": {
+  "pub": "虎嗅APP",
+  "title": "Anthropic1.5万亿美元估值也悬了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MTQzMjE1NjQwMQ==&mid=2656215294&idx=2&sn=2e1cadb0b5c1065b22e0e082838bcf09&chksm=675c72a9401eea3557d5653bebc6e448657307e87754484ce33ea45790aa5b3e22870f80cd4f&mpshare=1&scene=1&srcid=10283qeB64UzkUKySN4a9ASM&sharer_shareinfo=a381b5af55854bed9c67d42a6e02a38d&sharer_shareinfo_first=a381b5af55854bed9c67d42a6e02a38d#rd",
+  "date": "2026-10-28"
+ },
+ "32": {
+  "pub": "新智元",
+  "title": "Anthropic内部系统被AI攻破！员工薪酬全曝光了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652738259&idx=2&sn=fd93c7353994654daec26e483a2d1bd4&chksm=f0f63333a9bb3140a687173703c054ba0ee58d4f9a08df5b298d006f3486214c92296a952bb4&mpshare=1&scene=1&srcid=1028xn3piLGjTOlYKKEjNZFm&sharer_shareinfo=08dd0e744af3d02b47412db951584138&sharer_shareinfo_first=08dd0e744af3d02b47412db951584138#rd",
+  "date": "2026-10-28"
+ },
+ "33": {
+  "pub": "新智元",
+  "title": "刚刚，百度开源再拿全球第一！1000万下载神作杀回来了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652738252&idx=1&sn=cd9635665f1240282aa9d610ebe2dac6&chksm=f07b635413c4ec99d69e0fb1f42dac38be2a23296731a7e3041a95a7a7024cd05b32da686d02&mpshare=1&scene=1&srcid=1028pS1LzFcRCjIBPC692TVw&sharer_shareinfo=79e28ac7f935ce9843b32bf9948e7de9&sharer_shareinfo_first=79e28ac7f935ce9843b32bf9948e7de9#rd",
+  "date": "2026-10-28"
+ },
+ "34": {
+  "pub": "机器之心",
+  "title": "视频世界模型终于不「失忆」了！Meta提出World-T³：把记忆写进参数，单卡20.6FPS实时生成",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070597&idx=2&sn=d460641324d148a8c406673bfd63cecf&chksm=85fe8f82412b3d2597665c57907442c453527b3e9b95a96bb9e435338ade3f90d2b33240189a&mpshare=1&scene=1&srcid=10284mT28wqdDzbffwdUnZY4&sharer_shareinfo=51e1d7bfc7108ee16f1f65ad6b5e4551&sharer_shareinfo_first=51e1d7bfc7108ee16f1f65ad6b5e4551#rd",
+  "date": "2026-10-28"
+ },
+ "35": {
+  "pub": "机器之心",
+  "title": "游戏引擎已死？谷歌Genie 4刚刚发布，实时操控整个世界",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070597&idx=1&sn=f9eefd89ab14876092cd41b9d8a6b4ef&chksm=85850e620cd5899730cc483f0ed89017112911d90edbf0708cc982cede48ae5fb0a4e10ec966&mpshare=1&scene=1&srcid=1028AYl7HKdNXi5wxvOx3UsB&sharer_shareinfo=3c184e6836f1327b0875ef011a36bfcc&sharer_shareinfo_first=3c184e6836f1327b0875ef011a36bfcc#rd",
+  "date": "2026-10-28"
+ },
+ "36": {
+  "pub": "量子位",
+  "title": "Anthropic刚提交完招股书，Dario兄妹今年7月的一段采访突然火了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936684&idx=2&sn=9f4c3c7ffad527ceaf0d1f891ebf704e&chksm=e92302df5c4663e7907d020258f80c3be4a9fd80f3daf71a62b34214d04a88537a34b687c075&mpshare=1&scene=1&srcid=1028zWQew6313KyGTDpDOZHZ&sharer_shareinfo=3741843c12ceeb19b057a06ed7212ce6&sharer_shareinfo_first=3741843c12ceeb19b057a06ed7212ce6#rd",
+  "date": "2026-10-28"
+ },
+ "37": {
+  "pub": "夕小瑶科技说",
+  "title": "一文看懂OpenAI刚刚捅出的计算机界大篓子",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIwNzc2NTk0NQ==&mid=2247622832&idx=1&sn=3f071af6c77fd8be2fe46ea42c3a3211&chksm=96976c00f1dda9fc3c3e131dd597ded5470d111accfc16b592378e08f6310c5e3ea75a699868&mpshare=1&scene=1&srcid=10282tQXZNaF2fbvkcO8sD9O&sharer_shareinfo=0e6d9657ec0a9de06abb3ebb59394327&sharer_shareinfo_first=0e6d9657ec0a9de06abb3ebb59394327#rd",
+  "date": "2026-10-28"
+ },
+ "38": {
+  "pub": "51CTO技术栈",
+  "title": "造物主权限已到手！谷歌重磅发布Genie 4，真正的交互世界来了，大型语言模型的消亡正在逼近？",
+  "url": "https://mp.weixin.qq.com/s?__biz=MjM5ODI5Njc2MA==&mid=2655943535&idx=1&sn=81e446dcf91522b4d63993b7c68f589c&chksm=bcaebe12ace5c99da780be41d521e86e9478ee4195289b9a9f1aaf07e2c763827512d938dcfb&mpshare=1&scene=1&srcid=1028UIFFI4KdNCfT4Exse5S2&sharer_shareinfo=b8a57f5234932cc74b2ef8ddc64028b6&sharer_shareinfo_first=b8a57f5234932cc74b2ef8ddc64028b6#rd",
+  "date": "2026-10-28"
+ },
+ "39": {
+  "pub": "机器之心",
+  "title": "Anthropic负责人：彻底砍掉LeetCode面试",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070740&idx=1&sn=fc693e4a692096b9783de09f033bbb67&chksm=852baecc2787a1bba690c2d2c1856d2d721b5eb9605619f7f7600526fb18239d6a5a21962007&mpshare=1&scene=1&srcid=1028nDvJoTGKPLCTMhUo3p2N&sharer_shareinfo=079e58a897c4bf0ac652bc5e7800c579&sharer_shareinfo_first=079e58a897c4bf0ac652bc5e7800c579#rd",
+  "date": "2026-10-28"
+ },
+ "40": {
+  "pub": "量子位",
+  "title": "刚刚，扩散模型杀进Agent主场！350亿参数，速度比Jev快一倍",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936910&idx=1&sn=c8f7b46aa018e78b6fcf86b5794cf811&chksm=e91a811029c22f391c1d8bece2d7f88e52a5aeb4cc0914720c70a1995b8d51f76f5b26a2e947&mpshare=1&scene=1&srcid=10288Wzwx7tck74Xh85cUhh7&sharer_shareinfo=e29ce71f01d8e3f49ff6910b63ea55dd&sharer_shareinfo_first=e29ce71f01d8e3f49ff6910b63ea55dd#rd",
+  "date": "2026-10-28"
+ },
+ "41": {
+  "pub": "腾讯科技",
+  "title": "估值逼近200亿美元，资本看中了Physical Intelligence什么？",
+  "url": "https://mp.weixin.qq.com/s?__biz=Mjc1NjM3MjY2MA==&mid=2691573771&idx=1&sn=220a599735b2d189f028485e6bffa027&chksm=a8c88b4cb0623026457a3251dabbeb41388c9eaf83bb82beb124c74ba3d08e9aad40ecb2bf12&mpshare=1&scene=1&srcid=10283Yu0EOYV9VLDWZtpxNet&sharer_shareinfo=2e163be1044cbe2bb9a17cdbb16cb1e0&sharer_shareinfo_first=2e163be1044cbe2bb9a17cdbb16cb1e0#rd",
+  "date": "2026-10-28"
+ },
+ "42": {
+  "pub": "新智元",
+  "title": "刚刚，国产开源AI横扫全球4项第一！1.3B逆袭大厂，OCR极限实测杀疯了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652738823&idx=1&sn=8314f016dcf001684d4c90d8273981af&chksm=f046742648e40a775c38622d6988fab9aa3d1747874203894b456247749d61e54436b2b959d1&mpshare=1&scene=1&srcid=1028XHDQNqTmntTv2Y0iooIL&sharer_shareinfo=b746e562daf969e637fa8327ad5f48e9&sharer_shareinfo_first=b746e562daf969e637fa8327ad5f48e9#rd",
+  "date": "2026-10-28"
+ },
+ "43": {
+  "pub": "一个有毅力的吃货",
+  "title": "AA指数~大模型榜单~20261028 速递",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzU3OTQzNTU2OA==&mid=2247495215&idx=1&sn=260a7b0dec891d183ff8d3eb39e02b51&chksm=fc32a5423717cd706d04dd1c1f201f81766f0a8c6ef1aa7894d770ca21bd8fcfae5602922cc1&mpshare=1&scene=1&srcid=1028IgCCQn4MKavHIacTI7jv&sharer_shareinfo=451b1ffe57418de18eb78fc1eb13bed8&sharer_shareinfo_first=451b1ffe57418de18eb78fc1eb13bed8#rd",
+  "date": "2026-10-28"
+ },
+ "44": {
+  "pub": "量子位",
+  "title": "蚂蚁推出OCR大模型：同一架构实现全场景文本智能，2B参数也能打",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247936983&idx=3&sn=b299d236ca85f160878fe79885b52b98&chksm=e98b6f2d98773137d5eec28951568151bd10ba9a45856a01d6b4e0959826dc406861447277b5&mpshare=1&scene=1&srcid=1028LeAqpf4TeWuVzdTDypLx&sharer_shareinfo=4428db8204416bb019e2602ddca13265&sharer_shareinfo_first=4428db8204416bb019e2602ddca13265#rd",
+  "date": "2026-10-28"
+ },
+ "45": {
+  "pub": "机器之心",
+  "title": "清华27岁助理教授杀入AI自进化赛道！首个35B模型刚刚亮相",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070784&idx=1&sn=fddec8fb0f292e3b0778e3495d38f928&chksm=85328f5aa7b841dd80bac0f0702caecc26638e239aeddbc22e0a0c0b073c1104859cc492c47c&scene=0&xtrack=1#rd",
+  "date": "2026-10-28"
+ },
+ "46": {
+  "pub": "地球知识局",
+  "title": "刚刚，世界第二高铁国重大事故，死伤惨重",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzkyNzIwODI3OA==&mid=2247686957&idx=1&sn=dca541f3fa34088be787408d896788ff&chksm=c31f47960705ae7a67f4cc0f93a1d4c1ff2cdb0b7495ddc72d28cbc41fc142c7c63ebb62ed4d&scene=0&xtrack=1#rd",
+  "date": "2026-10-28"
+ },
+ "47": {
+  "pub": "芯榜",
+  "title": "刚刚，国产GPU实测硬刚H200！",
+  "url": "https://mp.weixin.qq.com/s/sqYwGGgYSoN0R1F1BOxA5g",
+  "date": "2026-10-28"
+ },
+ "48": {
+  "pub": "PaperAgent",
+  "title": "Anthropic新作：AI科研最大的瓶颈找到了",
+  "url": "http://mp.weixin.qq.com/s?__biz=Mzk0MTYzMzMxMA==&mid=2247513064&idx=1&sn=0a46a89968f8e8263755ec204a79da09&chksm=c3c85492caa393c58244587b9655c4dce3bf3056b365d148d1e3b9a2694a6c113f763b17d941&scene=0&xtrack=1#rd",
+  "date": "2026-10-28"
+ },
+ "49": {
+  "pub": "机器之心",
+  "title": "视频大模型不懂物理？接上模拟器，不用训练也能让水花「听话」",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070813&idx=2&sn=33f885df4f3517d8099165dc55ec86ca&chksm=8597053ec37448d6f719c5f6b9dac07262999c16eecec18a8657e8751dfc7c27202b3dd69e85&mpshare=1&scene=1&srcid=1029rqmPh9sJZspcfyyaKtbD&sharer_shareinfo=f7ca498ca6c9708578cb1cdf449457b2&sharer_shareinfo_first=f7ca498ca6c9708578cb1cdf449457b2#rd",
+  "date": "2026-10-29"
+ },
+ "50": {
+  "pub": "机器之心",
+  "title": "刚刚，谷歌发布最强模型Gemini 4 Carbon！荣登榜首",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651070813&idx=1&sn=27ff331fcf0e11d5910f35eb61753850&chksm=857f15e4f60b5feeb3f067ae5b0400eb2f2bbd74fe7e8d30a8e16c9ad7f162ca3c3da91aa2ac&mpshare=1&scene=1&srcid=1029toVqbXcyg5m2gFyqfvTB&sharer_shareinfo=8c60fe6b5042f1ca12719ee4acfdf217&sharer_shareinfo_first=8c60fe6b5042f1ca12719ee4acfdf217#rd",
+  "date": "2026-10-29"
+ },
+ "51": {
+  "pub": "APPSO",
+  "title": "刚刚，Gemini 4 Carbon 正式发布，哈基米重回世界第一",
+  "url": "https://mp.weixin.qq.com/s?__biz=MjM5MjAyNDUyMA==&mid=2651114169&idx=1&sn=9512be2d2cfe1cdeef7cd19114f618f3&chksm=bc31e50d85488d5eff5118db9acb7d1da1262795ba89c5d2cabdf02e4f4d1df0ab2fb10e590a&mpshare=1&scene=1&srcid=1029mULg5yi6CdxFoXwmUji6&sharer_shareinfo=b4012d2c8bcf051a7ea71624ff72b564&sharer_shareinfo_first=b4012d2c8bcf051a7ea71624ff72b564#rd",
+  "date": "2026-10-29"
+ },
+ "52": {
+  "pub": "智东西",
+  "title": "2.3万元起！首款触屏MacBook来了，苹果Logo重新发光点亮",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA4MTQ4NjQzMw==&mid=2652812854&idx=1&sn=0249589ca0b96a5ecbb5487c211783b3&chksm=85899a78b6d7c98b643fd0ccb305490c7f3ad501f9522766389a4052ab4a54dc54e47cd46a27&mpshare=1&scene=1&srcid=1029nocDtTlreMmmcwa4FpHi&sharer_shareinfo=8e849737077fe6d9afee4d598b19dfb8&sharer_shareinfo_first=8e849737077fe6d9afee4d598b19dfb8#rd",
+  "date": "2026-10-29"
+ },
+ "53": {
+  "pub": "量子位",
+  "title": "刚刚，Gemini 4 Carbon全面超越Opus 5.5！首发Token半价",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247937290&idx=1&sn=ad5b8167659359c3ffe19496c9885a1b&chksm=e98ff2ab8fead07229fadfbd414a2c0aca350c7f91fea684a48179f1d9c116e5d0d7e95c3a87&mpshare=1&scene=1&srcid=1029ts3F1Zf9I3JpvC9k4Cly&sharer_shareinfo=af42d8aabcfe08b9c62386d1c70b0613&sharer_shareinfo_first=af42d8aabcfe08b9c62386d1c70b0613#rd",
+  "date": "2026-10-29"
+ },
+ "54": {
+  "pub": "赛博禅心",
+  "title": "ChatGPT 每月送 API 额度，最多 500 美元/月",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&mid=2247522127&idx=1&sn=2ca419fa3fe63314ef3b3f322cfcb19e&chksm=c32e716593572c4d67ee46e443b80eb9c69b193e7c45573d3056098b28969ee465d183f5a47e&mpshare=1&scene=1&srcid=1029dGq4lqzTIpNijY41yIUR&sharer_shareinfo=81222eac2848f7d313f89e3521d44608&sharer_shareinfo_first=81222eac2848f7d313f89e3521d44608#rd",
+  "date": "2026-10-29"
+ },
+ "55": {
+  "pub": "量子位",
+  "title": "混元Hy4即将发布！腾讯所有应用打通WorkBuddy，AI办公转正了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247937427&idx=2&sn=76fc5c661c9f9dd50459312e7f7146cd&chksm=e9216f8c9b06398ce2816d0aea53b2fecd55880c606fc6d2720381ced417c77767cbba06bbd4&mpshare=1&scene=1&srcid=1029RwDbANCLTdNRqsUMHb6E&sharer_shareinfo=a7d766e211b9486b9db8f2ec8997e91c&sharer_shareinfo_first=a7d766e211b9486b9db8f2ec8997e91c#rd",
+  "date": "2026-10-29"
+ },
+ "56": {
+  "pub": "虎嗅APP",
+  "title": "宇树跑得更快了，赚钱却更难了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MTQzMjE1NjQwMQ==&mid=2656215513&idx=3&sn=e7390a78fbaa7bd01522972071dde695&chksm=6723ca2fe40338fd6c8a524d63aae19dc42fd9bec78fb15abdc794ad01da593a56960ebf8d38&mpshare=1&scene=1&srcid=1029waAsUK6LwNicTZVwaXgU&sharer_shareinfo=7f4e5ad77b221b751ab9b0d3fdb94ea8&sharer_shareinfo_first=7f4e5ad77b221b751ab9b0d3fdb94ea8#rd",
+  "date": "2026-10-29"
+ },
+ "57": {
+  "pub": "AINLP",
+  "title": "NeurIPS2026: PD异构计算的 Orthros 注意力机制",
+  "url": "https://mp.weixin.qq.com/s?__biz=MjM5ODkzMzMwMQ==&mid=2650455969&idx=2&sn=02484247a8bc1caa4cbb01bcd14eb0cb&chksm=bf107d3df75f1f74c9b47f0e5c40eb9797089586a792623ff9851eb02937a27d4666bf9cbdb9&mpshare=1&scene=1&srcid=1029T1CzY2mqrL2xWz7s4Vmh&sharer_shareinfo=0bce8e8df3650397a982cc1d8f0133a7&sharer_shareinfo_first=0bce8e8df3650397a982cc1d8f0133a7#rd",
+  "date": "2026-10-29"
+ },
+ "58": {
+  "pub": "都市快报",
+  "title": "“天一亮，人全跑余杭了……”16号线早高峰爆满，出租房源秒抢！青山湖成年轻人落脚杭州的新选择",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzkyMjM4NjI2OQ==&mid=2249448679&idx=1&sn=3b1973bceea2e63787f8dfdd184d4f23&chksm=c3f8e489c4207eb0200abd81e346205c2d39c5d2cf7f44cc6cb880fa06423a03134bebed4369&mpshare=1&scene=1&srcid=1029VZZHH7mZvxNhpPhpLOK1&sharer_shareinfo=d1ad38b5ccf3bf6fb17f14825131174b&sharer_shareinfo_first=d1ad38b5ccf3bf6fb17f14825131174b#rd",
+  "date": "2026-10-29"
+ },
+ "59": {
+  "pub": "智东西",
+  "title": "主打一个听劝，OpenAI把Pro额度翻倍了",
+  "url": "https://mp.weixin.qq.com/s?__biz=MzA4MTQ4NjQzMw==&mid=2652812943&idx=3&sn=d4280cf43fc28c5018555c47ebbbc758&chksm=853f5a1e40a144706c190692193fc5601181b64ec609b1a7e14d7dcac576d1ca3bd7abab0e0d&mpshare=1&scene=1&srcid=10304uazS8OH4tN379Iso8OP&sharer_shareinfo=b634b737f74eaea76f0273f02fe73836&sharer_shareinfo_first=b634b737f74eaea76f0273f02fe73836#rd",
+  "date": "2026-10-30"
+ },
+ "60": {
+  "pub": "雷峰网",
+  "title": "起底第一批FDE的「生存实录」",
+  "url": "https://mp.weixin.qq.com/s?__biz=MTM2ODM0ODYyMQ==&mid=2651758696&idx=1&sn=354ce274c888c972dd03268f161653b8&chksm=630176967d94fd77083dc92c29715488ba60625eac5c6ee709d26d18397ad3ce2243e72effd0&mpshare=1&scene=1&srcid=1030a8rySHAO8PPJTGc4IZr4&sharer_shareinfo=db1f4054e5f1a7f2aa747245300df615&sharer_shareinfo_first=db1f4054e5f1a7f2aa747245300df615#rd",
+  "date": "2026-10-30"
+ },
+ "61": {
+  "pub": "PaperAgent",
+  "title": "彻底爆了，第3篇可信RSI全面综述出炉",
+  "url": "https://mp.weixin.qq.com/s?__biz=Mzk0MTYzMzMxMA==&mid=2247513129&idx=1&sn=635fb8358da2a9b6f5914f39ed08dac2&chksm=c353b8be6867e9a6262a32d79f66564262d8fa3de9a908798c5d20fc22ff63268632565a61a0&mpshare=1&scene=1&srcid=1030buxaY1vqI73vaKFiZw6E&sharer_shareinfo=99d99054adeaf850e97ad8c35f9ec561&sharer_shareinfo_first=99d99054adeaf850e97ad8c35f9ec561#rd",
+  "date": "2026-10-30"
+ },
+ "62": {
+  "pub": "海外独角兽",
+  "title": "AI 如何改写企业安全预算？自动攻防、Agent 权限，与代码安全",
+  "url": "https://mp.weixin.qq.com/s?__biz=Mzg2OTY0MDk0NQ==&mid=2247527596&idx=1&sn=ed19f4e4e365eab230168334776049e6&chksm=cfaa51bdc8215fd3e4c006ade3ebb7ac97b63bb17af3d6a83b4da4f7702bde60a54b6a8feda8&mpshare=1&scene=1&srcid=1030E7N2hXb1BxcOFatXv8kr&sharer_shareinfo=fb8d9f5c7c97dad93f9a649e7628172b&sharer_shareinfo_first=fb8d9f5c7c97dad93f9a649e7628172b#rd",
+  "date": "2026-10-30"
+ },
+ "63": {
+  "pub": "21世纪经济报道",
+  "title": "沐曦股份扭亏为盈，Q3净利润环比下降96%",
+  "url": "https://mp.weixin.qq.com/s?__biz=MjI3Njc0NTk4MQ==&mid=2650667989&idx=1&sn=eb3770e4925bdc4f6f3d6583cb9319a2&chksm=b65135d82b423a932399558106b999aec27f7ac49e1afbcdd30388178ac5c38bb8c6314f6225&mpshare=1&scene=1&srcid=1030co0d0SXnRdFnsDgtqmit&sharer_shareinfo=4a61b3cd5e7d43eddfd2713cc9506e58&sharer_shareinfo_first=dad51d351f4c3137d200904690cb40e5#rd",
+  "date": "2026-10-30"
+ },
+ "64": {
+  "pub": "AI前线",
+  "title": "OpenAI下一代模型或取消Token计费？Altman酒后吐真言，客户反应出乎意料",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzU1NDA4NjU2MA==&mid=2247669014&idx=1&sn=1302b12aa1f18418e0b1429ad60c0e0e&chksm=fbe4ecd9cc9365cfaabca30ff8d792c90ecc89d5e0831f4fd7b02ec2511890f942e21cab2786#rd",
+  "date": "2026-10-30"
+ },
+ "65": {
+  "pub": "赛博禅心",
+  "title": "Few Shots 开放出题：你领域里的难题，交给所有人的 Agent",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzkzNDQxOTU2MQ==&mid=2247522147&idx=1&sn=f1b44ea994eeaf3648d70d7900ccad56&chksm=c3a5bec0bb7d3db03e9d5436687fda1ad8f496725c1fb755673ee14e26a9890b05e5807f8015&scene=0&xtrack=1#rd",
+  "date": "2026-10-30"
+ },
+ "66": {
+  "pub": "新智元",
+  "title": "GPT-6「看不懂 3D」实锤！250道题只拿0.53分，Claude没及格",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzI3MTA0MTk1MA==&mid=2652739321&idx=1&sn=4650d4aa51ac0aeb8d065674aa5dda1a&chksm=f12ee208c6596b1ec0b79d11b89c1efdb349926a6e9c8a089cba5267f18a8096731246b879b8#rd",
+  "date": "2026-10-30"
+ },
+ "67": {
+  "pub": "51CTO技术栈",
+  "title": "长上下文是骗局！Revolut让2000名工程师放开用AI，账单却降到十分之一：Claude Code不再是默认选项",
+  "url": "http://mp.weixin.qq.com/s?__biz=MjM5ODI5Njc2MA==&mid=2655943565&idx=1&sn=a9f8a292f007b3f0a9b951ae0f9ece9e&chksm=bd76365a8a01bf4ce553e9b599fa57c8bb6a0ac000e5b7dbb7001deb024e38688bde4e36be03#rd",
+  "date": "2026-10-30"
+ },
+ "68": {
+  "pub": "量子位",
+  "title": "AI零帧起手写算子，反超DeepSeek人类手写巅峰：快了9.8%！",
+  "url": "http://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247937794&idx=1&sn=eb7b252280463f0c541972a4be579478&chksm=e8da9870dfad11667db584e8fb3312b000c2689042add35522c8a68f777d9468fe44a8c105f2#rd",
+  "date": "2026-10-30"
+ }
+}

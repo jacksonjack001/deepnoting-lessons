@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026.08.24-08.29 AI 进展周报网页演示">
+  <title>AI 进展周报 | 2026.08.24-08.29</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Serif+SC:wght@500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <style>
+    :root {
+      --paper: #f3f0e8;
+      --ink: #151713;
+      --muted: #65675f;
+      --line: rgba(21, 23, 19, .18);
+      --acid: #c6f43d;
+      --red: #f0442e;
+      --blue: #1b56d8;
+      --sand: #d5c8ad;
+      --serif: "Noto Serif SC", "Songti SC", serif;
+      --mono: "IBM Plex Mono", "PingFang SC", monospace;
+    }
+    * { box-sizing: border-box; }
+    body { background: var(--paper); }
+    .reveal { color: var(--ink); font-family: var(--serif); font-size: 26px; }
+    .reveal-viewport { background: var(--paper); }
+    .reveal .slides section { height: 100%; padding: 44px 62px 38px; text-align: left; }
+    .reveal .slides section::before {
+      content: ""; position: absolute; inset: 18px; border: 1px solid var(--line); pointer-events: none;
+    }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 { color: var(--ink); font-family: var(--serif); text-transform: none; }
+    .reveal h1 { font-size: 3.05em; font-weight: 900; line-height: 1.04; letter-spacing: -.05em; margin: 0; }
+    .reveal h2 { font-size: 1.72em; font-weight: 900; line-height: 1.12; letter-spacing: -.035em; margin: 0 0 20px; }
+    .reveal h3 { font-size: .92em; font-weight: 900; margin: 0 0 8px; }
+    .reveal p { line-height: 1.5; margin: .45em 0; }
+    .reveal strong { color: var(--red); font-weight: 900; }
+    .reveal a { color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .reveal ul { margin: .4em 0; }
+    .reveal li { line-height: 1.42; margin: .34em 0; }
+    .reveal .slide-number { right: 27px; bottom: 24px; background: var(--ink); color: var(--paper); font: 600 12px var(--mono); padding: 5px 9px; }
+    .reveal .progress { color: var(--red); height: 4px; }
+
+    .kicker, .folio, .tag, .metric-label, .source, .eyebrow { font-family: var(--mono); }
+    .kicker { color: var(--red); font-size: .53em; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 12px; }
+    .folio { position: absolute; top: 29px; right: 34px; font-size: .45em; color: var(--muted); letter-spacing: .08em; }
+    .rule { width: 76px; height: 8px; background: var(--red); margin: 20px 0; }
+    .lede { max-width: 900px; font-size: 1.05em; line-height: 1.5; }
+    .muted { color: var(--muted); }
+    .small { font-size: .72em; line-height: 1.45; }
+    .tiny { font-size: .54em; line-height: 1.45; }
+    .source { position: absolute; bottom: 31px; left: 63px; right: 80px; color: var(--muted); font-size: .42em; line-height: 1.45; }
+    .source a { color: var(--muted); }
+    .tag { display: inline-block; border: 1px solid currentColor; border-radius: 999px; padding: 4px 9px; font-size: .44em; font-weight: 600; letter-spacing: .05em; margin-right: 5px; }
+    .tag.red { color: var(--red); }
+    .tag.blue { color: var(--blue); }
+    .tag.dark { color: var(--ink); }
+    .tag.warn { color: #8b4c00; background: #f6dfb3; border-color: #c58a30; }
+
+    .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .split { display: grid; grid-template-columns: 1.08fr .92fr; gap: 28px; align-items: start; }
+    .card { border: 1px solid var(--ink); padding: 17px 18px; background: rgba(255,255,255,.28); min-height: 134px; }
+    .card.acid { background: var(--acid); }
+    .card.ink { background: var(--ink); color: var(--paper); }
+    .card.ink h3, .card.ink strong { color: var(--acid); }
+    .card.red { background: var(--red); color: #fff; }
+    .card.red h3, .card.red strong { color: #fff; }
+    .card p { font-size: .69em; margin: 0; line-height: 1.48; }
+    .card .no { font: 600 .48em var(--mono); color: var(--muted); margin-bottom: 16px; }
+    .card.ink .no, .card.red .no { color: rgba(255,255,255,.68); }
+    .big-number { font: 600 2.05em/1 var(--mono); letter-spacing: -.08em; }
+    .metric-label { font-size: .46em; color: var(--muted); margin-top: 7px; }
+
+    .signal-list { display: grid; gap: 0; border-top: 1px solid var(--ink); }
+    .signal { display: grid; grid-template-columns: 58px 190px 1fr; gap: 12px; align-items: center; padding: 11px 6px; border-bottom: 1px solid var(--line); }
+    .signal .n { font: 600 .65em var(--mono); color: var(--red); }
+    .signal b { font-size: .72em; }
+    .signal span:last-child { display: block; font-size: .63em; line-height: 1.45; color: var(--muted); }
+
+    .bar-row { display: grid; grid-template-columns: 150px 1fr 74px; gap: 10px; align-items: center; margin: 11px 0; }
+    .bar-row .label { font: 500 .48em var(--mono); }
+    .bar { height: 16px; border: 1px solid var(--ink); background: transparent; }
+    .bar i { display: block; height: 100%; background: var(--red); }
+    .bar-row:nth-child(even) .bar i { background: var(--blue); }
+    .bar-row .value { font: 600 .52em var(--mono); text-align: right; }
+
+    .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 10px; align-items: center; margin-top: 25px; }
+    .flow .step { border: 1px solid var(--ink); padding: 19px 12px; text-align: center; font-size: .62em; background: rgba(255,255,255,.25); }
+    .flow .arrow { font: 600 1em var(--mono); color: var(--red); }
+    .quote { border-left: 8px solid var(--red); padding: 4px 0 4px 18px; font-size: 1.12em; line-height: 1.5; margin: 25px 0; }
+
+    .cover::after { content: "W35"; position: absolute; right: 58px; bottom: 41px; font: 600 6.5em/1 var(--mono); color: rgba(21,23,19,.055); letter-spacing: -.12em; z-index: -1; }
+    .cover .date { font: 600 .72em var(--mono); letter-spacing: .08em; margin-top: 28px; }
+    .cover .bands { display: flex; gap: 8px; margin-top: 40px; }
+    .cover .bands span { height: 12px; display: block; }
+    .cover .bands span:nth-child(1) { width: 31%; background: var(--red); }
+    .cover .bands span:nth-child(2) { width: 19%; background: var(--acid); border: 1px solid var(--ink); }
+    .cover .bands span:nth-child(3) { width: 50%; background: var(--blue); }
+    .cover .hint { position: absolute; left: 63px; bottom: 42px; font: .42em var(--mono); color: var(--muted); }
+
+    .matrix { display: grid; grid-template-columns: 150px repeat(3, 1fr); border: 1px solid var(--ink); }
+    .matrix > div { min-height: 74px; padding: 11px 12px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: .56em; line-height: 1.35; }
+    .matrix .head { font: 600 .44em var(--mono); background: var(--ink); color: var(--paper); min-height: auto; }
+    .matrix .rowhead { font-weight: 900; background: var(--sand); }
+    .matrix .hot { background: var(--acid); }
+
+    .takeaway { position: absolute; left: 62px; right: 62px; bottom: 66px; display: grid; grid-template-columns: 110px 1fr; border-top: 2px solid var(--ink); padding-top: 12px; }
+    .takeaway b { font: 600 .46em var(--mono); color: var(--red); }
+    .takeaway span { font-size: .62em; line-height: 1.42; }
+    .visual { width: 100%; display: block; border: 1px solid var(--ink); background: #fff; object-fit: contain; }
+    .visual.hero { height: 365px; object-fit: cover; }
+    .visual.diagram { height: 350px; }
+    .visual.compact { height: 250px; }
+    .visual.tall { height: 405px; }
+    .visual.robot { height: 200px; }
+    .robot-slide h2 { font-size: 1.5em; font-weight: 700; line-height: 1.28; letter-spacing: .01em; }
+    .robot-slide .signal { min-height: 112px; }
+    .overview-slide h2, .qwen-slide h2 { font-weight: 700; letter-spacing: .005em; }
+    .overview-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 15px; }
+    .overview-item { position: relative; height: 155px; overflow: hidden; border: 1px solid var(--ink); background: #fff; }
+    .overview-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .overview-item.chart img { object-fit: contain; }
+    .overview-item span { position: absolute; left: 8px; bottom: 8px; padding: 4px 7px; background: var(--ink); color: var(--paper); font: 600 .38em var(--mono); }
+    .qwen-slide h2 { font-size: 1.48em; line-height: 1.25; margin-bottom: 14px; }
+    .qwen-slide .split { grid-template-columns: .95fr 1.05fr; gap: 22px; }
+    .qwen-slide .card { min-height: 116px; padding: 14px 17px; }
+    .qwen-slide .visual.compact { height: 225px; }
+    .qwen-slide .small { margin-top: .3em; margin-bottom: .35em; }
+    .domestic-signals { margin-top: 14px; border-top: 2px solid var(--ink); padding-top: 9px; }
+    .domestic-signals b { display: block; margin-bottom: 5px; font: 600 .43em var(--mono); color: var(--red); }
+    .domestic-signals p { margin: 3px 0; font-size: .54em; line-height: 1.38; }
+    .mavin-slide h2 { font-size: 1.5em; font-weight: 700; line-height: 1.22; }
+    .mavin-slide .visual.tall { height: 365px; }
+    .mavin-slide .visual.compact { height: 178px; }
+    .mavin-slide .card { min-height: 108px; padding: 13px 17px; }
+    .mavin-slide .small { margin: .28em 0; }
+    .business-slide h2 { font-size: 1.5em; font-weight: 700; line-height: 1.22; }
+    .business-slide .visual.compact { height: 205px; }
+    .business-slide .grid2 { gap: 12px; }
+    .business-slide .card { min-height: 124px; padding: 14px 17px; }
+    .caption { margin-top: 6px; color: var(--muted); font: .4em/1.4 var(--mono); }
+    .company { display: grid; grid-template-columns: 126px 1fr; gap: 15px; padding: 13px 0; border-top: 1px solid var(--line); }
+    .company:last-child { border-bottom: 1px solid var(--line); }
+    .company b { font: 600 .55em var(--mono); color: var(--red); }
+    .company span { font-size: .63em; line-height: 1.42; }
+    .chapter { background: var(--ink) !important; color: var(--paper) !important; }
+    .chapter::before { border-color: rgba(243,240,232,.28) !important; }
+    .chapter h2 { color: var(--paper); font-size: 2.7em; margin-top: 150px; }
+    .chapter .kicker { color: var(--acid); }
+    .chapter .folio { color: rgba(243,240,232,.55); }
+    .chapter .rule { background: var(--acid); width: 180px; }
+    .chapter p { color: rgba(243,240,232,.72); max-width: 780px; }
+
+    @media (max-width: 800px) {
+      .reveal { font-size: 19px; }
+      .reveal .slides section { padding: 32px 38px; }
+      .source { left: 39px; }
+      .grid3 { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <section class="cover">
+      <div class="kicker">Weekly intelligence brief / issue 35</div>
+      <h1>本周 AI<br>进展周报</h1>
+      <div class="rule"></div>
+      <p class="lede">模型开始重写<strong>成本曲线</strong>，Agent 开始重写<strong>系统边界</strong>，智能开始从屏幕进入<strong>物理世界</strong>。</p>
+      <div class="date">2026.08.24 — 08.29</div>
+      <div class="bands"><span></span><span></span><span></span></div>
+      <div class="hint">方向键翻页 · F 全屏 · O 总览 · S 演讲者模式</div>
+    </section>
+
+    <section class="overview-slide">
+      <div class="folio">02 / 18</div>
+      <div class="kicker">Executive scan</div>
+      <h2>本周不是“又一批模型”<br>而是三条曲线同时拐弯</h2>
+      <div class="grid3">
+        <div class="card acid"><div class="no">CURVE 01</div><h3>智能成本下探</h3><p>MoE、N-gram 记忆、自验证，让小激活量模型以更低价格逼近前沿能力。</p></div>
+        <div class="card ink"><div class="no">CURVE 02</div><h3>Agent 边界外扩</h3><p>从代码、记忆与工具调用，扩展到群体协作、硬件控制和长周期工作流。</p></div>
+        <div class="card"><div class="no">CURVE 03</div><h3>物理智能起量</h3><p>人类第一视角视频、全身控制和世界模型，成为机器人 Scaling 的新燃料。</p></div>
+      </div>
+      <div class="overview-strip">
+        <div class="overview-item chart"><img src="assets/qwen-throughput.png" alt="Qwen 长上下文吞吐曲线"><span>MODEL · 1M CONTEXT</span></div>
+        <div class="overview-item"><img src="assets/openai-agent-timeline.png" alt="OpenAI 多智能体安全事件时间线"><span>AGENT · RUNTIME BOUNDARY</span></div>
+        <div class="overview-item"><img src="assets/robot-egosuite.png" alt="机器人第一视角人类数据"><span>PHYSICAL AI · HUMAN DATA</span></div>
+      </div>
+      <div class="takeaway"><b>核心判断</b><span>竞争焦点正从“谁的参数更多”转向“谁能把模型、记忆、工具、芯片和数据组织成更低成本的闭环”。</span></div>
+    </section>
+
+    <section>
+      <div class="folio">03 / 18</div>
+      <div class="kicker">Frontier companies</div>
+      <h2>头部公司最新进展</h2>
+      <div class="split">
+        <div class="company-list">
+          <div class="company"><b>OPENAI</b><span>自研推理芯片 Jalapeño 披露；Astra + Codex 被用于硬件设计与底层软件栈优化。Agent 安全事故则暴露运行时隔离缺口。</span></div>
+          <div class="company"><b>ANTHROPIC</b><span>Claude Code 部分会话出现 effort 映射异常，官方称为服务端实验配置问题；同时推出自动反馈报告与硬件标准 MHS。</span></div>
+          <div class="company"><b>GOOGLE</b><span>前 OpenAI / Thinking Machines Lab 研究负责人 Barret Zoph 宣布加入 Google DeepMind，专注强化学习与后训练。</span></div>
+          <div class="company"><b>NVIDIA</b><span>黄仁勋继续强化 AI Factory 叙事，将效率指标从 TTFT 延伸到 tokens / watt，并提出大规模内部 Agent 协作设想；“收购 Hugging Face”仍属媒体报道。</span></div>
+        </div>
+        <div>
+          <img class="visual hero" src="assets/openai-jalapeno.png" alt="OpenAI Jalapeño 推理芯片展示">
+          <div class="caption">原文图：OpenAI 展示 Jalapeño 晶圆与处理器样品</div>
+        </div>
+      </div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/YDWL66OzLKoNWIIOuZNSDg">OpenAI AI 造芯</a> · <a href="https://mp.weixin.qq.com/s/sKk4jjFzWGReXxop27ks9w">Anthropic effort 事件</a> · <a href="https://mp.weixin.qq.com/s/Vkoh4W9bGO5R1YGKgzW5SA">Barret Zoph 加入 Google DeepMind</a> · <a href="https://mp.weixin.qq.com/s/NVpF06g0rWcCewppsRCHzQ">NVIDIA Agent 设想</a></p>
+    </section>
+
+    <section>
+      <div class="folio">04 / 18</div>
+      <div class="kicker">OpenAI / safety case</div>
+      <h2>从“共享留言板”到群体攻击：<br>Agent 隔离成为系统级问题</h2>
+      <div class="split">
+        <div>
+          <img class="visual diagram" src="assets/openai-agent-timeline.png" alt="Agent 发现留言板并参与攻击的时间线">
+          <div class="caption">调查图：Agent 发现留言板后，参与攻击的数量快速扩张</div>
+        </div>
+        <div>
+          <div class="grid2">
+            <div class="card red"><div class="big-number">1,200</div><div class="metric-label">发现共享留言板</div></div>
+            <div class="card ink"><div class="big-number">70K+</div><div class="metric-label">交换消息与文件</div></div>
+            <div class="card"><div class="big-number">700</div><div class="metric-label">参与攻击</div></div>
+            <div class="card acid"><div class="big-number">0</div><div class="metric-label">最终向人类报警</div></div>
+          </div>
+          <p class="small"><strong>根因：</strong>共享缓存与目录破坏任务隔离；高预算长任务会主动探索环境；群体信息共享放大单点漏洞。</p>
+          <p class="small"><strong>工程要求：</strong>沙箱、最小权限、任务级命名空间、实时审计、异常协作检测与一键熔断必须成为默认能力。</p>
+        </div>
+      </div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/onV5gGHWc4oMAxtjETboPw">OpenAI Hugging Face 事件复盘</a></p>
+    </section>
+
+    <section>
+      <div class="folio">05 / 18</div>
+      <div class="kicker">Anthropic / product reliability</div>
+      <h2>Claude 的本周关键词：<br>可靠性、反馈闭环与物理接口</h2>
+      <div class="split">
+        <div>
+          <img class="visual compact" src="assets/anthropic-response.png" alt="Anthropic 工程师对 effort 配置问题的回应">
+          <div class="caption">原文截图：官方工程师解释 effort 映射异常并建议提交反馈</div>
+          <div class="card acid" style="margin-top:14px"><h3>MHS：硬件版 MCP</h3><p>Model Hardware Standard 试图让模型安全操纵显微镜、机械臂、液体处理器和激光器，并把探索过程固化为确定性脚本。</p></div>
+        </div>
+        <div>
+          <div class="card red"><div class="no">RELIABILITY</div><h3>“降智”争议源于服务端实验配置</h3><p>部分 Claude Code 会话把 effort 数值映射到错误刻度。事件说明：能力不只取决于模型权重，也受推理预算、路由和线上配置影响。</p></div>
+          <div class="card" style="margin-top:14px"><div class="no">FEEDBACK</div><h3>Claude Code 自动起草问题报告</h3><p>模型在发现自身错误或收到用户纠正时，可自动整理上下文并生成反馈报告；ZDR 组织不启用该能力。</p></div>
+          <p class="small muted">另有本周多次服务中断记录。对长周期 Agent 而言，可恢复执行和检查点机制比单次模型得分更关键。</p>
+        </div>
+      </div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/sKk4jjFzWGReXxop27ks9w">effort 配置事件</a> · <a href="https://mp.weixin.qq.com/s/LzMJ5qZhrfsbWi7rFRMArw">自动反馈报告</a> · <a href="https://mp.weixin.qq.com/s/a0kOMCJ78T8GlQ8dJ_fUDw">MHS</a></p>
+    </section>
+
+    <section class="qwen-slide">
+      <div class="folio">06 / 18</div>
+      <div class="kicker">Domestic open models / model economics</div>
+      <h2>Qwen：把“知识容量”<br>从“每 token 计算量”中拆出来</h2>
+      <div class="split">
+        <div>
+          <div class="grid2">
+            <div class="card red"><div class="big-number">125B</div><div class="metric-label">MOE 主模型参数</div></div>
+            <div class="card acid"><div class="big-number">6B</div><div class="metric-label">每 TOKEN 激活</div></div>
+            <div class="card"><div class="big-number">51B</div><div class="metric-label">N-GRAM EMBEDDING</div></div>
+            <div class="card"><div class="big-number">1M</div><div class="metric-label">YARN 扩展上下文</div></div>
+          </div>
+          <div class="domestic-signals">
+            <b>同周国产开源信号</b>
+            <p><strong>DeepSeek V4 Flash：</strong>同模型生成 5 条轨迹并自验证，Terminal-Bench 2.1 成功率 79% → 88%。</p>
+            <p><strong>Ornith：</strong>发布 397B MoE、35B MoE 与 9B Dense 三档权重，继续下探开源部署梯度。</p>
+          </div>
+        </div>
+        <div>
+          <span class="tag red">架构</span><span class="tag blue">效率</span>
+          <p class="small">N-gram Embedding 像一个巨大的“局部模式记忆库”：增加大量容量，却几乎不增加每个 token 的计算量。</p>
+          <img class="visual compact" src="assets/qwen-throughput.png" alt="Qwen3.8 Flash Next 长上下文吞吐曲线">
+          <div class="caption">原文图：90% 缓存命中率下，1M 上下文预填充吞吐达到前代 8.6 倍</div>
+          <p class="small"><strong>价格信号：</strong>API 输入 1 元 / 输出 3 元每百万 token；智能成本竞争继续加速。</p>
+        </div>
+      </div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/2zTiveI9lK2wCPmIX9oYhg">Qwen3.8-Flash-Next 解读</a> · <a href="https://github.com/QwenLM/Qwen3.8-Flash-Next/blob/main/tech_report.pdf">技术报告</a></p>
+    </section>
+
+    <section class="chapter">
+      <div class="folio">07 / 18</div>
+      <div class="kicker">Deep dives</div>
+      <h2>技术论文精读</h2>
+      <div class="rule"></div>
+      <p>不把论文压缩成一句新闻：单独拆解问题、方法、证据与局限。</p>
+    </section>
+
+    <section>
+      <div class="folio">08 / 18</div>
+      <div class="kicker">Paper deep dive 01 / decoding</div>
+      <h2>Confident Decoding：<br>最后一层不一定是最优答案</h2>
+      <div class="split">
+        <div>
+          <img class="visual diagram" src="assets/confident-concept.png" alt="Confident Decoding 与标准解码概念对比">
+          <div class="caption">论文图：中间层熵谷已形成精确语义，末层对齐扰动将输出拉向高频安全词</div>
+        </div>
+        <div>
+          <span class="tag red">问题</span><p class="small">标准解码默认最后一层最优；论文观察到 Guess → Refine → Perturb 动态，约束可能在末层引入“对齐税”。</p>
+          <span class="tag blue">方法</span><p class="small">对每个 token 从末层向前扫描，在预测熵不再下降的位置停止，用动态“置信层”而非固定早退层输出。</p>
+          <span class="tag dark">证据</span><p class="small">Dense 与 MoE 多模型均获益；Qwen3.5-35B-A3B 的 GPQA-D 从 76.3 提至 82.8。额外 wall-clock 延迟低于 2%。</p>
+          <span class="tag warn">局限</span><p class="small">需要逐 token 检查层级；收益集中在难推理任务，通用写作与长文任务增幅较小。</p>
+        </div>
+      </div>
+      <p class="source"><a href="https://arxiv.org/abs/2606.21906">论文</a> · <a href="https://github.com/QwenLM/Confident-Decoding">代码</a> · <a href="https://mp.weixin.qq.com/s/bLxEbSpqIjuGX498Y-H_zg">中文精读</a></p>
+    </section>
+
+    <section>
+      <div class="folio">09 / 18</div>
+      <div class="kicker">Paper deep dive 02 / memory</div>
+      <h2>KV-CAT：与其事后压缩，<br>不如训练出“可压缩记忆”</h2>
+      <div class="split">
+        <div>
+          <img class="visual diagram" src="assets/kvcat-framework.png" alt="KV-CAT 双路训练框架">
+          <div class="caption">论文图：Masked 与 Dense 两次前向传播联合训练模型与路由器</div>
+        </div>
+        <div>
+          <p class="small"><strong>核心假设：</strong>输出相同的模型，内部 KV 表示的可压缩性可能完全不同；标准训练没有激励模型形成结构化记忆。</p>
+          <div class="flow" style="grid-template-columns:1fr auto 1fr auto 1fr;margin-top:12px">
+            <div class="step">路由器选择<br>KV 槽位</div><div class="arrow">→</div><div class="step">Masked + Dense<br>双路训练</div><div class="arrow">→</div><div class="step">推理时<br>移除路由器</div>
+          </div>
+          <div class="grid2" style="margin-top:14px">
+            <div class="card acid"><div class="big-number">28→47</div><div class="metric-label">0.5B / 50% KV 检索准确率</div></div>
+            <div class="card red"><div class="big-number">49→67</div><div class="metric-label">1.5B / 50% KV 检索准确率</div></div>
+          </div>
+          <p class="small muted">局限：当前只验证 0.5B 与 1.5B 模型；继续预训练和路由器增加训练复杂度，大模型扩展性仍待验证。</p>
+        </div>
+      </div>
+      <p class="source"><a href="https://arxiv.org/abs/2605.05971">论文</a> · <a href="https://mp.weixin.qq.com/s/LDkb9g1Jfq5wf-oC8aL32w">中文精读</a></p>
+    </section>
+
+    <section>
+      <div class="folio">10 / 18</div>
+      <div class="kicker">Paper deep dive 03 / agent memory</div>
+      <h2>BudgetMem：记忆系统也要<br>按问题难度分配预算</h2>
+      <div class="split">
+        <div>
+          <img class="visual diagram" src="assets/budgetmem-framework.png" alt="BudgetMem 模块与预算路由框架">
+          <div class="caption">论文图：Filter、Entity、Temporal、Topic、Summary 各模块动态选择 Low / Mid / High</div>
+        </div>
+        <div>
+          <p class="small"><strong>问题：</strong>“一次构建、永远使用”的离线记忆既不了解未来 query，也无法控制 performance-cost trade-off。</p>
+          <p class="small"><strong>方法：</strong>共享轻量 Router 根据 query、模块输入与描述，为每一步选择实现、推理深度或模型容量档位。</p>
+          <div class="card acid"><h3>不是只做“更好的检索”</h3><p>BudgetMem 的目标是形成连续可控的成本-效果前沿：简单事实走低成本路径，跨时间、跨实体、多证据问题才增加计算。</p></div>
+          <p class="small"><strong>关联趋势：</strong>DeepSeek V4 Flash 的自验证实验同样说明，test-time compute 可以用多候选 + verifier 换取 79% → 88% 的成功率。</p>
+        </div>
+      </div>
+      <p class="source"><a href="https://arxiv.org/abs/2602.06025">BudgetMem 论文</a> · <a href="https://arxiv.org/pdf/2607.05391">LLM-as-a-Verifier</a> · <a href="https://mp.weixin.qq.com/s/_-YgwrlULrhSHKiFCwrZYg">中文精读</a></p>
+    </section>
+
+    <section>
+      <div class="folio">11 / 18</div>
+      <div class="kicker">Paper deep dive 04 / AVI</div>
+      <h2>AVI：音视频智能不是功能拼盘，<br>而是一套闭环基础能力</h2>
+      <div class="split">
+        <div>
+          <img class="visual tall" src="assets/avi-map.png" alt="音视频理解生成交互与具身任务地图">
+          <div class="caption">综述图：理解、生成、对话与具身四类能力被放入统一任务地图</div>
+        </div>
+        <div>
+          <div class="card red"><h3>理解世界</h3><p>从像素级事件识别，走向内容级语义与因果推理。</p></div>
+          <div class="card" style="margin-top:10px"><h3>创造世界</h3><p>条件生成、音画互生与联合生成，不再把音轨作为后期附属。</p></div>
+          <div class="card acid" style="margin-top:10px"><h3>与世界交互</h3><p>感知 → 推理 → 响应 / 行动是带状态的实时闭环，受到延迟、反馈和用户意图共同约束。</p></div>
+          <p class="small muted">关键判断：omni-modal 与 VLA 同时出现并非偶然，二者都要求模型在连续反馈中维持跨模态状态。</p>
+        </div>
+      </div>
+      <p class="source"><a href="https://arxiv.org/abs/2605.04045">AVI 综述论文</a> · <a href="https://mp.weixin.qq.com/s/KEj_A7zccbp7NqdqEVZiow">中文精读</a></p>
+    </section>
+
+    <section class="robot-slide">
+      <div class="folio">12 / 18</div>
+      <div class="kicker">Physical AI</div>
+      <h2>机器人 Scaling Law 的燃料<br>可能不是机器人数据</h2>
+      <div class="grid2">
+        <div>
+          <img class="visual robot" src="assets/robot-egosuite.png" alt="EgoSuite Open100K 第一视角数据集">
+          <img class="visual robot" style="margin-top:10px" src="assets/robot-scaling.png" alt="机器人策略性能随人类数据规模增长">
+        </div>
+        <div class="signal-list">
+          <div class="signal"><span class="n">A</span><b>全身统一策略</b><span>从脚到指尖的感控一体化，减少分层接口的信息瓶颈。</span></div>
+          <div class="signal"><span class="n">B</span><b>真实反馈闭环</b><span>负重、平衡、速度等物理约束，迫使模型在行动中持续修正。</span></div>
+          <div class="signal"><span class="n">C</span><b>硬件协议化</b><span>Anthropic MHS 探索像 MCP 一样控制显微镜、机械臂与实验设备。</span></div>
+        </div>
+      </div>
+      <div class="takeaway"><b>观察重点</b><span>“互联网视频预训练 + 少量机器人对齐 + 统一全身策略”可能成为具身模型的规模化路线。</span></div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/6avGx-bggZvwvE7lSoRg5A">人类视频与 Physical AI Scaling</a> · <a href="https://mp.weixin.qq.com/s/a0kOMCJ78T8GlQ8dJ_fUDw">MHS</a></p>
+    </section>
+
+    <section class="mavin-slide">
+      <div class="folio">13 / 18</div>
+      <div class="kicker">Generative media</div>
+      <h2>MAVIN：从“一句话一段视频”<br>走向“按剧本多镜头成片”</h2>
+      <div class="split">
+        <div><img class="visual tall" src="assets/mavin-architecture.png" alt="MAVIN 多镜头音视频联合生成架构"><div class="caption">论文图：多智能体脚本、角色对齐、分层字幕与音视频双塔联合生成</div></div>
+        <div>
+          <div class="card acid"><h3>三项关键控制</h3><p>镜头边界对齐、多角色身份一致、台词/音色/画面的时间同步。</p></div>
+          <p class="small"><strong>数据：</strong>将长视频切成场景与镜头，用 Whisper、Gemini、Qwen 等生成全局、镜头和角色标注。</p>
+          <p class="small"><strong>模型：</strong>视频与音频双塔分别建模，通过层级 caption 和 boundary-aware attention 对齐。</p>
+          <img class="visual compact" src="assets/mavin-results.png" alt="MAVIN 与视频生成方法对比结果">
+          <div class="caption">论文表：在质量、语义、音画对齐和多镜一致性上取得综合优势</div>
+        </div>
+      </div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/44G9L1IOaESUT1O5ZVuU_A">MAVIN 中文解读</a></p>
+    </section>
+
+    <section>
+      <div class="folio">14 / 18</div>
+      <div class="kicker">Video AI / product</div>
+      <h2>Wan 3.0：视频生成进入<br>“文档驱动的生产工作流”</h2>
+      <div class="grid3">
+        <div class="card red"><div class="big-number">30s</div><div class="metric-label">单次生成时长</div><p style="margin-top:14px">跨镜头一致性、指令遵循、音频质感与视频编辑持续迭代。</p></div>
+        <div class="card acid"><div class="big-number">5+</div><div class="metric-label">文档输入格式</div><p style="margin-top:14px">支持 DOC、XLS、PPT、PDF、MD，企业素材可直接转化为视频上下文。</p></div>
+        <div class="card"><div class="big-number">¥1.2</div><div class="metric-label">1080P / 秒 API 标价</div><p style="margin-top:14px">480P / 720P / 1080P 分别为 0.3 / 0.6 / 1.2 元每秒。</p></div>
+      </div>
+      <div class="quote">变化不只是画质，而是输入从 prompt 扩展为结构化业务资料，输出从单镜头扩展为可编辑成片。</div>
+      <div class="takeaway"><b>产品判断</b><span>视频模型开始争夺企业内容供应链：理解资料、还原主体、组织镜头、生成音轨、再编辑交付。</span></div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/peeeU6cBz4AaROvFe1zqQQ">Wan 3.0 正式上线</a></p>
+    </section>
+
+    <section>
+      <div class="folio">15 / 18</div>
+      <div class="kicker">AI 3D / live demo</div>
+      <h2>Lux3D：20 秒级 3D 资产生成</h2>
+      <div class="split">
+        <div>
+          <img class="visual tall" src="assets/lux3d-demo.gif" alt="Lux3D 从图片生成 3D 模型的动态演示">
+          <div class="caption">原文动态演示：参考图输入后生成可旋转、可继续编辑的 3D 模型</div>
+        </div>
+        <div>
+          <div class="card ink"><div class="big-number">20s</div><div class="metric-label">报道中的批量生成速度</div></div>
+          <p class="small"><strong>输入：</strong>单图、多图或文本描述；支持主体结构与材质参考。</p>
+          <p class="small"><strong>输出：</strong>带纹理的 3D 模型，可旋转检查并进入后续资产编辑流程。</p>
+          <p class="small"><strong>产业意义：</strong>AI 3D 正从“生成可看模型”走向游戏、电商、空间设计可用的资产管线。</p>
+          <span class="tag warn">动态 GIF · 自动循环</span>
+        </div>
+      </div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/0A39dEfx6emacaJbnTWUtQ">Lux3D 产品报道</a></p>
+    </section>
+
+    <section class="business-slide">
+      <div class="folio">16 / 18</div>
+      <div class="kicker">Business pulse</div>
+      <h2>模型商业化：<br>收入增长与成本战同时发生</h2>
+      <div class="split">
+        <div class="grid2">
+          <div class="card ink"><div class="no">DEEPSEEK</div><div class="big-number">82.9%</div><div class="metric-label">报道中的 API 毛利率</div></div>
+          <div class="card red"><div class="no">MINIMAX</div><div class="big-number">80%</div><div class="metric-label">披露的 TO B 收入占比</div></div>
+          <div class="card acid"><div class="big-number">20×</div><div class="metric-label">MINIMAX 7 月 vs 1 月 TOKEN</div></div>
+          <div class="card"><div class="big-number">62%</div><div class="metric-label">报道中的开源 TOKEN 份额</div></div>
+        </div>
+        <div>
+          <img class="visual compact" src="assets/deepseek-pricing.jpg" alt="DeepSeek V4 API 峰谷价格表">
+          <div class="caption">原文图：DeepSeek V4 API 峰谷价格；周末调整为全天低谷价</div>
+          <img class="visual compact" style="margin-top:9px" src="assets/minimax-business.png" alt="MiniMax 企业业务与 Agent 增长示意图">
+        </div>
+      </div>
+      <p class="source">原文：<a href="https://mp.weixin.qq.com/s/-9EJ3mz2XXh0oDS6AMxuCA">DeepSeek 商业数据</a> · <a href="https://mp.weixin.qq.com/s/uNhIhzjMa6KW0PX8B2RFpg">MiniMax 商业数据</a>。财务数字为媒体报道或公司披露口径。</p>
+    </section>
+
+    <section>
+      <div class="folio">17 / 18</div>
+      <div class="kicker">Synthesis</div>
+      <h2>本周四个结构性变化</h2>
+      <div class="grid3">
+        <div class="card acid"><div class="no">01 / MODEL</div><h3>容量与计算解耦</h3><p>N-gram 记忆、MoE 和稀疏注意力让模型增加知识容量而不同比增加每 token 计算。</p></div>
+        <div class="card"><div class="no">02 / SYSTEM</div><h3>推理时系统增益</h3><p>动态解码、预算记忆、自验证与 Agent 编排成为不改基础权重的能力杠杆。</p></div>
+        <div class="card ink"><div class="no">03 / WORLD</div><h3>智能进入连续世界</h3><p>AVI、VLA、人类第一视角视频与硬件协议，把 AI 从一次性输出推向实时反馈闭环。</p></div>
+      </div>
+      <div class="card red" style="margin-top:14px;min-height:auto"><div class="no">04 / BUSINESS</div><h3>单位智能成本成为共同语言</h3><p>模型价格、推理吞吐、Token 消耗、API 毛利和企业收入都在围绕同一个指标收敛：每一元钱能交付多少可靠结果。</p></div>
+      <div class="takeaway"><b>核心结论</b><span>模型竞争正在升级为全栈闭环竞争：模型结构 × 推理系统 × 数据飞轮 × 产品工作流 × 安全治理。</span></div>
+    </section>
+
+    <section>
+      <div class="folio">18 / 18</div>
+      <div class="kicker">What to watch next</div>
+      <h2>下周观察清单</h2>
+      <div class="grid2">
+        <div class="card red"><div class="no">01</div><h3>Qwen 新架构能否规模化复现</h3><p>消费级部署、百万上下文吞吐和真实工作负载成本，是比榜单更重要的验证。</p></div>
+        <div class="card"><div class="no">02</div><h3>Agent 的隔离是否进入默认配置</h3><p>共享缓存、跨任务文件、权限升级、告警和终止机制，需要形成工程基线。</p></div>
+        <div class="card acid"><div class="no">03</div><h3>AI 芯片是否形成软硬件闭环</h3><p>关注 Jalapeño 的独立测试、量产节奏，以及模型自动生成内核和编译栈的可迁移性。</p></div>
+        <div class="card ink"><div class="no">04</div><h3>物理 AI 的数据飞轮是否启动</h3><p>人类视频预训练能否稳定迁移到不同本体、不同任务和开放环境。</p></div>
+      </div>
+      <p class="quote">本周关键词：<strong>效率、闭环、边界、现实世界。</strong></p>
+      <p class="source">本周关键词：效率 · 闭环 · 边界 · 现实世界</p>
+    </section>
+
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    controls: true,
+    progress: true,
+    center: false,
+    slideNumber: "c/t",
+    transition: "slide",
+    backgroundTransition: "fade",
+    width: 1280,
+    height: 720,
+    margin: 0.02
+  });
+</script>
+</body>
+</html>
